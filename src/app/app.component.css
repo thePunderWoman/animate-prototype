@@ -1,0 +1,42 @@
+.fade {
+  animation: fade-out 1s forwards;
+}
+
+.rotate {
+  transform: rotateZ(20deg);
+  transition-property: transform;
+  transition-duration: 1.5s;
+}
+
+p {
+  opacity: 1;
+  transform-origin: top left;
+  @starting-style {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+.appear {
+  transition-duration: 500ms, 800ms;
+  transition-property: opacity, transform;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(20deg);
+  }
+}
+
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
