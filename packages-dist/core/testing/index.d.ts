@@ -1,15 +1,17 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
-import { InjectionToken, Type, ProviderToken, InjectOptions } from '../chrome_dev_tools_performance.d-qv7drdAl.js';
-import { DeferBlockDetails, DeferBlockState, ComponentRef, DebugElement, ElementRef, ChangeDetectorRef, NgZone, SchemaMetadata, DeferBlockBehavior, PlatformRef, NgModule, Component, Directive, Pipe, Navigation, NavigationHistoryEntry, NavigationNavigateOptions, NavigationResult, NavigationOptions, NavigateEvent, NavigationCurrentEntryChangeEvent, NavigationTransition, NavigationUpdateCurrentEntryOptions, NavigationReloadOptions } from '../discovery.d-o1MkoZAq.js';
+import '../event_dispatcher.d-BReQpZfC.js';
+import { InjectionToken, Type, ProviderToken, InjectOptions } from '../chrome_dev_tools_performance.d-Dk_7kdX9.js';
+import { DeferBlockDetails, DeferBlockState, ComponentRef, DebugElement, ElementRef, ChangeDetectorRef, NgZone, SchemaMetadata, DeferBlockBehavior, PlatformRef, NgModule, Component, Directive, Pipe, Navigation, NavigationNavigateOptions, NavigationOptions, NavigateEvent, NavigationCurrentEntryChangeEvent, NavigationTransition, NavigationUpdateCurrentEntryOptions, NavigationReloadOptions, NavigationResult, NavigationHistoryEntry } from '../discovery.d-AiW64LSq.js';
+import * as i0 from '@angular/core';
 import '../graph.d-BcIOep_B.js';
-import '../event_dispatcher.d-DlbccpYq.js';
 import 'rxjs';
-import '../signal.d-D6VJ67xi.js';
+import '../signal.d-BcmOdASA.js';
+import '@angular/core/primitives/di';
 
 /**
  * Wraps a test function in an asynchronous test zone. The test will automatically
@@ -38,7 +40,7 @@ declare function waitForAsync(fn: Function): (done: any) => any;
 declare class DeferBlockFixture {
     private block;
     private componentFixture;
-    /** @nodoc */
+    /** @docs-private */
     constructor(block: DeferBlockDetails, componentFixture: ComponentFixture<unknown>);
     /**
      * Renders the specified state of the defer fixture.
@@ -91,7 +93,7 @@ declare class ComponentFixture<T> {
     private autoDetect;
     private subscriptions;
     ngZone: NgZone | null;
-    /** @nodoc */
+    /** @docs-private */
     constructor(componentRef: ComponentRef<T>);
     /**
      * Trigger a change detection cycle for the component.
@@ -107,8 +109,16 @@ declare class ComponentFixture<T> {
      * Also runs detectChanges once so that any existing change is detected.
      *
      * @param autoDetect Whether to autodetect changes. By default, `true`.
+     * @deprecated For `autoDetect: true`, use `autoDetectChanges()`.
+     * We have not seen a use-case for `autoDetect: false` but `changeDetectorRef.detach()` is a close equivalent.
      */
-    autoDetectChanges(autoDetect?: boolean): void;
+    autoDetectChanges(autoDetect: boolean): void;
+    /**
+     * Enables automatically synchronizing the view, as it would in an application.
+     *
+     * Also runs detectChanges once so that any existing change is detected.
+     */
+    autoDetectChanges(): void;
     /**
      * Return whether the fixture is currently stable or has async tasks that have not been completed
      * yet.
@@ -447,9 +457,15 @@ interface TestBed {
     overrideTemplateUsingTestingModule(component: Type<any>, template: string): TestBed;
     createComponent<T>(component: Type<T>): ComponentFixture<T>;
     /**
+     * Execute any pending effects.
+     *
+     * @deprecated use `TestBed.tick()` instead
+     */
+    flushEffects(): void;
+    /**
      * Execute any pending work required to synchronize model to the UI.
      *
-     * @publicApi
+     * @publicApi 20.0
      */
     tick(): void;
 }
@@ -500,17 +516,6 @@ declare class InjectSetupWrapper {
  */
 declare function withModule(moduleDef: TestModuleMetadata): InjectSetupWrapper;
 declare function withModule(moduleDef: TestModuleMetadata, fn: Function): () => any;
-
-declare function getCleanupHook(expectedTeardownValue: boolean): VoidFunction;
-/**
- * This API should be removed. But doing so seems to break `google3` and so it requires a bit of
- * investigation.
- *
- * A work around is to mark it as `@codeGenApi` for now and investigate later.
- *
- * @codeGenApi
- */
-declare const __core_private_testing_placeholder__ = "";
 
 declare class MetadataOverrider {
     private _references;
@@ -683,5 +688,18 @@ declare class FakeNavigationHistoryEntry implements NavigationHistoryEntry {
     dispose(): void;
 }
 
-export { ComponentFixture, ComponentFixtureAutoDetect, ComponentFixtureNoNgZone, DeferBlockBehavior, DeferBlockFixture, DeferBlockState, InjectSetupWrapper, TestBed, TestComponentRenderer, __core_private_testing_placeholder__, discardPeriodicTasks, fakeAsync, flush, flushMicrotasks, getTestBed, inject, resetFakeAsyncZone, tick, waitForAsync, withModule, FakeNavigation as ɵFakeNavigation, MetadataOverrider as ɵMetadataOverrider, getCleanupHook as ɵgetCleanupHook };
+declare function getCleanupHook(expectedTeardownValue: boolean): VoidFunction;
+
+declare class Log<T = string> {
+    logItems: T[];
+    constructor();
+    add(value: T): void;
+    fn(value: T): () => void;
+    clear(): void;
+    result(): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<Log<any>, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<Log<any>>;
+}
+
+export { ComponentFixture, ComponentFixtureAutoDetect, ComponentFixtureNoNgZone, DeferBlockBehavior, DeferBlockFixture, DeferBlockState, InjectSetupWrapper, TestBed, TestComponentRenderer, discardPeriodicTasks, fakeAsync, flush, flushMicrotasks, getTestBed, inject, resetFakeAsyncZone, tick, waitForAsync, withModule, FakeNavigation as ɵFakeNavigation, Log as ɵLog, MetadataOverrider as ɵMetadataOverrider, getCleanupHook as ɵgetCleanupHook };
 export type { MetadataOverride, ModuleTeardownOptions, TestBedStatic, TestEnvironmentOptions, TestModuleMetadata };

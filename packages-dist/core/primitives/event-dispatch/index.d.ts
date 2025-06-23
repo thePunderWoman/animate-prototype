@@ -1,11 +1,11 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
-import { EarlyJsactionDataContainer, EventInfo, Restriction } from '../../event_dispatcher.d-DlbccpYq.js';
-export { EventContract, EventContractContainer, EventDispatcher, EventInfoWrapper, EventPhase, registerDispatcher } from '../../event_dispatcher.d-DlbccpYq.js';
+import { EarlyJsactionDataContainer, EventInfo, Restriction } from '../../event_dispatcher.d-BReQpZfC.js';
+export { EventContract, EventContractContainer, EventDispatcher, EventInfoWrapper, EventPhase, registerDispatcher } from '../../event_dispatcher.d-BReQpZfC.js';
 
 declare const Attribute: {
     /**

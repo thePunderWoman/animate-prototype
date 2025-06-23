@@ -1,10 +1,10 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
-export { ApplicationConfig, BrowserModule, bootstrapApplication, createApplication, platformBrowser, provideProtractorTestingSupport } from './browser.d-C4gIBeOX.js';
+export { ApplicationConfig, BrowserModule, bootstrapApplication, createApplication, platformBrowser, provideProtractorTestingSupport } from './browser.d-DlTxfqBL.js';
 import * as i0 from '@angular/core';
 import { ComponentRef, Predicate, DebugNode, DebugElement, Type, InjectionToken, NgZone, ListenerOptions, OnDestroy, RendererFactory2, ɵTracingService as _TracingService, ɵTracingSnapshot as _TracingSnapshot, ElementRegistry, RendererType2, Renderer2, Injector, Sanitizer, SecurityContext, Provider, EnvironmentProviders, GetTestability, TestabilityRegistry, Testability, Version } from '@angular/core';
 import { HttpTransferCacheOptions } from '@angular/common/http';
@@ -291,10 +291,6 @@ declare class SharedStylesHost implements OnDestroy {
      * Set of host DOM nodes that will have styles attached.
      */
     private readonly hosts;
-    /**
-     * Whether the application code is currently executing on a server.
-     */
-    private readonly isServer;
     constructor(doc: Document, appId: string, nonce?: string | null | undefined, platformId?: object);
     /**
      * Adds embedded styles to the DOM via HTML `style` elements.
@@ -666,7 +662,7 @@ declare function withHttpTransferCacheOptions(options: HttpTransferCacheOptions)
 /**
  * Enables support for hydrating i18n blocks.
  *
- * @publicApi
+ * @publicApi 20.0
  */
 declare function withI18nSupport(): HydrationFeature<HydrationFeatureKind.I18nSupport>;
 /**
@@ -699,7 +695,7 @@ declare function withEventReplay(): HydrationFeature<HydrationFeatureKind.EventR
  *   providers: [provideClientHydration(withIncrementalHydration())]
  * });
  * ```
- * @publicApi
+ * @publicApi 20.0
  * @see {@link provideClientHydration}
  */
 declare function withIncrementalHydration(): HydrationFeature<HydrationFeatureKind.IncrementalHydration>;
@@ -750,7 +746,7 @@ declare function withIncrementalHydration(): HydrationFeature<HydrationFeatureKi
  * @param features Optional features to configure additional hydration behaviors.
  * @returns A set of providers to enable hydration.
  *
- * @publicApi
+ * @publicApi 17.0
  */
 declare function provideClientHydration(...features: HydrationFeature<HydrationFeatureKind>[]): EnvironmentProviders;
 

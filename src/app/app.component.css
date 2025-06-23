@@ -8,7 +8,7 @@
   transition-duration: 1.5s;
 }
 
-p {
+li {
   opacity: 1;
   transform-origin: top left;
   @starting-style {

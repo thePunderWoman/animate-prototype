@@ -1,18 +1,18 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
 import { Observable, ReplaySubject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { assertInInjectionContext, inject, DestroyRef, RuntimeError, Injector, assertNotInReactiveContext, signal, PendingTasks } from './root_effect_scheduler-DTKVhAd7.mjs';
-import { getOutputDestroyRef, effect, untracked, computed, resource } from './resource-BEapo6Wy.mjs';
+import { assertInInjectionContext, inject, DestroyRef, RuntimeError, Injector, assertNotInReactiveContext, signal, PendingTasks } from './view_context-D0j9LO9U.mjs';
+import { getOutputDestroyRef, effect, untracked, computed, resource, encapsulateResourceError } from './resource-ADBOY-Y0.mjs';
 import './primitives/di.mjs';
-import './signal-CVVPheSN.mjs';
+import './signal-nCiHhWf6.mjs';
 import '@angular/core/primitives/di';
 import '@angular/core/primitives/signals';
-import './untracked-BLZYODu2.mjs';
+import './untracked-DmD_2MlC.mjs';
 
 /**
  * Operator which completes the Observable when the calling context (component, directive, service,
@@ -22,15 +22,19 @@ import './untracked-BLZYODu2.mjs';
  *     passed explicitly to use `takeUntilDestroyed` outside of an [injection
  * context](guide/di/dependency-injection-context). Otherwise, the current `DestroyRef` is injected.
  *
- * @publicApi
+ * @publicApi 19.0
  */
 function takeUntilDestroyed(destroyRef) {
     if (!destroyRef) {
-        assertInInjectionContext(takeUntilDestroyed);
+        ngDevMode && assertInInjectionContext(takeUntilDestroyed);
         destroyRef = inject(DestroyRef);
     }
-    const destroyed$ = new Observable((observer) => {
-        const unregisterFn = destroyRef.onDestroy(observer.next.bind(observer));
+    const destroyed$ = new Observable((subscriber) => {
+        if (destroyRef.destroyed) {
+            subscriber.next();
+            return;
+        }
+        const unregisterFn = destroyRef.onDestroy(subscriber.next.bind(subscriber));
         return unregisterFn;
     });
     return (source) => {
@@ -91,7 +95,7 @@ class OutputFromObservableRef {
  * }
  * ```
  *
- * @publicApi
+ * @publicApi 19.0
  */
 function outputFromObservable(observable, opts) {
     ngDevMode && assertInInjectionContext(outputFromObservable);
@@ -104,7 +108,7 @@ function outputFromObservable(observable, opts) {
  *
  * You can subscribe to the output via `Observable.subscribe` then.
  *
- * @publicApi
+ * @publicApi 19.0
  */
 function outputToObservable(ref) {
     const destroyRef = getOutputDestroyRef(ref);
@@ -112,9 +116,12 @@ function outputToObservable(ref) {
         // Complete the observable upon directive/component destroy.
         // Note: May be `undefined` if an `EventEmitter` is declared outside
         // of an injection context.
-        destroyRef?.onDestroy(() => observer.complete());
+        const unregisterOnDestroy = destroyRef?.onDestroy(() => observer.complete());
         const subscription = ref.subscribe((v) => observer.next(v));
-        return () => subscription.unsubscribe();
+        return () => {
+            subscription.unsubscribe();
+            unregisterOnDestroy?.();
+        };
     });
 }
 
@@ -125,10 +132,12 @@ function outputToObservable(ref) {
  *
  * `toObservable` must be called in an injection context unless an injector is provided via options.
  *
- * @publicApi
+ * @publicApi 20.0
  */
 function toObservable(source, options) {
-    !options?.injector && assertInInjectionContext(toObservable);
+    if (ngDevMode && !options?.injector) {
+        assertInInjectionContext(toObservable);
+    }
     const injector = options?.injector ?? inject(Injector);
     const subject = new ReplaySubject(1);
     const watcher = effect(() => {
@@ -177,7 +186,9 @@ function toSignal(source, options) {
         assertNotInReactiveContext(toSignal, 'Invoking `toSignal` causes new subscriptions every time. ' +
             'Consider moving `toSignal` outside of the reactive context and read the signal value where needed.');
     const requiresCleanup = !options?.manualCleanup;
-    requiresCleanup && !options?.injector && assertInInjectionContext(toSignal);
+    if (ngDevMode && requiresCleanup && !options?.injector) {
+        assertInInjectionContext(toSignal);
+    }
     const cleanupRef = requiresCleanup
         ? (options?.injector?.get(DestroyRef) ?? inject(DestroyRef))
         : null;
@@ -193,6 +204,7 @@ function toSignal(source, options) {
         // If an initial value was passed, use it. Otherwise, use `undefined` as the initial value.
         state = signal({ kind: 1 /* StateKind.Value */, value: options?.initialValue }, { equal });
     }
+    let destroyUnregisterFn;
     // Note: This code cannot run inside a reactive context (see assertion above). If we'd support
     // this, we would subscribe to the observable outside of the current reactive context, avoiding
     // that side-effect signal reads/writes are attribute to the current consumer. The current
@@ -203,6 +215,10 @@ function toSignal(source, options) {
         next: (value) => state.set({ kind: 1 /* StateKind.Value */, value }),
         error: (error) => {
             state.set({ kind: 2 /* StateKind.Error */, error });
+            destroyUnregisterFn?.();
+        },
+        complete: () => {
+            destroyUnregisterFn?.();
         },
         // Completion of the Observable is meaningless to the signal. Signals don't have a concept of
         // "complete".
@@ -212,7 +228,7 @@ function toSignal(source, options) {
             '`toSignal()` called with `requireSync` but `Observable` did not emit synchronously.');
     }
     // Unsubscribe when the current context is destroyed, if requested.
-    cleanupRef?.onDestroy(sub.unsubscribe.bind(sub));
+    destroyUnregisterFn = cleanupRef?.onDestroy(sub.unsubscribe.bind(sub));
     // The actual returned signal is a `computed` of the `State` signal, which maps the various states
     // to either values or errors.
     return computed(() => {
@@ -240,11 +256,11 @@ function makeToSignalEqual(userEquality = Object.is) {
  *
  * @param injector The `Injector` to use during creation. If this is not provided, the current injection context will be used instead (via `inject`).
  *
- * @developerPreview
+ * @developerPreview 20.0
  */
 function pendingUntilEvent(injector) {
     if (injector === undefined) {
-        assertInInjectionContext(pendingUntilEvent);
+        ngDevMode && assertInInjectionContext(pendingUntilEvent);
         injector = inject(Injector);
     }
     const taskService = injector.get(PendingTasks);
@@ -284,7 +300,9 @@ function pendingUntilEvent(injector) {
 }
 
 function rxResource(opts) {
-    opts?.injector || assertInInjectionContext(rxResource);
+    if (ngDevMode && !opts?.injector) {
+        assertInInjectionContext(rxResource);
+    }
     return resource({
         ...opts,
         loader: undefined,
@@ -306,14 +324,19 @@ function rxResource(opts) {
             // TODO(alxhub): remove after g3 updated to rename loader -> stream
             const streamFn = opts.stream ?? opts.loader;
             if (streamFn === undefined) {
-                throw new Error(`Must provide \`stream\` option.`);
+                throw new RuntimeError(990 /* ɵRuntimeErrorCode.MUST_PROVIDE_STREAM_OPTION */, ngDevMode && `Must provide \`stream\` option.`);
             }
             sub = streamFn(params).subscribe({
                 next: (value) => send({ value }),
-                error: (error) => send({ error }),
+                error: (error) => {
+                    send({ error: encapsulateResourceError(error) });
+                    params.abortSignal.removeEventListener('abort', onAbort);
+                },
                 complete: () => {
                     if (resolve) {
-                        send({ error: new Error('Resource completed before producing a value') });
+                        send({
+                            error: new RuntimeError(991 /* ɵRuntimeErrorCode.RESOURCE_COMPLETED_BEFORE_PRODUCING_VALUE */, ngDevMode && 'Resource completed before producing a value'),
+                        });
                     }
                     params.abortSignal.removeEventListener('abort', onAbort);
                 },

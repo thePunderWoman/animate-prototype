@@ -1,11 +1,11 @@
 {
   "name": "@angular/core",
-  "version": "19.2.9+sha-cb4c3da-with-local-changes",
+  "version": "20.0.3+sha-e8e1a42",
   "description": "Angular - the core framework",
   "author": "angular",
   "license": "MIT",
   "engines": {
-    "node": "^20.11.1 || >=22.11.0"
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
   },
   "exports": {
     "./schematics/*": {
@@ -46,12 +46,15 @@
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/compiler": "19.2.9+sha-cb4c3da-with-local-changes",
+    "@angular/compiler": "20.0.3+sha-e8e1a42",
     "rxjs": "^6.5.3 || ^7.4.0",
     "zone.js": "~0.15.0"
   },
   "peerDependenciesMeta": {
     "@angular/compiler": {
+      "optional": true
+    },
+    "zone.js": {
       "optional": true
     }
   },

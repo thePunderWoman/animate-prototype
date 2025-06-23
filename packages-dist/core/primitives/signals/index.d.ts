@@ -1,13 +1,13 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
 import { ReactiveNode, ValueEqualityFn, SIGNAL } from '../../graph.d-BcIOep_B.js';
 export { REACTIVE_NODE, Reactive, ReactiveHookFn, consumerAfterComputation, consumerBeforeComputation, consumerDestroy, consumerMarkDirty, consumerPollProducersForChange, defaultEquals, getActiveConsumer, isInNotificationPhase, isReactive, producerAccessed, producerIncrementEpoch, producerMarkClean, producerNotifyConsumers, producerUpdateValueVersion, producerUpdatesAllowed, runPostProducerCreatedFn, setActiveConsumer, setPostProducerCreatedFn } from '../../graph.d-BcIOep_B.js';
-import { SignalNode } from '../../signal.d-D6VJ67xi.js';
-export { SIGNAL_NODE, SignalGetter, createSignal, createSignalTuple, runPostSignalSetFn, setPostSignalSetFn, signalGetFn, signalSetFn, signalUpdateFn } from '../../signal.d-D6VJ67xi.js';
+import { SignalNode } from '../../signal.d-BcmOdASA.js';
+export { SIGNAL_NODE, SignalGetter, createSignal, runPostSignalSetFn, setPostSignalSetFn, signalGetFn, signalSetFn, signalUpdateFn } from '../../signal.d-BcmOdASA.js';
 export { setAlternateWeakRefImpl } from '../../weak_ref.d-eGOEP9S1.js';
 
 /**

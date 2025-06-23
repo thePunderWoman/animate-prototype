@@ -1,6 +1,9 @@
 <div>
-  <button type="button" (click)="toggle()">Toggle</button>
-  @if (show) {
-    <p in="appear" out="fade rotate" #el>I should fade</p>
+  <button type="button" (click)="add()">Add</button>
+  <button type="button" (click)="remove()">Remove</button>
+  <ul>
+  @for (item of items; track item) {
+    <li [animate.in]="inClass()" animate.out="fade rotate">I should fade</li>
   }
+  </ul>
 </div>

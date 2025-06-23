@@ -1,17 +1,16 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
-import { ActivatedRouteSnapshot, Params, UrlTree, RouterOutletContract, ActivatedRoute, RouterStateSnapshot, Route, LoadedRouterConfig, Router, Routes, InMemoryScrollingOptions, NavigationError, RedirectCommand, RouterConfigOptions, CanActivate, CanActivateFn, CanActivateChild, CanActivateChildFn, CanDeactivate, CanDeactivateFn, CanMatch, CanMatchFn, Resolve, ResolveFn, Event } from './router_module.d-D4HmHYPv.js';
-export { ActivationEnd, ActivationStart, BaseRouteReuseStrategy, CanLoad, CanLoadFn, ChildActivationEnd, ChildActivationStart, Data, DefaultExport, DefaultUrlSerializer, DeprecatedGuard, DeprecatedResolve, DetachedRouteHandle, EventType, ExtraOptions, GuardResult, GuardsCheckEnd, GuardsCheckStart, InitialNavigation, IsActiveMatchOptions, LoadChildren, LoadChildrenCallback, MaybeAsync, Navigation, NavigationBehaviorOptions, NavigationCancel, NavigationCancellationCode, NavigationEnd, NavigationExtras, NavigationSkipped, NavigationSkippedCode, NavigationStart, OnSameUrlNavigation, PRIMARY_OUTLET, ParamMap, QueryParamsHandling, ROUTER_CONFIGURATION, ROUTER_INITIALIZER, ROUTER_OUTLET_DATA, RedirectFunction, ResolveData, ResolveEnd, ResolveStart, RouteConfigLoadEnd, RouteConfigLoadStart, RouteReuseStrategy, RouterEvent, RouterLink, RouterLinkActive, RouterLink as RouterLinkWithHref, RouterModule, RouterOutlet, RouterState, RoutesRecognized, RunGuardsAndResolvers, Scroll, UrlCreationOptions, UrlMatchResult, UrlMatcher, UrlSegment, UrlSegmentGroup, UrlSerializer, convertToParamMap, defaultUrlMatcher, ɵEmptyOutletComponent, ROUTER_PROVIDERS as ɵROUTER_PROVIDERS, RestoredState as ɵRestoredState } from './router_module.d-D4HmHYPv.js';
+import { ActivatedRouteSnapshot, Params, UrlTree, RouterOutletContract, ActivatedRoute, RouterStateSnapshot, Route, LoadedRouterConfig, Router, Routes, InMemoryScrollingOptions, RouterConfigOptions, NavigationError, RedirectCommand, CanMatch, CanMatchFn, CanActivate, CanActivateFn, CanActivateChild, CanActivateChildFn, CanDeactivate, CanDeactivateFn, Resolve, ResolveFn, Event } from './router_module.d-mlGavL8F.js';
+export { ActivationEnd, ActivationStart, BaseRouteReuseStrategy, CanLoad, CanLoadFn, ChildActivationEnd, ChildActivationStart, Data, DefaultExport, DefaultUrlSerializer, DeprecatedGuard, DeprecatedResolve, DetachedRouteHandle, EventType, ExtraOptions, GuardResult, GuardsCheckEnd, GuardsCheckStart, InitialNavigation, IsActiveMatchOptions, LoadChildren, LoadChildrenCallback, MaybeAsync, Navigation, NavigationBehaviorOptions, NavigationCancel, NavigationCancellationCode, NavigationEnd, NavigationExtras, NavigationSkipped, NavigationSkippedCode, NavigationStart, OnSameUrlNavigation, PRIMARY_OUTLET, ParamMap, QueryParamsHandling, ROUTER_CONFIGURATION, ROUTER_INITIALIZER, ROUTER_OUTLET_DATA, RedirectFunction, ResolveData, ResolveEnd, ResolveStart, RouteConfigLoadEnd, RouteConfigLoadStart, RouteReuseStrategy, RouterEvent, RouterLink, RouterLinkActive, RouterLink as RouterLinkWithHref, RouterModule, RouterOutlet, RouterState, RoutesRecognized, RunGuardsAndResolvers, Scroll, UrlCreationOptions, UrlMatchResult, UrlMatcher, UrlSegment, UrlSegmentGroup, UrlSerializer, convertToParamMap, defaultUrlMatcher, ɵEmptyOutletComponent, ROUTER_PROVIDERS as ɵROUTER_PROVIDERS, RestoredState as ɵRestoredState } from './router_module.d-mlGavL8F.js';
 import { Title } from '@angular/platform-browser';
 import * as i0 from '@angular/core';
-import { EnvironmentInjector, ComponentRef, InjectionToken, Type, Injector, Compiler, OnDestroy, Provider, EnvironmentProviders, Version } from '@angular/core';
+import { ComponentRef, EnvironmentInjector, InjectionToken, Compiler, Injector, Type, OnDestroy, EnvironmentProviders, Provider, Version } from '@angular/core';
 import { Observable } from 'rxjs';
 import '@angular/common';
-import '@angular/router';
 
 /**
  * Creates a `UrlTree` relative to an `ActivatedRouteSnapshot`.
@@ -88,7 +87,7 @@ declare class OutletContext {
 declare class ChildrenOutletContexts {
     private rootInjector;
     private contexts;
-    /** @nodoc */
+    /** @docs-private */
     constructor(rootInjector: EnvironmentInjector);
     /** Called when a `RouterOutlet` directive is instantiated */
     onChildOutletCreated(childName: string, outlet: RouterOutletContract): void;
@@ -113,8 +112,7 @@ declare class ChildrenOutletContexts {
 /**
  * Options to configure the View Transitions integration in the Router.
  *
- * @experimental
- * @publicApi
+ * @developerPreview 20.0
  * @see withViewTransitions
  */
 interface ViewTransitionsFeatureOptions {
@@ -134,8 +132,7 @@ interface ViewTransitionsFeatureOptions {
  * The information passed to the `onViewTransitionCreated` function provided in the
  * `withViewTransitions` feature options.
  *
- * @publicApi
- * @experimental
+ * @developerPreview 20.0
  */
 interface ViewTransitionInfo {
     /**
@@ -300,7 +297,7 @@ declare class RouterPreloader implements OnDestroy {
     constructor(router: Router, injector: EnvironmentInjector, preloadingStrategy: PreloadingStrategy, loader: RouterConfigLoader);
     setUpPreloading(): void;
     preload(): Observable<any>;
-    /** @nodoc */
+    /** @docs-private */
     ngOnDestroy(): void;
     private processRoutes;
     private preloadConfig;
@@ -761,7 +758,7 @@ declare function withComponentInputBinding(): ComponentInputBindingFeature;
  * @returns A set of providers for use with `provideRouter`.
  * @see https://developer.chrome.com/docs/web-platform/view-transitions/
  * @see https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API
- * @developerPreview
+ * @developerPreview 19.0
  */
 declare function withViewTransitions(options?: ViewTransitionsFeatureOptions): ViewTransitionsFeature;
 /**
