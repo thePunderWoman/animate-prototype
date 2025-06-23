@@ -1,5 +1,5 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import { HttpRequest, HttpEvent, HttpHeaders, HttpContext, HttpParams, HttpResponse, HttpProgressEvent } from '../module.d-yNBsZ8gb.js';
 export { HttpClientJsonpModule, HttpClientModule, HttpClientXsrfModule, HttpContextToken, HttpDownloadProgressEvent, HttpErrorResponse, HttpEventType, HttpHeaderResponse, HttpParameterCodec, HttpParamsOptions, HttpResponseBase, HttpSentEvent, HttpStatusCode, HttpUploadProgressEvent, HttpUrlEncodingCodec, HttpUserEvent } from '../module.d-yNBsZ8gb.js';
 import * as i0 from '@angular/core';
-import { InjectionToken, EnvironmentInjector, Provider, EnvironmentProviders, WritableResource, ResourceRef, Signal, Injector, ValueEqualityFn } from '@angular/core';
+import { InjectionToken, EnvironmentInjector, Provider, EnvironmentProviders, Injector, ValueEqualityFn, WritableResource, ResourceRef, Signal } from '@angular/core';
 import { XhrFactory } from '../xhr.d-D_1kTQR5.js';
 
 /**
@@ -2787,6 +2787,9 @@ declare class HttpClient {
 declare class FetchBackend implements HttpBackend {
     private readonly fetchImpl;
     private readonly ngZone;
+    private readonly destroyRef;
+    private destroyed;
+    constructor();
     handle(request: HttpRequest<any>): Observable<HttpEvent<any>>;
     private doRequest;
     private parseBody;
@@ -3102,7 +3105,7 @@ declare function withJsonpSupport(): HttpFeature<HttpFeatureKind.JsonpSupport>;
  * this option.
  *
  * @see {@link provideHttpClient}
- * @publicApi
+ * @publicApi 19.0
  */
 declare function withRequestsMadeViaParent(): HttpFeature<HttpFeatureKind.RequestsMadeViaParent>;
 /**
@@ -3117,7 +3120,7 @@ declare function withFetch(): HttpFeature<HttpFeatureKind.Fetch>;
 /**
  * The structure of an `httpResource` request which will be sent to the backend.
  *
- * @experimental
+ * @experimental 19.2
  */
 interface HttpResourceRequest {
     /**
@@ -3174,7 +3177,7 @@ interface HttpResourceRequest {
 /**
  * Options for creating an `httpResource`.
  *
- * @experimental
+ * @experimental 19.2
  */
 interface HttpResourceOptions<TResult, TRaw> {
     /**
@@ -3187,7 +3190,7 @@ interface HttpResourceOptions<TResult, TRaw> {
      */
     parse?: (value: TRaw) => TResult;
     /**
-     * Value that the resource will take when in Idle, Loading, or Error states.
+     * Value that the resource will take when in Idle or Loading states.
      *
      * If not set, the resource will use `undefined` as its default value.
      */
@@ -3210,7 +3213,7 @@ interface HttpResourceOptions<TResult, TRaw> {
  * `HttpResource`s are backed by `HttpClient`, including support for interceptors, testing, and the
  * other features of the `HttpClient` API.
  *
- * @experimental
+ * @experimental 19.2
  */
 interface HttpResourceRef<T> extends WritableResource<T>, ResourceRef<T> {
     /**
@@ -3234,7 +3237,7 @@ interface HttpResourceRef<T> extends WritableResource<T>, ResourceRef<T> {
  * based `httpRequest` as well as sub-functions for `ArrayBuffer`, `Blob`, and `string` type
  * requests.
  *
- * @experimental
+ * @experimental 19.2
  */
 interface HttpResourceFn {
     /**
@@ -3246,7 +3249,7 @@ interface HttpResourceFn {
      * of the `HttpClient` API. Data is parsed as JSON by default - use a sub-function of
      * `httpResource`, such as `httpResource.text()`, to parse the response differently.
      *
-     * @experimental
+     * @experimental 19.2
      */
     <TResult = unknown>(url: () => string | undefined, options: HttpResourceOptions<TResult, unknown> & {
         defaultValue: NoInfer<TResult>;
@@ -3260,7 +3263,7 @@ interface HttpResourceFn {
      * of the `HttpClient` API. Data is parsed as JSON by default - use a sub-function of
      * `httpResource`, such as `httpResource.text()`, to parse the response differently.
      *
-     * @experimental
+     * @experimental 19.2
      */
     <TResult = unknown>(url: () => string | undefined, options?: HttpResourceOptions<TResult, unknown>): HttpResourceRef<TResult | undefined>;
     /**
@@ -3272,7 +3275,7 @@ interface HttpResourceFn {
      * of the `HttpClient` API. Data is parsed as JSON by default - use a sub-function of
      * `httpResource`, such as `httpResource.text()`, to parse the response differently.
      *
-     * @experimental
+     * @experimental 19.2
      */
     <TResult = unknown>(request: () => HttpResourceRequest | undefined, options: HttpResourceOptions<TResult, unknown> & {
         defaultValue: NoInfer<TResult>;
@@ -3286,7 +3289,7 @@ interface HttpResourceFn {
      * of the `HttpClient` API. Data is parsed as JSON by default - use a sub-function of
      * `httpResource`, such as `httpResource.text()`, to parse the response differently.
      *
-     * @experimental
+     * @experimental 19.2
      */
     <TResult = unknown>(request: () => HttpResourceRequest | undefined, options?: HttpResourceOptions<TResult, unknown>): HttpResourceRef<TResult | undefined>;
     /**
@@ -3297,7 +3300,7 @@ interface HttpResourceFn {
      * Uses `HttpClient` to make requests and supports interceptors, testing, and the other features
      * of the `HttpClient` API. Data is parsed into an `ArrayBuffer`.
      *
-     * @experimental
+     * @experimental 19.2
      */
     arrayBuffer: {
         <TResult = ArrayBuffer>(url: () => string | undefined, options: HttpResourceOptions<TResult, ArrayBuffer> & {
@@ -3317,7 +3320,7 @@ interface HttpResourceFn {
      * Uses `HttpClient` to make requests and supports interceptors, testing, and the other features
      * of the `HttpClient` API. Data is parsed into a `Blob`.
      *
-     * @experimental
+     * @experimental 19.2
      */
     blob: {
         <TResult = Blob>(url: () => string | undefined, options: HttpResourceOptions<TResult, Blob> & {
@@ -3337,7 +3340,7 @@ interface HttpResourceFn {
      * Uses `HttpClient` to make requests and supports interceptors, testing, and the other features
      * of the `HttpClient` API. Data is parsed as a `string`.
      *
-     * @experimental
+     * @experimental 19.2
      */
     text: {
         <TResult = string>(url: () => string | undefined, options: HttpResourceOptions<TResult, string> & {
@@ -3356,7 +3359,7 @@ interface HttpResourceFn {
  * request that expects a different kind of data, you can use a sub-constructor of `httpResource`,
  * such as `httpResource.text`.
  *
- * @experimental
+ * @experimental 19.2
  * @initializerApiFunction
  */
 declare const httpResource: HttpResourceFn;

@@ -1,16 +1,15 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
-export { AsyncPipe, CommonModule, CurrencyPipe, DATE_PIPE_DEFAULT_OPTIONS, DATE_PIPE_DEFAULT_TIMEZONE, DatePipe, DecimalPipe, FormStyle, FormatWidth, HashLocationStrategy, I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValuePipe, LowerCasePipe, NgClass, NgComponentOutlet, NgForOf as NgFor, NgForOf, NgForOfContext, NgIf, NgIfContext, NgLocaleLocalization, NgLocalization, NgPlural, NgPluralCase, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet, NumberFormatStyle, NumberSymbol, PercentPipe, Plural, SlicePipe, TitleCasePipe, TranslationWidth, UpperCasePipe, WeekDay, formatCurrency, formatDate, formatNumber, formatPercent, getCurrencySymbol, getLocaleCurrencyCode, getLocaleCurrencyName, getLocaleCurrencySymbol, getLocaleDateFormat, getLocaleDateTimeFormat, getLocaleDayNames, getLocaleDayPeriods, getLocaleDirection, getLocaleEraNames, getLocaleExtraDayPeriodRules, getLocaleExtraDayPeriods, getLocaleFirstDayOfWeek, getLocaleId, getLocaleMonthNames, getLocaleNumberFormat, getLocaleNumberSymbol, getLocalePluralCase, getLocaleTimeFormat, getLocaleWeekEndRange, getNumberOfCurrencyDigits } from './common_module-96z1HarB.mjs';
+export { AsyncPipe, CommonModule, CurrencyPipe, DATE_PIPE_DEFAULT_OPTIONS, DATE_PIPE_DEFAULT_TIMEZONE, DatePipe, DecimalPipe, FormStyle, FormatWidth, HashLocationStrategy, I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValuePipe, LowerCasePipe, NgClass, NgComponentOutlet, NgForOf as NgFor, NgForOf, NgForOfContext, NgIf, NgIfContext, NgLocaleLocalization, NgLocalization, NgPlural, NgPluralCase, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet, NumberFormatStyle, NumberSymbol, PercentPipe, Plural, SlicePipe, TitleCasePipe, TranslationWidth, UpperCasePipe, WeekDay, formatCurrency, formatDate, formatNumber, formatPercent, getCurrencySymbol, getLocaleCurrencyCode, getLocaleCurrencyName, getLocaleCurrencySymbol, getLocaleDateFormat, getLocaleDateTimeFormat, getLocaleDayNames, getLocaleDayPeriods, getLocaleDirection, getLocaleEraNames, getLocaleExtraDayPeriodRules, getLocaleExtraDayPeriods, getLocaleFirstDayOfWeek, getLocaleId, getLocaleMonthNames, getLocaleNumberFormat, getLocaleNumberSymbol, getLocalePluralCase, getLocaleTimeFormat, getLocaleWeekEndRange, getNumberOfCurrencyDigits } from './common_module-D4mHDfs1.mjs';
 import * as i0 from '@angular/core';
-import { ɵregisterLocaleData as _registerLocaleData, inject, ANIMATIONS_DISABLED, ɵstringify as _stringify, Input, Directive, ElementRegistry, Version, ɵɵdefineInjectable as __defineInjectable, DOCUMENT, InjectionToken, ɵRuntimeError as _RuntimeError, ɵformatRuntimeError as _formatRuntimeError, PLATFORM_ID, Injectable, ɵIMAGE_CONFIG as _IMAGE_CONFIG, Renderer2, ElementRef, Injector, DestroyRef, ɵperformanceMarkFeature as _performanceMarkFeature, NgZone, ApplicationRef, booleanAttribute, numberAttribute, ChangeDetectorRef, ɵIMAGE_CONFIG_DEFAULTS as _IMAGE_CONFIG_DEFAULTS, ɵunwrapSafeValue as _unwrapSafeValue } from '@angular/core';
+import { ɵregisterLocaleData as _registerLocaleData, Version, ɵɵdefineInjectable as __defineInjectable, inject, DOCUMENT, InjectionToken, ɵRuntimeError as _RuntimeError, ɵformatRuntimeError as _formatRuntimeError, Injectable, ɵIMAGE_CONFIG as _IMAGE_CONFIG, Renderer2, ElementRef, Injector, DestroyRef, ɵperformanceMarkFeature as _performanceMarkFeature, NgZone, ApplicationRef, numberAttribute, booleanAttribute, Directive, Input, ɵIMAGE_CONFIG_DEFAULTS as _IMAGE_CONFIG_DEFAULTS, ɵunwrapSafeValue as _unwrapSafeValue, ChangeDetectorRef } from '@angular/core';
 export { DOCUMENT, ɵIMAGE_CONFIG as IMAGE_CONFIG } from '@angular/core';
-import { isPlatformBrowser } from './xhr-BfNfxNDv.mjs';
-export { XhrFactory, isPlatformServer, PLATFORM_BROWSER_ID as ɵPLATFORM_BROWSER_ID, PLATFORM_SERVER_ID as ɵPLATFORM_SERVER_ID, parseCookieValue as ɵparseCookieValue } from './xhr-BfNfxNDv.mjs';
-export { APP_BASE_HREF, BrowserPlatformLocation, LOCATION_INITIALIZED, Location, LocationStrategy, PathLocationStrategy, PlatformLocation, DomAdapter as ɵDomAdapter, getDOM as ɵgetDOM, normalizeQueryParams as ɵnormalizeQueryParams, setRootDomAdapter as ɵsetRootDomAdapter } from './location-BeT0iJq7.mjs';
+export { XhrFactory, parseCookieValue as ɵparseCookieValue } from './xhr-CEmSPUGj.mjs';
+export { APP_BASE_HREF, BrowserPlatformLocation, LOCATION_INITIALIZED, Location, LocationStrategy, PathLocationStrategy, PlatformLocation, DomAdapter as ɵDomAdapter, getDOM as ɵgetDOM, normalizeQueryParams as ɵnormalizeQueryParams, setRootDomAdapter as ɵsetRootDomAdapter } from './location-BIEtBxGx.mjs';
 export { PlatformNavigation as ɵPlatformNavigation } from './platform_navigation-B45Jeakb.mjs';
 import 'rxjs';
 
@@ -27,226 +26,22 @@ function registerLocaleData(data, localeId, extraData) {
     return _registerLocaleData(data, localeId, extraData);
 }
 
-const WS_REGEXP$1 = /\s+/;
-class NgIn {
-    _ngEl;
-    _renderer;
-    _animationsDisabled = inject(ANIMATIONS_DISABLED);
-    _longestAnimation = null;
-    _inClass = [];
-    constructor(_ngEl, _renderer) {
-        this._ngEl = _ngEl;
-        this._renderer = _renderer;
-    }
-    set inValue(value) {
-        if (this._animationsDisabled)
-            return;
-        switch (typeof value) {
-            case 'function':
-                this.applyInFunction(value);
-                break;
-            case 'string':
-                this._inClass = value.trim().split(WS_REGEXP$1);
-                this.applyInClass();
-                break;
-            default:
-                throw new Error(`NgIn only supports classes as strings or functions, got ${_stringify(value)}`);
-        }
-    }
-    applyInFunction(animateFn) {
-        // no animation should happen on the server
-        if (typeof ngServerMode !== 'undefined' && ngServerMode)
-            return;
-        animateFn(this._ngEl.nativeElement, () => { });
-    }
-    removeClass() {
-        for (const klass of this._inClass) {
-            this._renderer.removeClass(this._ngEl.nativeElement, klass);
-        }
-        this.cleanup();
-    }
-    onAnimationEnd = (event) => {
-        if (this._longestAnimation?.animationName) {
-            if (event.animationName === this._longestAnimation.animationName) {
-                event.stopImmediatePropagation();
-                this.removeClass();
-            }
-        }
-    };
-    onTransitionEnd = (event) => {
-        if (this._longestAnimation?.propertyName) {
-            const tEvent = event;
-            if (tEvent.target === this._ngEl.nativeElement &&
-                tEvent.propertyName === this._longestAnimation.propertyName) {
-                event.stopImmediatePropagation();
-                this.removeClass();
-            }
-        }
-    };
-    applyInClass() {
-        const el = this._ngEl.nativeElement;
-        el.addEventListener('animationstart', this.getLongestAnimation);
-        el.addEventListener('transitionstart', this.getLongestAnimation);
-        el.addEventListener('animationend', this.onAnimationEnd);
-        el.addEventListener('transitionend', this.onTransitionEnd);
-        for (const klass of this._inClass) {
-            this._renderer.addClass(el, klass);
-        }
-    }
-    getLongestAnimation = () => {
-        const el = this._ngEl.nativeElement;
-        if (typeof el.getAnimations === 'function' && el.getAnimations().length > 0) {
-            const animations = el.getAnimations();
-            if (animations.length === 0)
-                return;
-            let longest = { animationName: undefined, propertyName: undefined, duration: 0 };
-            for (const animation of animations) {
-                const timing = animation.effect?.getTiming();
-                let duration = timing?.delay ?? 0;
-                let propertyName;
-                let animationName;
-                if (timing) {
-                    duration += timing.duration === 'auto' ? 0 : timing.duration;
-                }
-                if (animation.hasOwnProperty('animationName')) {
-                    animationName = animation.animationName;
-                }
-                else {
-                    propertyName = animation.transitionProperty;
-                }
-                longest = duration >= longest.duration ? { animationName, propertyName, duration } : longest;
-            }
-            this._longestAnimation = longest;
-        }
-    };
-    cleanup() {
-        this._ngEl.nativeElement.removeEventListener('animationstart', this.getLongestAnimation);
-        this._ngEl.nativeElement.removeEventListener('transitionstart', this.getLongestAnimation);
-        this._ngEl.nativeElement.removeEventListener('animationend', this.onAnimationEnd);
-        this._ngEl.nativeElement.removeEventListener('transitionend', this.onTransitionEnd);
-    }
-    ngOnDestroy() {
-        this.cleanup();
-    }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: NgIn, deps: [{ token: i0.ElementRef }, { token: i0.Renderer2 }], target: i0.ɵɵFactoryTarget.Directive });
-    static ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", type: NgIn, isStandalone: true, selector: "[in]", inputs: { inValue: ["in", "inValue"] }, ngImport: i0 });
+const PLATFORM_BROWSER_ID = 'browser';
+const PLATFORM_SERVER_ID = 'server';
+/**
+ * Returns whether a platform id represents a browser platform.
+ * @publicApi
+ */
+function isPlatformBrowser(platformId) {
+    return platformId === PLATFORM_BROWSER_ID;
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: NgIn, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: '[in]',
-                }]
-        }], ctorParameters: () => [{ type: i0.ElementRef }, { type: i0.Renderer2 }], propDecorators: { inValue: [{
-                type: Input,
-                args: ['in']
-            }] } });
-
-const WS_REGEXP = /\s+/;
-class NgOut {
-    _ngEl;
-    _renderer;
-    _registry = inject(ElementRegistry);
-    _animationsDisabled = inject(ANIMATIONS_DISABLED);
-    _longestAnimation = null;
-    _removeFn = () => { };
-    constructor(_ngEl, _renderer) {
-        this._ngEl = _ngEl;
-        this._renderer = _renderer;
-    }
-    set outValue(value) {
-        if (typeof ngServerMode !== 'undefined' && ngServerMode)
-            return;
-        this._registry.add(this._ngEl.nativeElement, this.animate(this._ngEl.nativeElement, value));
-    }
-    onAnimationEnd = (event) => {
-        if (this._longestAnimation?.animationName) {
-            if (event.animationName === this._longestAnimation.animationName) {
-                event.stopImmediatePropagation();
-                this._removeFn();
-            }
-        }
-    };
-    onTransitionEnd = (event) => {
-        if (this._longestAnimation?.propertyName) {
-            const tEvent = event;
-            if (tEvent.target === this._ngEl.nativeElement &&
-                tEvent.propertyName === this._longestAnimation.propertyName) {
-                event.stopImmediatePropagation();
-                this._removeFn();
-            }
-        }
-    };
-    ngOnDestroy() {
-        this._registry.remove(this._ngEl.nativeElement);
-    }
-    animate(el, action) {
-        if (typeof action === 'string') {
-            return (removeFn) => {
-                this.animateClass(el, action, removeFn);
-            };
-        }
-        if (typeof action === 'function') {
-            return (removeFn) => {
-                const animateFn = action;
-                animateFn(el, removeFn);
-            };
-        }
-        throw new Error(`NgOut requires a class name or a function, got ${_stringify(action)}`);
-    }
-    animateClass(el, klass, removeFn) {
-        this._removeFn = removeFn;
-        if (!this._animationsDisabled) {
-            el.addEventListener('animationstart', this.getLongestAnimation);
-            el.addEventListener('transitionstart', this.getLongestAnimation);
-            el.addEventListener('animationend', this.onAnimationEnd);
-            el.addEventListener('transitionend', this.onTransitionEnd);
-        }
-        const classList = klass.trim().split(WS_REGEXP);
-        for (const item of classList) {
-            this._renderer.addClass(el, item);
-        }
-        if (this._animationsDisabled) {
-            removeFn();
-        }
-    }
-    getLongestAnimation = () => {
-        const el = this._ngEl.nativeElement;
-        if (typeof el.getAnimations === 'function' && el.getAnimations().length > 0) {
-            const animations = el.getAnimations();
-            if (animations.length === 0)
-                return;
-            let longest = { animationName: undefined, propertyName: undefined, duration: 0 };
-            for (const animation of animations) {
-                const timing = animation.effect?.getTiming();
-                let duration = timing?.delay ?? 0;
-                let propertyName;
-                let animationName;
-                if (timing) {
-                    duration += timing.duration === 'auto' ? 0 : timing.duration;
-                }
-                if (animation.hasOwnProperty('animationName')) {
-                    animationName = animation.animationName;
-                }
-                else {
-                    propertyName = animation.transitionProperty;
-                }
-                longest = duration >= longest.duration ? { animationName, propertyName, duration } : longest;
-            }
-            this._longestAnimation = longest;
-        }
-    };
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: NgOut, deps: [{ token: i0.ElementRef }, { token: i0.Renderer2 }], target: i0.ɵɵFactoryTarget.Directive });
-    static ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "14.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", type: NgOut, isStandalone: true, selector: "[out]", inputs: { outValue: ["out", "outValue"] }, ngImport: i0 });
+/**
+ * Returns whether a platform id represents a server platform.
+ * @publicApi
+ */
+function isPlatformServer(platformId) {
+    return platformId === PLATFORM_SERVER_ID;
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: NgOut, decorators: [{
-            type: Directive,
-            args: [{
-                    selector: '[out]',
-                }]
-        }], ctorParameters: () => [{ type: i0.ElementRef }, { type: i0.Renderer2 }], propDecorators: { outValue: [{
-                type: Input,
-                args: ['out']
-            }] } });
 
 /**
  * @module
@@ -256,7 +51,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3
 /**
  * @publicApi
  */
-const VERSION = new Version('19.2.9+sha-cb4c3da-with-local-changes');
+const VERSION = new Version('20.0.3+sha-e8e1a42');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
@@ -791,14 +586,12 @@ function assertDevMode(checkName) {
 class LCPImageObserver {
     // Map of full image URLs -> original `ngSrc` values.
     images = new Map();
-    window = null;
+    window = inject(DOCUMENT).defaultView;
     observer = null;
     constructor() {
-        const isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
         assertDevMode('LCP checker');
-        const win = inject(DOCUMENT).defaultView;
-        if (isBrowser && typeof PerformanceObserver !== 'undefined') {
-            this.window = win;
+        if ((typeof ngServerMode === 'undefined' || !ngServerMode) &&
+            typeof PerformanceObserver !== 'undefined') {
             this.observer = this.initPerformanceObserver();
         }
     }
@@ -870,10 +663,10 @@ class LCPImageObserver {
         this.observer.disconnect();
         this.images.clear();
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: LCPImageObserver, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: LCPImageObserver, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: LCPImageObserver, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: LCPImageObserver, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: LCPImageObserver, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: LCPImageObserver, decorators: [{
             type: Injectable,
             args: [{ providedIn: 'root' }]
         }], ctorParameters: () => [] });
@@ -991,10 +784,10 @@ class PreconnectLinkChecker {
         this.preconnectLinks?.clear();
         this.alreadySeen.clear();
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: PreconnectLinkChecker, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: PreconnectLinkChecker, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: PreconnectLinkChecker, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: PreconnectLinkChecker, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: PreconnectLinkChecker, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: PreconnectLinkChecker, decorators: [{
             type: Injectable,
             args: [{ providedIn: 'root' }]
         }], ctorParameters: () => [] });
@@ -1082,10 +875,10 @@ class PreloadLinkCreator {
         }
         renderer.appendChild(this.document.head, preload);
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: PreloadLinkCreator, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: PreloadLinkCreator, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: PreloadLinkCreator, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: PreloadLinkCreator, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: PreloadLinkCreator, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: PreloadLinkCreator, decorators: [{
             type: Injectable,
             args: [{ providedIn: 'root' }]
         }] });
@@ -1323,6 +1116,17 @@ class NgOptimizedImage {
      */
     height;
     /**
+     * The desired decoding behavior for the image. Defaults to `auto`
+     * if not explicitly set, matching native browser behavior.
+     *
+     * Use `async` to decode the image off the main thread (non-blocking),
+     * `sync` for immediate decoding (blocking), or `auto` to let the
+     * browser decide the optimal strategy.
+     *
+     * [Spec](https://html.spec.whatwg.org/multipage/images.html#image-decoding-hint)
+     */
+    decoding;
+    /**
      * The desired loading behavior (lazy, eager, or auto). Defaults to `lazy`,
      * which is recommended for most images.
      *
@@ -1384,7 +1188,7 @@ class NgOptimizedImage {
             });
         }
     }
-    /** @nodoc */
+    /** @docs-private */
     ngOnInit() {
         _performanceMarkFeature('NgOptimizedImage');
         if (ngDevMode) {
@@ -1416,6 +1220,7 @@ class NgOptimizedImage {
                 ngZone.runOutsideAngular(() => assertNoImageDistortion(this, this.imgElement, this.renderer));
             }
             assertValidLoadingInput(this);
+            assertValidDecodingInput(this);
             if (!this.ngSrcset) {
                 assertNoComplexSizes(this);
             }
@@ -1452,6 +1257,7 @@ class NgOptimizedImage {
         }
         this.setHostAttribute('loading', this.getLoadingBehavior());
         this.setHostAttribute('fetchpriority', this.getFetchPriority());
+        this.setHostAttribute('decoding', this.getDecoding());
         // The `data-ng-img` attribute flags an image as using the directive, to allow
         // for analysis of the directive's performance.
         this.setHostAttribute('ng-img', 'true');
@@ -1478,7 +1284,7 @@ class NgOptimizedImage {
             preloadLinkCreator.createPreloadLinkTag(this.renderer, this.getRewrittenSrc(), rewrittenSrcset, this.sizes);
         }
     }
-    /** @nodoc */
+    /** @docs-private */
     ngOnChanges(changes) {
         if (ngDevMode) {
             assertNoPostInitInputChange(this, changes, [
@@ -1528,6 +1334,19 @@ class NgOptimizedImage {
     }
     getFetchPriority() {
         return this.priority ? 'high' : 'auto';
+    }
+    getDecoding() {
+        if (this.priority) {
+            // `sync` means the image is decoded immediately when it's loaded,
+            // reducing the risk of content shifting later (important for LCP).
+            // If we're marking an image as priority, we want it decoded and
+            // painted as early as possible.
+            return 'sync';
+        }
+        // Returns the value of the `decoding` attribute, defaulting to `auto`
+        // if not explicitly provided. This mimics native browser behavior and
+        // avoids breaking changes when no decoding strategy is specified.
+        return this.decoding ?? 'auto';
     }
     getRewrittenSrc() {
         // ImageLoaderConfig supports setting a width property. However, we're not setting width here
@@ -1653,10 +1472,10 @@ class NgOptimizedImage {
     setHostAttribute(name, value) {
         this.renderer.setAttribute(this.imgElement, name, value);
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: NgOptimizedImage, deps: [], target: i0.ɵɵFactoryTarget.Directive });
-    static ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "16.1.0", version: "19.2.9+sha-cb4c3da-with-local-changes", type: NgOptimizedImage, isStandalone: true, selector: "img[ngSrc]", inputs: { ngSrc: ["ngSrc", "ngSrc", unwrapSafeUrl], ngSrcset: "ngSrcset", sizes: "sizes", width: ["width", "width", numberAttribute], height: ["height", "height", numberAttribute], loading: "loading", priority: ["priority", "priority", booleanAttribute], loaderParams: "loaderParams", disableOptimizedSrcset: ["disableOptimizedSrcset", "disableOptimizedSrcset", booleanAttribute], fill: ["fill", "fill", booleanAttribute], placeholder: ["placeholder", "placeholder", booleanOrUrlAttribute], placeholderConfig: "placeholderConfig", src: "src", srcset: "srcset" }, host: { properties: { "style.position": "fill ? \"absolute\" : null", "style.width": "fill ? \"100%\" : null", "style.height": "fill ? \"100%\" : null", "style.inset": "fill ? \"0\" : null", "style.background-size": "placeholder ? \"cover\" : null", "style.background-position": "placeholder ? \"50% 50%\" : null", "style.background-repeat": "placeholder ? \"no-repeat\" : null", "style.background-image": "placeholder ? generatePlaceholder(placeholder) : null", "style.filter": "placeholder && shouldBlurPlaceholder(placeholderConfig) ? \"blur(15px)\" : null" } }, usesOnChanges: true, ngImport: i0 });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: NgOptimizedImage, deps: [], target: i0.ɵɵFactoryTarget.Directive });
+    static ɵdir = i0.ɵɵngDeclareDirective({ minVersion: "16.1.0", version: "20.0.3+sha-e8e1a42", type: NgOptimizedImage, isStandalone: true, selector: "img[ngSrc]", inputs: { ngSrc: ["ngSrc", "ngSrc", unwrapSafeUrl], ngSrcset: "ngSrcset", sizes: "sizes", width: ["width", "width", numberAttribute], height: ["height", "height", numberAttribute], decoding: "decoding", loading: "loading", priority: ["priority", "priority", booleanAttribute], loaderParams: "loaderParams", disableOptimizedSrcset: ["disableOptimizedSrcset", "disableOptimizedSrcset", booleanAttribute], fill: ["fill", "fill", booleanAttribute], placeholder: ["placeholder", "placeholder", booleanOrUrlAttribute], placeholderConfig: "placeholderConfig", src: "src", srcset: "srcset" }, host: { properties: { "style.position": "fill ? \"absolute\" : null", "style.width": "fill ? \"100%\" : null", "style.height": "fill ? \"100%\" : null", "style.inset": "fill ? \"0\" : null", "style.background-size": "placeholder ? \"cover\" : null", "style.background-position": "placeholder ? \"50% 50%\" : null", "style.background-repeat": "placeholder ? \"no-repeat\" : null", "style.background-image": "placeholder ? generatePlaceholder(placeholder) : null", "style.filter": "placeholder && shouldBlurPlaceholder(placeholderConfig) ? \"blur(15px)\" : null" } }, usesOnChanges: true, ngImport: i0 });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3da-with-local-changes", ngImport: i0, type: NgOptimizedImage, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "20.0.3+sha-e8e1a42", ngImport: i0, type: NgOptimizedImage, decorators: [{
             type: Directive,
             args: [{
                     selector: 'img[ngSrc]',
@@ -1685,6 +1504,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.9+sha-cb4c3
             }], height: [{
                 type: Input,
                 args: [{ transform: numberAttribute }]
+            }], decoding: [{
+                type: Input
             }], loading: [{
                 type: Input
             }], priority: [{
@@ -2082,6 +1903,17 @@ function assertValidLoadingInput(dir) {
     }
 }
 /**
+ * Verifies that the `decoding` attribute is set to a valid input.
+ */
+function assertValidDecodingInput(dir) {
+    const validInputs = ['sync', 'async', 'auto'];
+    if (typeof dir.decoding === 'string' && !validInputs.includes(dir.decoding)) {
+        throw new _RuntimeError(2952 /* RuntimeErrorCode.INVALID_INPUT */, `${imgDirectiveDetails(dir.ngSrc)} the \`decoding\` attribute ` +
+            `has an invalid value (\`${dir.decoding}\`). ` +
+            `To fix this, provide a valid value ("sync", "async", or "auto").`);
+    }
+}
+/**
  * Warns if NOT using a loader (falling back to the generic loader) and
  * the image appears to be hosted on one of the image CDNs for which
  * we do have a built-in image loader. Suggests switching to the
@@ -2200,5 +2032,5 @@ function booleanOrUrlAttribute(value) {
     return booleanAttribute(value);
 }
 
-export { IMAGE_LOADER, NgIn, NgOptimizedImage, NgOut, PRECONNECT_CHECK_BLOCKLIST, VERSION, ViewportScroller, isPlatformBrowser, provideCloudflareLoader, provideCloudinaryLoader, provideImageKitLoader, provideImgixLoader, provideNetlifyLoader, registerLocaleData, NullViewportScroller as ɵNullViewportScroller };
+export { IMAGE_LOADER, NgOptimizedImage, PRECONNECT_CHECK_BLOCKLIST, VERSION, ViewportScroller, isPlatformBrowser, isPlatformServer, provideCloudflareLoader, provideCloudinaryLoader, provideImageKitLoader, provideImgixLoader, provideNetlifyLoader, registerLocaleData, NullViewportScroller as ɵNullViewportScroller, PLATFORM_BROWSER_ID as ɵPLATFORM_BROWSER_ID, PLATFORM_SERVER_ID as ɵPLATFORM_SERVER_ID };
 //# sourceMappingURL=common.mjs.map

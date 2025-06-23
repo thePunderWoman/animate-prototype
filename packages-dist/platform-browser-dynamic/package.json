@@ -1,20 +1,20 @@
 {
   "name": "@angular/platform-browser-dynamic",
-  "version": "19.2.9+sha-cb4c3da-with-local-changes",
+  "version": "20.0.3+sha-e8e1a42",
   "description": "Angular - library for using Angular in a web browser with JIT compilation",
   "author": "angular",
   "license": "MIT",
   "engines": {
-    "node": "^20.11.1 || >=22.11.0"
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
-    "@angular/core": "19.2.9+sha-cb4c3da-with-local-changes",
-    "@angular/common": "19.2.9+sha-cb4c3da-with-local-changes",
-    "@angular/compiler": "19.2.9+sha-cb4c3da-with-local-changes",
-    "@angular/platform-browser": "19.2.9+sha-cb4c3da-with-local-changes"
+    "@angular/core": "20.0.3+sha-e8e1a42",
+    "@angular/common": "20.0.3+sha-e8e1a42",
+    "@angular/compiler": "20.0.3+sha-e8e1a42",
+    "@angular/platform-browser": "20.0.3+sha-e8e1a42"
   },
   "repository": {
     "type": "git",

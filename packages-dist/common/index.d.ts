@@ -1,14 +1,14 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
 import * as i0 from '@angular/core';
-import { ɵNavigation as _Navigation, ɵNavigationHistoryEntry as _NavigationHistoryEntry, ɵNavigationUpdateCurrentEntryOptions as _NavigationUpdateCurrentEntryOptions, ɵNavigationTransition as _NavigationTransition, ɵNavigationNavigateOptions as _NavigationNavigateOptions, ɵNavigationResult as _NavigationResult, ɵNavigationReloadOptions as _NavigationReloadOptions, ɵNavigationOptions as _NavigationOptions, ɵNavigateEvent as _NavigateEvent, ɵNavigationCurrentEntryChangeEvent as _NavigationCurrentEntryChangeEvent, OnDestroy, ElementRef, Renderer2, AnimationType, AnimationFunction, Version, InjectionToken, Provider, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { ɵNavigation as _Navigation, ɵNavigationHistoryEntry as _NavigationHistoryEntry, ɵNavigationUpdateCurrentEntryOptions as _NavigationUpdateCurrentEntryOptions, ɵNavigationTransition as _NavigationTransition, ɵNavigationNavigateOptions as _NavigationNavigateOptions, ɵNavigationResult as _NavigationResult, ɵNavigationReloadOptions as _NavigationReloadOptions, ɵNavigationOptions as _NavigationOptions, ɵNavigateEvent as _NavigateEvent, ɵNavigationCurrentEntryChangeEvent as _NavigationCurrentEntryChangeEvent, OnDestroy, Version, Provider, InjectionToken, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 export { DOCUMENT, ɵIMAGE_CONFIG as IMAGE_CONFIG, ɵImageConfig as ImageConfig } from '@angular/core';
-import { LocationStrategy } from './common_module.d-ClF75kAz.js';
-export { APP_BASE_HREF, AsyncPipe, CommonModule, CurrencyPipe, DATE_PIPE_DEFAULT_OPTIONS, DATE_PIPE_DEFAULT_TIMEZONE, DatePipe, DatePipeConfig, DecimalPipe, I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValue, KeyValuePipe, Location, LowerCasePipe, NgClass, NgComponentOutlet, NgForOf as NgFor, NgForOf, NgForOfContext, NgIf, NgIfContext, NgLocaleLocalization, NgLocalization, NgPlural, NgPluralCase, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet, PathLocationStrategy, PercentPipe, PopStateEvent, SlicePipe, TitleCasePipe, UpperCasePipe } from './common_module.d-ClF75kAz.js';
+import { LocationStrategy } from './common_module.d-Cpp8wYHt.js';
+export { APP_BASE_HREF, AsyncPipe, CommonModule, CurrencyPipe, DATE_PIPE_DEFAULT_OPTIONS, DATE_PIPE_DEFAULT_TIMEZONE, DatePipe, DatePipeConfig, DecimalPipe, I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValue, KeyValuePipe, Location, LowerCasePipe, NgClass, NgComponentOutlet, NgForOf as NgFor, NgForOf, NgForOfContext, NgIf, NgIfContext, NgLocaleLocalization, NgLocalization, NgPlural, NgPluralCase, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault, NgTemplateOutlet, PathLocationStrategy, PercentPipe, PopStateEvent, SlicePipe, TitleCasePipe, UpperCasePipe } from './common_module.d-Cpp8wYHt.js';
 import { PlatformLocation, LocationChangeListener } from './platform_location.d-Lbv6Ueec.js';
 export { BrowserPlatformLocation, LOCATION_INITIALIZED, LocationChangeEvent } from './platform_location.d-Lbv6Ueec.js';
 export { XhrFactory } from './xhr.d-D_1kTQR5.js';
@@ -89,7 +89,7 @@ declare class HashLocationStrategy extends LocationStrategy implements OnDestroy
     private _baseHref;
     private _removeListenerFns;
     constructor(_platformLocation: PlatformLocation, _baseHref?: string);
-    /** @nodoc */
+    /** @docs-private */
     ngOnDestroy(): void;
     onPopState(fn: LocationChangeListener): void;
     getBaseHref(): string;
@@ -282,7 +282,8 @@ declare enum TranslationWidth {
  * @see [Internationalization (i18n) Guide](guide/i18n)
  * @publicApi
  *
- * @deprecated Date locale data getters are deprecated
+ * @deprecated 18.0
+ * Date locale data getters are deprecated
  */
 declare enum FormatWidth {
     /**
@@ -773,45 +774,6 @@ declare function getNumberOfCurrencyDigits(code: string): number;
 
 declare function parseCookieValue(cookieStr: string, name: string): string | null;
 
-declare class NgIn {
-    private _ngEl;
-    private _renderer;
-    private _animationsDisabled;
-    private _longestAnimation;
-    private _inClass;
-    constructor(_ngEl: ElementRef, _renderer: Renderer2);
-    set inValue(value: AnimationType);
-    applyInFunction(animateFn: AnimationFunction): void;
-    removeClass(): void;
-    onAnimationEnd: (event: Event) => void;
-    onTransitionEnd: (event: Event) => void;
-    applyInClass(): void;
-    getLongestAnimation: () => void;
-    cleanup(): void;
-    ngOnDestroy(): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<NgIn, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<NgIn, "[in]", never, { "inValue": { "alias": "in"; "required": false; }; }, {}, never, never, true, never>;
-}
-
-declare class NgOut {
-    private _ngEl;
-    private _renderer;
-    private _registry;
-    private _animationsDisabled;
-    private _longestAnimation;
-    private _removeFn;
-    constructor(_ngEl: ElementRef, _renderer: Renderer2);
-    set outValue(value: AnimationType);
-    onAnimationEnd: (event: Event) => void;
-    onTransitionEnd: (event: Event) => void;
-    ngOnDestroy(): void;
-    animate(el: Element, action: AnimationType): Function;
-    animateClass(el: Element, klass: string, removeFn: Function): void;
-    getLongestAnimation: () => void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<NgOut, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<NgOut, "[out]", never, { "outValue": { "alias": "out"; "required": false; }; }, {}, never, never, true, never>;
-}
-
 declare const PLATFORM_BROWSER_ID = "browser";
 declare const PLATFORM_SERVER_ID = "server";
 /**
@@ -910,7 +872,7 @@ declare class NullViewportScroller implements ViewportScroller {
  *
  * @publicApi
  */
-declare const provideCloudflareLoader: (path: string) => i0.Provider[];
+declare const provideCloudflareLoader: (path: string) => Provider[];
 
 /**
  * Config options recognized by the image loader function.
@@ -968,7 +930,7 @@ declare const IMAGE_LOADER: InjectionToken<ImageLoader>;
  *
  * @publicApi
  */
-declare const provideCloudinaryLoader: (path: string) => i0.Provider[];
+declare const provideCloudinaryLoader: (path: string) => Provider[];
 
 /**
  * Function that generates an ImageLoader for ImageKit and turns it into an Angular provider.
@@ -981,7 +943,7 @@ declare const provideCloudinaryLoader: (path: string) => i0.Provider[];
  *
  * @publicApi
  */
-declare const provideImageKitLoader: (path: string) => i0.Provider[];
+declare const provideImageKitLoader: (path: string) => Provider[];
 
 /**
  * Function that generates an ImageLoader for Imgix and turns it into an Angular provider.
@@ -992,7 +954,7 @@ declare const provideImageKitLoader: (path: string) => i0.Provider[];
  *
  * @publicApi
  */
-declare const provideImgixLoader: (path: string) => i0.Provider[];
+declare const provideImgixLoader: (path: string) => Provider[];
 
 /**
  * Function that generates an ImageLoader for Netlify and turns it into an Angular provider.
@@ -1158,6 +1120,17 @@ declare class NgOptimizedImage implements OnInit, OnChanges {
      */
     height: number | undefined;
     /**
+     * The desired decoding behavior for the image. Defaults to `auto`
+     * if not explicitly set, matching native browser behavior.
+     *
+     * Use `async` to decode the image off the main thread (non-blocking),
+     * `sync` for immediate decoding (blocking), or `auto` to let the
+     * browser decide the optimal strategy.
+     *
+     * [Spec](https://html.spec.whatwg.org/multipage/images.html#image-decoding-hint)
+     */
+    decoding?: 'sync' | 'async' | 'auto';
+    /**
      * The desired loading behavior (lazy, eager, or auto). Defaults to `lazy`,
      * which is recommended for most images.
      *
@@ -1195,14 +1168,15 @@ declare class NgOptimizedImage implements OnInit, OnChanges {
      */
     placeholderConfig?: ImagePlaceholderConfig;
     constructor();
-    /** @nodoc */
+    /** @docs-private */
     ngOnInit(): void;
     private setHostAttributes;
-    /** @nodoc */
+    /** @docs-private */
     ngOnChanges(changes: SimpleChanges): void;
     private callImageLoader;
     private getLoadingBehavior;
     private getFetchPriority;
+    private getDecoding;
     private getRewrittenSrc;
     private getRewrittenSrcset;
     private getAutomaticSrcset;
@@ -1224,7 +1198,7 @@ declare class NgOptimizedImage implements OnInit, OnChanges {
     private removePlaceholderOnLoad;
     private setHostAttribute;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgOptimizedImage, never>;
-    static ɵdir: i0.ɵɵDirectiveDeclaration<NgOptimizedImage, "img[ngSrc]", never, { "ngSrc": { "alias": "ngSrc"; "required": true; }; "ngSrcset": { "alias": "ngSrcset"; "required": false; }; "sizes": { "alias": "sizes"; "required": false; }; "width": { "alias": "width"; "required": false; }; "height": { "alias": "height"; "required": false; }; "loading": { "alias": "loading"; "required": false; }; "priority": { "alias": "priority"; "required": false; }; "loaderParams": { "alias": "loaderParams"; "required": false; }; "disableOptimizedSrcset": { "alias": "disableOptimizedSrcset"; "required": false; }; "fill": { "alias": "fill"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "placeholderConfig": { "alias": "placeholderConfig"; "required": false; }; "src": { "alias": "src"; "required": false; }; "srcset": { "alias": "srcset"; "required": false; }; }, {}, never, never, true, never>;
+    static ɵdir: i0.ɵɵDirectiveDeclaration<NgOptimizedImage, "img[ngSrc]", never, { "ngSrc": { "alias": "ngSrc"; "required": true; }; "ngSrcset": { "alias": "ngSrcset"; "required": false; }; "sizes": { "alias": "sizes"; "required": false; }; "width": { "alias": "width"; "required": false; }; "height": { "alias": "height"; "required": false; }; "decoding": { "alias": "decoding"; "required": false; }; "loading": { "alias": "loading"; "required": false; }; "priority": { "alias": "priority"; "required": false; }; "loaderParams": { "alias": "loaderParams"; "required": false; }; "disableOptimizedSrcset": { "alias": "disableOptimizedSrcset"; "required": false; }; "fill": { "alias": "fill"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "placeholderConfig": { "alias": "placeholderConfig"; "required": false; }; "src": { "alias": "src"; "required": false; }; "srcset": { "alias": "srcset"; "required": false; }; }, {}, never, never, true, never>;
     static ngAcceptInputType_ngSrc: string | i0.ɵSafeValue;
     static ngAcceptInputType_width: unknown;
     static ngAcceptInputType_height: unknown;
@@ -1263,5 +1237,5 @@ declare const PRECONNECT_CHECK_BLOCKLIST: InjectionToken<(string | string[])[]>;
  */
 declare function normalizeQueryParams(params: string): string;
 
-export { FormStyle, FormatWidth, HashLocationStrategy, IMAGE_LOADER, LocationChangeListener, LocationStrategy, NgIn, NgOptimizedImage, NgOut, NumberFormatStyle, NumberSymbol, PRECONNECT_CHECK_BLOCKLIST, PlatformLocation, Plural, TranslationWidth, VERSION, ViewportScroller, WeekDay, formatCurrency, formatDate, formatNumber, formatPercent, getCurrencySymbol, getLocaleCurrencyCode, getLocaleCurrencyName, getLocaleCurrencySymbol, getLocaleDateFormat, getLocaleDateTimeFormat, getLocaleDayNames, getLocaleDayPeriods, getLocaleDirection, getLocaleEraNames, getLocaleExtraDayPeriodRules, getLocaleExtraDayPeriods, getLocaleFirstDayOfWeek, getLocaleId, getLocaleMonthNames, getLocaleNumberFormat, getLocaleNumberSymbol, getLocalePluralCase, getLocaleTimeFormat, getLocaleWeekEndRange, getNumberOfCurrencyDigits, isPlatformBrowser, isPlatformServer, provideCloudflareLoader, provideCloudinaryLoader, provideImageKitLoader, provideImgixLoader, provideNetlifyLoader, registerLocaleData, DomAdapter as ɵDomAdapter, NullViewportScroller as ɵNullViewportScroller, PLATFORM_BROWSER_ID as ɵPLATFORM_BROWSER_ID, PLATFORM_SERVER_ID as ɵPLATFORM_SERVER_ID, PlatformNavigation as ɵPlatformNavigation, getDOM as ɵgetDOM, normalizeQueryParams as ɵnormalizeQueryParams, parseCookieValue as ɵparseCookieValue, setRootDomAdapter as ɵsetRootDomAdapter };
+export { FormStyle, FormatWidth, HashLocationStrategy, IMAGE_LOADER, LocationChangeListener, LocationStrategy, NgOptimizedImage, NumberFormatStyle, NumberSymbol, PRECONNECT_CHECK_BLOCKLIST, PlatformLocation, Plural, TranslationWidth, VERSION, ViewportScroller, WeekDay, formatCurrency, formatDate, formatNumber, formatPercent, getCurrencySymbol, getLocaleCurrencyCode, getLocaleCurrencyName, getLocaleCurrencySymbol, getLocaleDateFormat, getLocaleDateTimeFormat, getLocaleDayNames, getLocaleDayPeriods, getLocaleDirection, getLocaleEraNames, getLocaleExtraDayPeriodRules, getLocaleExtraDayPeriods, getLocaleFirstDayOfWeek, getLocaleId, getLocaleMonthNames, getLocaleNumberFormat, getLocaleNumberSymbol, getLocalePluralCase, getLocaleTimeFormat, getLocaleWeekEndRange, getNumberOfCurrencyDigits, isPlatformBrowser, isPlatformServer, provideCloudflareLoader, provideCloudinaryLoader, provideImageKitLoader, provideImgixLoader, provideNetlifyLoader, registerLocaleData, DomAdapter as ɵDomAdapter, NullViewportScroller as ɵNullViewportScroller, PLATFORM_BROWSER_ID as ɵPLATFORM_BROWSER_ID, PLATFORM_SERVER_ID as ɵPLATFORM_SERVER_ID, PlatformNavigation as ɵPlatformNavigation, getDOM as ɵgetDOM, normalizeQueryParams as ɵnormalizeQueryParams, parseCookieValue as ɵparseCookieValue, setRootDomAdapter as ɵsetRootDomAdapter };
 export type { ImageLoader, ImageLoaderConfig, ImagePlaceholderConfig, Time };

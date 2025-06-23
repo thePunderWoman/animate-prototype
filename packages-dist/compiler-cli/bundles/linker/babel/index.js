@@ -8,22 +8,22 @@ import {
   LinkerEnvironment,
   assert,
   isFatalLinkerError
-} from "../../chunk-CWRSENRA.js";
+} from "../../chunk-N3B6BMGR.js";
 import {
   ConsoleLogger,
   LogLevel
-} from "../../chunk-GBKXY6BH.js";
-import "../../chunk-5UDS2TPQ.js";
-import "../../chunk-HG2G5L5H.js";
+} from "../../chunk-H5Y7P5GQ.js";
+import "../../chunk-NVYT6OPE.js";
+import "../../chunk-CZ5FD3CS.js";
 import {
   NodeJSFileSystem
-} from "../../chunk-STORTTKY.js";
+} from "../../chunk-U5SKOFKE.js";
 import "../../chunk-KPQ72R34.js";
 
-// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/es2015_linker_plugin.mjs
+// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/es2015_linker_plugin.js
 import { types as t4 } from "@babel/core";
 
-// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/ast/babel_ast_factory.mjs
+// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/ast/babel_ast_factory.js
 import { types as t } from "@babel/core";
 var BabelAstFactory = class {
   sourceUrl;
@@ -155,7 +155,7 @@ function isLExpression(expr) {
   return t.isLVal(expr);
 }
 
-// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/ast/babel_ast_host.mjs
+// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/ast/babel_ast_host.js
 import { types as t2 } from "@babel/core";
 var BabelAstHost = class {
   getSymbolName(node) {
@@ -281,7 +281,7 @@ function isMinifiedBooleanLiteral(node) {
   return t2.isUnaryExpression(node) && node.prefix && node.operator === "!" && t2.isNumericLiteral(node.argument) && (node.argument.value === 0 || node.argument.value === 1);
 }
 
-// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/babel_declaration_scope.mjs
+// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/babel_declaration_scope.js
 import { types as t3 } from "@babel/core";
 var BabelDeclarationScope = class {
   declarationScope;
@@ -308,21 +308,20 @@ var BabelDeclarationScope = class {
   }
 };
 
-// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/es2015_linker_plugin.mjs
+// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/es2015_linker_plugin.js
 function createEs2015LinkerPlugin({ fileSystem, logger, ...options }) {
   let fileLinker = null;
   return {
     visitor: {
       Program: {
         enter(_, state) {
-          var _a, _b;
           assertNull(fileLinker);
           const file = state.file;
-          const filename = (_a = file.opts.filename) != null ? _a : file.opts.filenameRelative;
+          const filename = file.opts.filename ?? file.opts.filenameRelative;
           if (!filename) {
             throw new Error("No filename (nor filenameRelative) provided by Babel. This is required for the linking of partially compiled directives and components.");
           }
-          const sourceUrl = fileSystem.resolve((_b = file.opts.cwd) != null ? _b : ".", filename);
+          const sourceUrl = fileSystem.resolve(file.opts.cwd ?? ".", filename);
           const linkerEnvironment = LinkerEnvironment.create(fileSystem, logger, new BabelAstHost(), new BabelAstFactory(sourceUrl), options);
           fileLinker = new FileLinker(linkerEnvironment, sourceUrl, file.code);
         },
@@ -409,7 +408,7 @@ function buildCodeFrameError(file, message, node) {
   return `${filename}: ${error.message}`;
 }
 
-// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/babel_plugin.mjs
+// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/src/babel_plugin.js
 function defaultLinkerPlugin(api, options) {
   api.assertVersion(7);
   return createEs2015LinkerPlugin({
@@ -419,7 +418,7 @@ function defaultLinkerPlugin(api, options) {
   });
 }
 
-// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/index.mjs
+// bazel-out/darwin_arm64-fastbuild/bin/packages/compiler-cli/linker/babel/index.js
 var babel_default = defaultLinkerPlugin;
 export {
   createEs2015LinkerPlugin,

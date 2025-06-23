@@ -1,16 +1,24 @@
-import { Component } from '@angular/core';
-import {NgOut, NgIn} from '@angular/common';
+import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 @Component({
   selector: 'app-root',
-  imports: [NgOut, NgIn],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  schemas: [NO_ERRORS_SCHEMA],
 })
 export class AppComponent {
   title = 'animate';
-  show = true;
+  itemNum = 0;
 
-  toggle() {
-    this.show = !this.show;
+  items: number[] = [];
+
+  inClass() {
+    return 'appear';
+  }
+
+  add() {
+    this.items.push(this.itemNum++);
+  }
+  remove() {
+    this.items.pop();
   }
 }

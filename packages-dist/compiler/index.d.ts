@@ -1,16 +1,16 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
 declare const emitDistinctChangesOnlyDefaultValue = true;
-declare enum ViewEncapsulation {
+declare enum ViewEncapsulation$1 {
     Emulated = 0,
     None = 2,
     ShadowDom = 3
 }
-declare enum ChangeDetectionStrategy {
+declare enum ChangeDetectionStrategy$1 {
     OnPush = 0,
     Default = 1
 }
@@ -41,10 +41,10 @@ interface SchemaMetadata {
 }
 declare const CUSTOM_ELEMENTS_SCHEMA: SchemaMetadata;
 declare const NO_ERRORS_SCHEMA: SchemaMetadata;
-interface Type$1 extends Function {
+interface Type$2 extends Function {
     new (...args: any[]): any;
 }
-declare const Type$1: FunctionConstructor;
+declare const Type$2: FunctionConstructor;
 declare enum SecurityContext {
     NONE = 0,
     HTML = 1,
@@ -227,8 +227,6 @@ declare const enum AttributeMarker {
 type core_d_AttributeMarker = AttributeMarker;
 declare const core_d_AttributeMarker: typeof AttributeMarker;
 declare const core_d_CUSTOM_ELEMENTS_SCHEMA: typeof CUSTOM_ELEMENTS_SCHEMA;
-type core_d_ChangeDetectionStrategy = ChangeDetectionStrategy;
-declare const core_d_ChangeDetectionStrategy: typeof ChangeDetectionStrategy;
 type core_d_HostBinding = HostBinding;
 type core_d_HostListener = HostListener;
 type core_d_InjectFlags = InjectFlags;
@@ -249,12 +247,10 @@ type core_d_SecurityContext = SecurityContext;
 declare const core_d_SecurityContext: typeof SecurityContext;
 type core_d_SelectorFlags = SelectorFlags;
 declare const core_d_SelectorFlags: typeof SelectorFlags;
-type core_d_ViewEncapsulation = ViewEncapsulation;
-declare const core_d_ViewEncapsulation: typeof ViewEncapsulation;
 declare const core_d_emitDistinctChangesOnlyDefaultValue: typeof emitDistinctChangesOnlyDefaultValue;
 declare const core_d_parseSelectorToR3Selector: typeof parseSelectorToR3Selector;
 declare namespace core_d {
-  export { core_d_AttributeMarker as AttributeMarker, core_d_CUSTOM_ELEMENTS_SCHEMA as CUSTOM_ELEMENTS_SCHEMA, core_d_ChangeDetectionStrategy as ChangeDetectionStrategy, core_d_InjectFlags as InjectFlags, core_d_InputFlags as InputFlags, core_d_MissingTranslationStrategy as MissingTranslationStrategy, core_d_NO_ERRORS_SCHEMA as NO_ERRORS_SCHEMA, core_d_RenderFlags as RenderFlags, core_d_SecurityContext as SecurityContext, core_d_SelectorFlags as SelectorFlags, Type$1 as Type, core_d_ViewEncapsulation as ViewEncapsulation, core_d_emitDistinctChangesOnlyDefaultValue as emitDistinctChangesOnlyDefaultValue, core_d_parseSelectorToR3Selector as parseSelectorToR3Selector };
+  export { core_d_AttributeMarker as AttributeMarker, core_d_CUSTOM_ELEMENTS_SCHEMA as CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy$1 as ChangeDetectionStrategy, core_d_InjectFlags as InjectFlags, core_d_InputFlags as InputFlags, core_d_MissingTranslationStrategy as MissingTranslationStrategy, core_d_NO_ERRORS_SCHEMA as NO_ERRORS_SCHEMA, core_d_RenderFlags as RenderFlags, core_d_SecurityContext as SecurityContext, core_d_SelectorFlags as SelectorFlags, Type$2 as Type, ViewEncapsulation$1 as ViewEncapsulation, core_d_emitDistinctChangesOnlyDefaultValue as emitDistinctChangesOnlyDefaultValue, core_d_parseSelectorToR3Selector as parseSelectorToR3Selector };
   export type { core_d_HostBinding as HostBinding, core_d_HostListener as HostListener, core_d_Input as Input, core_d_Output as Output, core_d_R3CssSelector as R3CssSelector, core_d_R3CssSelectorList as R3CssSelectorList, core_d_SchemaMetadata as SchemaMetadata };
 }
 
@@ -276,7 +272,7 @@ declare class ParseSourceFile {
     url: string;
     constructor(content: string, url: string);
 }
-declare class ParseSourceSpan {
+declare class ParseSourceSpan$1 {
     start: ParseLocation;
     end: ParseLocation;
     fullStart: ParseLocation;
@@ -313,7 +309,7 @@ declare enum ParseErrorLevel {
 }
 declare class ParseError {
     /** Location of the error. */
-    readonly span: ParseSourceSpan;
+    readonly span: ParseSourceSpan$1;
     /** Error message. */
     readonly msg: string;
     /** Severity level of the error. */
@@ -325,7 +321,7 @@ declare class ParseError {
     readonly relatedError?: unknown | undefined;
     constructor(
     /** Location of the error. */
-    span: ParseSourceSpan, 
+    span: ParseSourceSpan$1, 
     /** Error message. */
     msg: string, 
     /** Severity level of the error. */
@@ -346,7 +342,7 @@ declare class ParseError {
  * @param sourceUrl reference to Component or Directive source.
  * @returns instance of ParseSourceSpan that represent a given Component or Directive.
  */
-declare function r3JitTypeSourceSpan(kind: string, typeName: string, sourceUrl: string): ParseSourceSpan;
+declare function r3JitTypeSourceSpan(kind: string, typeName: string, sourceUrl: string): ParseSourceSpan$1;
 declare function identifierName(compileIdentifier: CompileIdentifierMetadata | null | undefined): string | null;
 interface CompileIdentifierMetadata {
     reference: any;
@@ -361,7 +357,7 @@ interface MessagePlaceholder {
     /** The text contents of the placeholder */
     text: string;
     /** The source span of the placeholder */
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
 }
 declare class Message {
     nodes: Node$2[];
@@ -401,19 +397,19 @@ interface MessageSpan {
     endCol: number;
 }
 interface Node$2 {
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
     visit(visitor: Visitor$2, context?: any): any;
 }
 declare class Text$2 implements Node$2 {
     value: string;
-    sourceSpan: ParseSourceSpan;
-    constructor(value: string, sourceSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    constructor(value: string, sourceSpan: ParseSourceSpan$1);
     visit(visitor: Visitor$2, context?: any): any;
 }
 declare class Container implements Node$2 {
     children: Node$2[];
-    sourceSpan: ParseSourceSpan;
-    constructor(children: Node$2[], sourceSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    constructor(children: Node$2[], sourceSpan: ParseSourceSpan$1);
     visit(visitor: Visitor$2, context?: any): any;
 }
 declare class Icu$1 implements Node$2 {
@@ -422,11 +418,11 @@ declare class Icu$1 implements Node$2 {
     cases: {
         [k: string]: Node$2;
     };
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
     expressionPlaceholder?: string | undefined;
     constructor(expression: string, type: string, cases: {
         [k: string]: Node$2;
-    }, sourceSpan: ParseSourceSpan, expressionPlaceholder?: string | undefined);
+    }, sourceSpan: ParseSourceSpan$1, expressionPlaceholder?: string | undefined);
     visit(visitor: Visitor$2, context?: any): any;
 }
 declare class TagPlaceholder implements Node$2 {
@@ -438,28 +434,28 @@ declare class TagPlaceholder implements Node$2 {
     closeName: string;
     children: Node$2[];
     isVoid: boolean;
-    sourceSpan: ParseSourceSpan;
-    startSourceSpan: ParseSourceSpan | null;
-    endSourceSpan: ParseSourceSpan | null;
+    sourceSpan: ParseSourceSpan$1;
+    startSourceSpan: ParseSourceSpan$1 | null;
+    endSourceSpan: ParseSourceSpan$1 | null;
     constructor(tag: string, attrs: {
         [k: string]: string;
-    }, startName: string, closeName: string, children: Node$2[], isVoid: boolean, sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan | null, endSourceSpan: ParseSourceSpan | null);
+    }, startName: string, closeName: string, children: Node$2[], isVoid: boolean, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1 | null, endSourceSpan: ParseSourceSpan$1 | null);
     visit(visitor: Visitor$2, context?: any): any;
 }
 declare class Placeholder implements Node$2 {
     value: string;
     name: string;
-    sourceSpan: ParseSourceSpan;
-    constructor(value: string, name: string, sourceSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    constructor(value: string, name: string, sourceSpan: ParseSourceSpan$1);
     visit(visitor: Visitor$2, context?: any): any;
 }
 declare class IcuPlaceholder implements Node$2 {
     value: Icu$1;
     name: string;
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
     /** Used to capture a message computed from a previous processing pass (see `setI18nRefs()`). */
     previousMessage?: Message;
-    constructor(value: Icu$1, name: string, sourceSpan: ParseSourceSpan);
+    constructor(value: Icu$1, name: string, sourceSpan: ParseSourceSpan$1);
     visit(visitor: Visitor$2, context?: any): any;
 }
 declare class BlockPlaceholder implements Node$2 {
@@ -468,10 +464,10 @@ declare class BlockPlaceholder implements Node$2 {
     startName: string;
     closeName: string;
     children: Node$2[];
-    sourceSpan: ParseSourceSpan;
-    startSourceSpan: ParseSourceSpan | null;
-    endSourceSpan: ParseSourceSpan | null;
-    constructor(name: string, parameters: string[], startName: string, closeName: string, children: Node$2[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan | null, endSourceSpan: ParseSourceSpan | null);
+    sourceSpan: ParseSourceSpan$1;
+    startSourceSpan: ParseSourceSpan$1 | null;
+    endSourceSpan: ParseSourceSpan$1 | null;
+    constructor(name: string, parameters: string[], startName: string, closeName: string, children: Node$2[], sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1 | null, endSourceSpan: ParseSourceSpan$1 | null);
     visit(visitor: Visitor$2, context?: any): any;
 }
 /**
@@ -540,7 +536,7 @@ type InterpolatedAttributeToken = AttributeValueTextToken | AttributeValueInterp
 interface TokenBase {
     type: TokenType$1;
     parts: string[];
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
 }
 interface TextToken extends TokenBase {
     type: TokenType$1.TEXT | TokenType$1.ESCAPABLE_RAW_TEXT | TokenType$1.RAW_TEXT;
@@ -564,46 +560,46 @@ interface AttributeValueInterpolationToken extends TokenBase {
 }
 
 interface BaseNode {
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
     visit(visitor: Visitor$1, context: any): any;
 }
 type Node$1 = Attribute | Comment$1 | Element$1 | Expansion | ExpansionCase | Text$1 | Block | BlockParameter | Component$1 | Directive$1;
 declare abstract class NodeWithI18n implements BaseNode {
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
     i18n?: I18nMeta$1 | undefined;
-    constructor(sourceSpan: ParseSourceSpan, i18n?: I18nMeta$1 | undefined);
+    constructor(sourceSpan: ParseSourceSpan$1, i18n?: I18nMeta$1 | undefined);
     abstract visit(visitor: Visitor$1, context: any): any;
 }
 declare class Text$1 extends NodeWithI18n {
     value: string;
     tokens: InterpolatedTextToken[];
-    constructor(value: string, sourceSpan: ParseSourceSpan, tokens: InterpolatedTextToken[], i18n?: I18nMeta$1);
+    constructor(value: string, sourceSpan: ParseSourceSpan$1, tokens: InterpolatedTextToken[], i18n?: I18nMeta$1);
     visit(visitor: Visitor$1, context: any): any;
 }
 declare class Expansion extends NodeWithI18n {
     switchValue: string;
     type: string;
     cases: ExpansionCase[];
-    switchValueSourceSpan: ParseSourceSpan;
-    constructor(switchValue: string, type: string, cases: ExpansionCase[], sourceSpan: ParseSourceSpan, switchValueSourceSpan: ParseSourceSpan, i18n?: I18nMeta$1);
+    switchValueSourceSpan: ParseSourceSpan$1;
+    constructor(switchValue: string, type: string, cases: ExpansionCase[], sourceSpan: ParseSourceSpan$1, switchValueSourceSpan: ParseSourceSpan$1, i18n?: I18nMeta$1);
     visit(visitor: Visitor$1, context: any): any;
 }
 declare class ExpansionCase implements BaseNode {
     value: string;
     expression: Node$1[];
-    sourceSpan: ParseSourceSpan;
-    valueSourceSpan: ParseSourceSpan;
-    expSourceSpan: ParseSourceSpan;
-    constructor(value: string, expression: Node$1[], sourceSpan: ParseSourceSpan, valueSourceSpan: ParseSourceSpan, expSourceSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    valueSourceSpan: ParseSourceSpan$1;
+    expSourceSpan: ParseSourceSpan$1;
+    constructor(value: string, expression: Node$1[], sourceSpan: ParseSourceSpan$1, valueSourceSpan: ParseSourceSpan$1, expSourceSpan: ParseSourceSpan$1);
     visit(visitor: Visitor$1, context: any): any;
 }
 declare class Attribute extends NodeWithI18n {
     name: string;
     value: string;
-    readonly keySpan: ParseSourceSpan | undefined;
-    valueSpan: ParseSourceSpan | undefined;
+    readonly keySpan: ParseSourceSpan$1 | undefined;
+    valueSpan: ParseSourceSpan$1 | undefined;
     valueTokens: InterpolatedAttributeToken[] | undefined;
-    constructor(name: string, value: string, sourceSpan: ParseSourceSpan, keySpan: ParseSourceSpan | undefined, valueSpan: ParseSourceSpan | undefined, valueTokens: InterpolatedAttributeToken[] | undefined, i18n: I18nMeta$1 | undefined);
+    constructor(name: string, value: string, sourceSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1 | undefined, valueSpan: ParseSourceSpan$1 | undefined, valueTokens: InterpolatedAttributeToken[] | undefined, i18n: I18nMeta$1 | undefined);
     visit(visitor: Visitor$1, context: any): any;
 }
 declare class Element$1 extends NodeWithI18n {
@@ -611,25 +607,26 @@ declare class Element$1 extends NodeWithI18n {
     attrs: Attribute[];
     readonly directives: Directive$1[];
     children: Node$1[];
-    startSourceSpan: ParseSourceSpan;
-    endSourceSpan: ParseSourceSpan | null;
-    constructor(name: string, attrs: Attribute[], directives: Directive$1[], children: Node$1[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan?: ParseSourceSpan | null, i18n?: I18nMeta$1);
+    readonly isSelfClosing: boolean;
+    startSourceSpan: ParseSourceSpan$1;
+    endSourceSpan: ParseSourceSpan$1 | null;
+    constructor(name: string, attrs: Attribute[], directives: Directive$1[], children: Node$1[], isSelfClosing: boolean, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan?: ParseSourceSpan$1 | null, i18n?: I18nMeta$1);
     visit(visitor: Visitor$1, context: any): any;
 }
 declare class Comment$1 implements BaseNode {
     value: string | null;
-    sourceSpan: ParseSourceSpan;
-    constructor(value: string | null, sourceSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    constructor(value: string | null, sourceSpan: ParseSourceSpan$1);
     visit(visitor: Visitor$1, context: any): any;
 }
 declare class Block extends NodeWithI18n {
     name: string;
     parameters: BlockParameter[];
     children: Node$1[];
-    nameSpan: ParseSourceSpan;
-    startSourceSpan: ParseSourceSpan;
-    endSourceSpan: ParseSourceSpan | null;
-    constructor(name: string, parameters: BlockParameter[], children: Node$1[], sourceSpan: ParseSourceSpan, nameSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan?: ParseSourceSpan | null, i18n?: I18nMeta$1);
+    nameSpan: ParseSourceSpan$1;
+    startSourceSpan: ParseSourceSpan$1;
+    endSourceSpan: ParseSourceSpan$1 | null;
+    constructor(name: string, parameters: BlockParameter[], children: Node$1[], sourceSpan: ParseSourceSpan$1, nameSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan?: ParseSourceSpan$1 | null, i18n?: I18nMeta$1);
     visit(visitor: Visitor$1, context: any): any;
 }
 declare class Component$1 extends NodeWithI18n {
@@ -639,33 +636,34 @@ declare class Component$1 extends NodeWithI18n {
     attrs: Attribute[];
     readonly directives: Directive$1[];
     readonly children: Node$1[];
-    readonly startSourceSpan: ParseSourceSpan;
-    endSourceSpan: ParseSourceSpan | null;
-    constructor(componentName: string, tagName: string | null, fullName: string, attrs: Attribute[], directives: Directive$1[], children: Node$1[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan?: ParseSourceSpan | null, i18n?: I18nMeta$1);
+    readonly isSelfClosing: boolean;
+    readonly startSourceSpan: ParseSourceSpan$1;
+    endSourceSpan: ParseSourceSpan$1 | null;
+    constructor(componentName: string, tagName: string | null, fullName: string, attrs: Attribute[], directives: Directive$1[], children: Node$1[], isSelfClosing: boolean, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan?: ParseSourceSpan$1 | null, i18n?: I18nMeta$1);
     visit(visitor: Visitor$1, context: any): any;
 }
 declare class Directive$1 implements BaseNode {
     readonly name: string;
     readonly attrs: Attribute[];
-    readonly sourceSpan: ParseSourceSpan;
-    readonly startSourceSpan: ParseSourceSpan;
-    readonly endSourceSpan: ParseSourceSpan | null;
-    constructor(name: string, attrs: Attribute[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan?: ParseSourceSpan | null);
+    readonly sourceSpan: ParseSourceSpan$1;
+    readonly startSourceSpan: ParseSourceSpan$1;
+    readonly endSourceSpan: ParseSourceSpan$1 | null;
+    constructor(name: string, attrs: Attribute[], sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan?: ParseSourceSpan$1 | null);
     visit(visitor: Visitor$1, context: any): any;
 }
 declare class BlockParameter implements BaseNode {
     expression: string;
-    sourceSpan: ParseSourceSpan;
-    constructor(expression: string, sourceSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    constructor(expression: string, sourceSpan: ParseSourceSpan$1);
     visit(visitor: Visitor$1, context: any): any;
 }
 declare class LetDeclaration$1 implements BaseNode {
     name: string;
     value: string;
-    sourceSpan: ParseSourceSpan;
-    readonly nameSpan: ParseSourceSpan;
-    valueSpan: ParseSourceSpan;
-    constructor(name: string, value: string, sourceSpan: ParseSourceSpan, nameSpan: ParseSourceSpan, valueSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    readonly nameSpan: ParseSourceSpan$1;
+    valueSpan: ParseSourceSpan$1;
+    constructor(name: string, value: string, sourceSpan: ParseSourceSpan$1, nameSpan: ParseSourceSpan$1, valueSpan: ParseSourceSpan$1);
     visit(visitor: Visitor$1, context: any): any;
 }
 interface Visitor$1 {
@@ -808,8 +806,8 @@ interface TokenizeOptions {
 
 declare class TreeError extends ParseError {
     elementName: string | null;
-    static create(elementName: string | null, span: ParseSourceSpan, msg: string): TreeError;
-    constructor(elementName: string | null, span: ParseSourceSpan, msg: string);
+    static create(elementName: string | null, span: ParseSourceSpan$1, msg: string): TreeError;
+    constructor(elementName: string | null, span: ParseSourceSpan$1, msg: string);
 }
 declare class ParseTreeResult {
     rootNodes: Node$1[];
@@ -834,7 +832,7 @@ declare enum TypeModifier {
     None = 0,
     Const = 1
 }
-declare abstract class Type {
+declare abstract class Type$1 {
     modifiers: TypeModifier;
     constructor(modifiers?: TypeModifier);
     abstract visitType(visitor: TypeVisitor, context: any): any;
@@ -850,28 +848,28 @@ declare enum BuiltinTypeName {
     Inferred = 6,
     None = 7
 }
-declare class BuiltinType extends Type {
+declare class BuiltinType extends Type$1 {
     name: BuiltinTypeName;
     constructor(name: BuiltinTypeName, modifiers?: TypeModifier);
     visitType(visitor: TypeVisitor, context: any): any;
 }
-declare class ExpressionType extends Type {
+declare class ExpressionType extends Type$1 {
     value: Expression;
-    typeParams: Type[] | null;
-    constructor(value: Expression, modifiers?: TypeModifier, typeParams?: Type[] | null);
+    typeParams: Type$1[] | null;
+    constructor(value: Expression, modifiers?: TypeModifier, typeParams?: Type$1[] | null);
     visitType(visitor: TypeVisitor, context: any): any;
 }
-declare class ArrayType extends Type {
-    of: Type;
-    constructor(of: Type, modifiers?: TypeModifier);
+declare class ArrayType extends Type$1 {
+    of: Type$1;
+    constructor(of: Type$1, modifiers?: TypeModifier);
     visitType(visitor: TypeVisitor, context: any): any;
 }
-declare class MapType extends Type {
-    valueType: Type | null;
-    constructor(valueType: Type | null | undefined, modifiers?: TypeModifier);
+declare class MapType extends Type$1 {
+    valueType: Type$1 | null;
+    constructor(valueType: Type$1 | null | undefined, modifiers?: TypeModifier);
     visitType(visitor: TypeVisitor, context: any): any;
 }
-declare class TransplantedType<T> extends Type {
+declare class TransplantedType<T> extends Type$1 {
     readonly type: T;
     constructor(type: T, modifiers?: TypeModifier);
     visitType(visitor: TypeVisitor, context: any): any;
@@ -898,24 +896,25 @@ declare enum UnaryOperator {
 declare enum BinaryOperator {
     Equals = 0,
     NotEquals = 1,
-    Identical = 2,
-    NotIdentical = 3,
-    Minus = 4,
-    Plus = 5,
-    Divide = 6,
-    Multiply = 7,
-    Modulo = 8,
-    And = 9,
-    Or = 10,
-    BitwiseOr = 11,
-    BitwiseAnd = 12,
-    Lower = 13,
-    LowerEquals = 14,
-    Bigger = 15,
-    BiggerEquals = 16,
-    NullishCoalesce = 17,
-    Exponentiation = 18,
-    In = 19
+    Assign = 2,
+    Identical = 3,
+    NotIdentical = 4,
+    Minus = 5,
+    Plus = 6,
+    Divide = 7,
+    Multiply = 8,
+    Modulo = 9,
+    And = 10,
+    Or = 11,
+    BitwiseOr = 12,
+    BitwiseAnd = 13,
+    Lower = 14,
+    LowerEquals = 15,
+    Bigger = 16,
+    BiggerEquals = 17,
+    NullishCoalesce = 18,
+    Exponentiation = 19,
+    In = 20
 }
 declare function nullSafeIsEquivalent<T extends {
     isEquivalent(other: T): boolean;
@@ -924,9 +923,9 @@ declare function areAllEquivalent<T extends {
     isEquivalent(other: T): boolean;
 }>(base: T[], other: T[]): boolean;
 declare abstract class Expression {
-    type: Type | null;
-    sourceSpan: ParseSourceSpan | null;
-    constructor(type: Type | null | undefined, sourceSpan?: ParseSourceSpan | null);
+    type: Type$1 | null;
+    sourceSpan: ParseSourceSpan$1 | null;
+    constructor(type: Type$1 | null | undefined, sourceSpan?: ParseSourceSpan$1 | null);
     abstract visitExpression(visitor: ExpressionVisitor, context: any): any;
     /**
      * Calculates whether this expression produces the same value as the given expression.
@@ -938,45 +937,45 @@ declare abstract class Expression {
      */
     abstract isConstant(): boolean;
     abstract clone(): Expression;
-    prop(name: string, sourceSpan?: ParseSourceSpan | null): ReadPropExpr;
-    key(index: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null): ReadKeyExpr;
-    callFn(params: Expression[], sourceSpan?: ParseSourceSpan | null, pure?: boolean): InvokeFunctionExpr;
-    instantiate(params: Expression[], type?: Type | null, sourceSpan?: ParseSourceSpan | null): InstantiateExpr;
-    conditional(trueCase: Expression, falseCase?: Expression | null, sourceSpan?: ParseSourceSpan | null): ConditionalExpr;
-    equals(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    notEquals(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    identical(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    notIdentical(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    minus(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    plus(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    divide(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    multiply(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    modulo(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    power(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    and(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    bitwiseOr(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    bitwiseAnd(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    or(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    lower(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    lowerEquals(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    bigger(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    biggerEquals(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
-    isBlank(sourceSpan?: ParseSourceSpan | null): Expression;
-    nullishCoalesce(rhs: Expression, sourceSpan?: ParseSourceSpan | null): BinaryOperatorExpr;
+    prop(name: string, sourceSpan?: ParseSourceSpan$1 | null): ReadPropExpr;
+    key(index: Expression, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null): ReadKeyExpr;
+    callFn(params: Expression[], sourceSpan?: ParseSourceSpan$1 | null, pure?: boolean): InvokeFunctionExpr;
+    instantiate(params: Expression[], type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null): InstantiateExpr;
+    conditional(trueCase: Expression, falseCase?: Expression | null, sourceSpan?: ParseSourceSpan$1 | null): ConditionalExpr;
+    equals(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    notEquals(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    identical(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    notIdentical(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    minus(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    plus(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    divide(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    multiply(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    modulo(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    power(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    and(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    bitwiseOr(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    bitwiseAnd(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    or(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    lower(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    lowerEquals(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    bigger(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    biggerEquals(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
+    isBlank(sourceSpan?: ParseSourceSpan$1 | null): Expression;
+    nullishCoalesce(rhs: Expression, sourceSpan?: ParseSourceSpan$1 | null): BinaryOperatorExpr;
     toStmt(): Statement;
 }
 declare class ReadVarExpr extends Expression {
     name: string;
-    constructor(name: string, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(name: string, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     clone(): ReadVarExpr;
-    set(value: Expression): WriteVarExpr;
+    set(value: Expression): BinaryOperatorExpr;
 }
 declare class TypeofExpr extends Expression {
     expr: Expression;
-    constructor(expr: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(expr: Expression, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
@@ -984,7 +983,7 @@ declare class TypeofExpr extends Expression {
 }
 declare class VoidExpr extends Expression {
     expr: Expression;
-    constructor(expr: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(expr: Expression, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
@@ -992,48 +991,17 @@ declare class VoidExpr extends Expression {
 }
 declare class WrappedNodeExpr<T> extends Expression {
     node: T;
-    constructor(node: T, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(node: T, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     clone(): WrappedNodeExpr<T>;
 }
-declare class WriteVarExpr extends Expression {
-    name: string;
-    value: Expression;
-    constructor(name: string, value: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
-    isEquivalent(e: Expression): boolean;
-    isConstant(): boolean;
-    visitExpression(visitor: ExpressionVisitor, context: any): any;
-    clone(): WriteVarExpr;
-    toDeclStmt(type?: Type | null, modifiers?: StmtModifier): DeclareVarStmt;
-    toConstDecl(): DeclareVarStmt;
-}
-declare class WriteKeyExpr extends Expression {
-    receiver: Expression;
-    index: Expression;
-    value: Expression;
-    constructor(receiver: Expression, index: Expression, value: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
-    isEquivalent(e: Expression): boolean;
-    isConstant(): boolean;
-    visitExpression(visitor: ExpressionVisitor, context: any): any;
-    clone(): WriteKeyExpr;
-}
-declare class WritePropExpr extends Expression {
-    receiver: Expression;
-    name: string;
-    value: Expression;
-    constructor(receiver: Expression, name: string, value: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
-    isEquivalent(e: Expression): boolean;
-    isConstant(): boolean;
-    visitExpression(visitor: ExpressionVisitor, context: any): any;
-    clone(): WritePropExpr;
-}
 declare class InvokeFunctionExpr extends Expression {
     fn: Expression;
     args: Expression[];
     pure: boolean;
-    constructor(fn: Expression, args: Expression[], type?: Type | null, sourceSpan?: ParseSourceSpan | null, pure?: boolean);
+    constructor(fn: Expression, args: Expression[], type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null, pure?: boolean);
     get receiver(): Expression;
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
@@ -1043,7 +1011,7 @@ declare class InvokeFunctionExpr extends Expression {
 declare class TaggedTemplateLiteralExpr extends Expression {
     tag: Expression;
     template: TemplateLiteralExpr;
-    constructor(tag: Expression, template: TemplateLiteralExpr, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(tag: Expression, template: TemplateLiteralExpr, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1052,7 +1020,7 @@ declare class TaggedTemplateLiteralExpr extends Expression {
 declare class InstantiateExpr extends Expression {
     classExpr: Expression;
     args: Expression[];
-    constructor(classExpr: Expression, args: Expression[], type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(classExpr: Expression, args: Expression[], type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1060,7 +1028,7 @@ declare class InstantiateExpr extends Expression {
 }
 declare class LiteralExpr extends Expression {
     value: number | string | boolean | null | undefined;
-    constructor(value: number | string | boolean | null | undefined, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(value: number | string | boolean | null | undefined, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1069,7 +1037,7 @@ declare class LiteralExpr extends Expression {
 declare class TemplateLiteralExpr extends Expression {
     elements: TemplateLiteralElementExpr[];
     expressions: Expression[];
-    constructor(elements: TemplateLiteralElementExpr[], expressions: Expression[], sourceSpan?: ParseSourceSpan | null);
+    constructor(elements: TemplateLiteralElementExpr[], expressions: Expression[], sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1078,7 +1046,7 @@ declare class TemplateLiteralExpr extends Expression {
 declare class TemplateLiteralElementExpr extends Expression {
     readonly text: string;
     readonly rawText: string;
-    constructor(text: string, sourceSpan?: ParseSourceSpan | null, rawText?: string);
+    constructor(text: string, sourceSpan?: ParseSourceSpan$1 | null, rawText?: string);
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
@@ -1086,12 +1054,12 @@ declare class TemplateLiteralElementExpr extends Expression {
 }
 declare class LiteralPiece {
     text: string;
-    sourceSpan: ParseSourceSpan;
-    constructor(text: string, sourceSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    constructor(text: string, sourceSpan: ParseSourceSpan$1);
 }
 declare class PlaceholderPiece {
     text: string;
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
     associatedMessage?: Message | undefined;
     /**
      * Create a new instance of a `PlaceholderPiece`.
@@ -1102,7 +1070,7 @@ declare class PlaceholderPiece {
      * The `associatedMessage` is mainly used to provide a relationship to an ICU message that has
      * been extracted out from the message containing the placeholder.
      */
-    constructor(text: string, sourceSpan: ParseSourceSpan, associatedMessage?: Message | undefined);
+    constructor(text: string, sourceSpan: ParseSourceSpan$1, associatedMessage?: Message | undefined);
 }
 type MessagePiece = LiteralPiece | PlaceholderPiece;
 declare class LocalizedString extends Expression {
@@ -1110,7 +1078,7 @@ declare class LocalizedString extends Expression {
     readonly messageParts: LiteralPiece[];
     readonly placeHolderNames: PlaceholderPiece[];
     readonly expressions: Expression[];
-    constructor(metaBlock: I18nMeta, messageParts: LiteralPiece[], placeHolderNames: PlaceholderPiece[], expressions: Expression[], sourceSpan?: ParseSourceSpan | null);
+    constructor(metaBlock: I18nMeta, messageParts: LiteralPiece[], placeHolderNames: PlaceholderPiece[], expressions: Expression[], sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1124,8 +1092,8 @@ declare class LocalizedString extends Expression {
      * @param messagePart The first part of the tagged string
      */
     serializeI18nHead(): CookedRawString;
-    getMessagePartSourceSpan(i: number): ParseSourceSpan | null;
-    getPlaceholderSourceSpan(i: number): ParseSourceSpan;
+    getMessagePartSourceSpan(i: number): ParseSourceSpan$1 | null;
+    getPlaceholderSourceSpan(i: number): ParseSourceSpan$1;
     /**
      * Serialize the given `placeholderName` and `messagePart` into "cooked" and "raw" strings that
      * can be used in a `$localize` tagged string.
@@ -1146,12 +1114,12 @@ declare class LocalizedString extends Expression {
 interface CookedRawString {
     cooked: string;
     raw: string;
-    range: ParseSourceSpan | null;
+    range: ParseSourceSpan$1 | null;
 }
 declare class ExternalExpr extends Expression {
     value: ExternalReference;
-    typeParams: Type[] | null;
-    constructor(value: ExternalReference, type?: Type | null, typeParams?: Type[] | null, sourceSpan?: ParseSourceSpan | null);
+    typeParams: Type$1[] | null;
+    constructor(value: ExternalReference, type?: Type$1 | null, typeParams?: Type$1[] | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1166,7 +1134,7 @@ declare class ConditionalExpr extends Expression {
     condition: Expression;
     falseCase: Expression | null;
     trueCase: Expression;
-    constructor(condition: Expression, trueCase: Expression, falseCase?: Expression | null, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(condition: Expression, trueCase: Expression, falseCase?: Expression | null, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1175,7 +1143,7 @@ declare class ConditionalExpr extends Expression {
 declare class DynamicImportExpr extends Expression {
     url: string | Expression;
     urlComment?: string | undefined;
-    constructor(url: string | Expression, sourceSpan?: ParseSourceSpan | null, urlComment?: string | undefined);
+    constructor(url: string | Expression, sourceSpan?: ParseSourceSpan$1 | null, urlComment?: string | undefined);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1183,7 +1151,7 @@ declare class DynamicImportExpr extends Expression {
 }
 declare class NotExpr extends Expression {
     condition: Expression;
-    constructor(condition: Expression, sourceSpan?: ParseSourceSpan | null);
+    constructor(condition: Expression, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1191,8 +1159,8 @@ declare class NotExpr extends Expression {
 }
 declare class FnParam {
     name: string;
-    type: Type | null;
-    constructor(name: string, type?: Type | null);
+    type: Type$1 | null;
+    constructor(name: string, type?: Type$1 | null);
     isEquivalent(param: FnParam): boolean;
     clone(): FnParam;
 }
@@ -1200,7 +1168,7 @@ declare class FunctionExpr extends Expression {
     params: FnParam[];
     statements: Statement[];
     name?: string | null | undefined;
-    constructor(params: FnParam[], statements: Statement[], type?: Type | null, sourceSpan?: ParseSourceSpan | null, name?: string | null | undefined);
+    constructor(params: FnParam[], statements: Statement[], type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null, name?: string | null | undefined);
     isEquivalent(e: Expression | Statement): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1210,7 +1178,7 @@ declare class FunctionExpr extends Expression {
 declare class ArrowFunctionExpr extends Expression {
     params: FnParam[];
     body: Expression | Statement[];
-    constructor(params: FnParam[], body: Expression | Statement[], type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(params: FnParam[], body: Expression | Statement[], type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1221,7 +1189,7 @@ declare class UnaryOperatorExpr extends Expression {
     operator: UnaryOperator;
     expr: Expression;
     parens: boolean;
-    constructor(operator: UnaryOperator, expr: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null, parens?: boolean);
+    constructor(operator: UnaryOperator, expr: Expression, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null, parens?: boolean);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1229,7 +1197,7 @@ declare class UnaryOperatorExpr extends Expression {
 }
 declare class ParenthesizedExpr extends Expression {
     expr: Expression;
-    constructor(expr: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(expr: Expression, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     visitExpression(visitor: ExpressionVisitor, context: any): any;
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
@@ -1239,7 +1207,7 @@ declare class BinaryOperatorExpr extends Expression {
     operator: BinaryOperator;
     rhs: Expression;
     lhs: Expression;
-    constructor(operator: BinaryOperator, lhs: Expression, rhs: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(operator: BinaryOperator, lhs: Expression, rhs: Expression, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1248,27 +1216,27 @@ declare class BinaryOperatorExpr extends Expression {
 declare class ReadPropExpr extends Expression {
     receiver: Expression;
     name: string;
-    constructor(receiver: Expression, name: string, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(receiver: Expression, name: string, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     get index(): string;
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
-    set(value: Expression): WritePropExpr;
+    set(value: Expression): BinaryOperatorExpr;
     clone(): ReadPropExpr;
 }
 declare class ReadKeyExpr extends Expression {
     receiver: Expression;
     index: Expression;
-    constructor(receiver: Expression, index: Expression, type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(receiver: Expression, index: Expression, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
-    set(value: Expression): WriteKeyExpr;
+    set(value: Expression): BinaryOperatorExpr;
     clone(): ReadKeyExpr;
 }
 declare class LiteralArrayExpr extends Expression {
     entries: Expression[];
-    constructor(entries: Expression[], type?: Type | null, sourceSpan?: ParseSourceSpan | null);
+    constructor(entries: Expression[], type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null);
     isConstant(): boolean;
     isEquivalent(e: Expression): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1284,8 +1252,8 @@ declare class LiteralMapEntry {
 }
 declare class LiteralMapExpr extends Expression {
     entries: LiteralMapEntry[];
-    valueType: Type | null;
-    constructor(entries: LiteralMapEntry[], type?: MapType | null, sourceSpan?: ParseSourceSpan | null);
+    valueType: Type$1 | null;
+    constructor(entries: LiteralMapEntry[], type?: MapType | null, sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1293,7 +1261,7 @@ declare class LiteralMapExpr extends Expression {
 }
 declare class CommaExpr extends Expression {
     parts: Expression[];
-    constructor(parts: Expression[], sourceSpan?: ParseSourceSpan | null);
+    constructor(parts: Expression[], sourceSpan?: ParseSourceSpan$1 | null);
     isEquivalent(e: Expression): boolean;
     isConstant(): boolean;
     visitExpression(visitor: ExpressionVisitor, context: any): any;
@@ -1301,9 +1269,6 @@ declare class CommaExpr extends Expression {
 }
 interface ExpressionVisitor {
     visitReadVarExpr(ast: ReadVarExpr, context: any): any;
-    visitWriteVarExpr(expr: WriteVarExpr, context: any): any;
-    visitWriteKeyExpr(expr: WriteKeyExpr, context: any): any;
-    visitWritePropExpr(expr: WritePropExpr, context: any): any;
     visitInvokeFunctionExpr(ast: InvokeFunctionExpr, context: any): any;
     visitTaggedTemplateLiteralExpr(ast: TaggedTemplateLiteralExpr, context: any): any;
     visitTemplateLiteralExpr(ast: TemplateLiteralExpr, context: any): any;
@@ -1352,9 +1317,9 @@ declare class JSDocComment extends LeadingComment {
 }
 declare abstract class Statement {
     modifiers: StmtModifier;
-    sourceSpan: ParseSourceSpan | null;
+    sourceSpan: ParseSourceSpan$1 | null;
     leadingComments?: LeadingComment[] | undefined;
-    constructor(modifiers?: StmtModifier, sourceSpan?: ParseSourceSpan | null, leadingComments?: LeadingComment[] | undefined);
+    constructor(modifiers?: StmtModifier, sourceSpan?: ParseSourceSpan$1 | null, leadingComments?: LeadingComment[] | undefined);
     /**
      * Calculates whether this statement produces the same value as the given statement.
      * Note: We don't check Types nor ParseSourceSpans nor function arguments.
@@ -1367,8 +1332,8 @@ declare abstract class Statement {
 declare class DeclareVarStmt extends Statement {
     name: string;
     value?: Expression | undefined;
-    type: Type | null;
-    constructor(name: string, value?: Expression | undefined, type?: Type | null, modifiers?: StmtModifier, sourceSpan?: ParseSourceSpan | null, leadingComments?: LeadingComment[]);
+    type: Type$1 | null;
+    constructor(name: string, value?: Expression | undefined, type?: Type$1 | null, modifiers?: StmtModifier, sourceSpan?: ParseSourceSpan$1 | null, leadingComments?: LeadingComment[]);
     isEquivalent(stmt: Statement): boolean;
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
@@ -1376,20 +1341,20 @@ declare class DeclareFunctionStmt extends Statement {
     name: string;
     params: FnParam[];
     statements: Statement[];
-    type: Type | null;
-    constructor(name: string, params: FnParam[], statements: Statement[], type?: Type | null, modifiers?: StmtModifier, sourceSpan?: ParseSourceSpan | null, leadingComments?: LeadingComment[]);
+    type: Type$1 | null;
+    constructor(name: string, params: FnParam[], statements: Statement[], type?: Type$1 | null, modifiers?: StmtModifier, sourceSpan?: ParseSourceSpan$1 | null, leadingComments?: LeadingComment[]);
     isEquivalent(stmt: Statement): boolean;
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 declare class ExpressionStatement extends Statement {
     expr: Expression;
-    constructor(expr: Expression, sourceSpan?: ParseSourceSpan | null, leadingComments?: LeadingComment[]);
+    constructor(expr: Expression, sourceSpan?: ParseSourceSpan$1 | null, leadingComments?: LeadingComment[]);
     isEquivalent(stmt: Statement): boolean;
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
 declare class ReturnStatement extends Statement {
     value: Expression;
-    constructor(value: Expression, sourceSpan?: ParseSourceSpan | null, leadingComments?: LeadingComment[]);
+    constructor(value: Expression, sourceSpan?: ParseSourceSpan$1 | null, leadingComments?: LeadingComment[]);
     isEquivalent(stmt: Statement): boolean;
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
@@ -1397,7 +1362,7 @@ declare class IfStmt extends Statement {
     condition: Expression;
     trueCase: Statement[];
     falseCase: Statement[];
-    constructor(condition: Expression, trueCase: Statement[], falseCase?: Statement[], sourceSpan?: ParseSourceSpan | null, leadingComments?: LeadingComment[]);
+    constructor(condition: Expression, trueCase: Statement[], falseCase?: Statement[], sourceSpan?: ParseSourceSpan$1 | null, leadingComments?: LeadingComment[]);
     isEquivalent(stmt: Statement): boolean;
     visitStatement(visitor: StatementVisitor, context: any): any;
 }
@@ -1409,7 +1374,7 @@ interface StatementVisitor {
     visitIfStmt(stmt: IfStmt, context: any): any;
 }
 declare class RecursiveAstVisitor$1 implements StatementVisitor, ExpressionVisitor {
-    visitType(ast: Type, context: any): any;
+    visitType(ast: Type$1, context: any): any;
     visitExpression(ast: Expression, context: any): any;
     visitBuiltinType(type: BuiltinType, context: any): any;
     visitExpressionType(type: ExpressionType, context: any): any;
@@ -1418,9 +1383,6 @@ declare class RecursiveAstVisitor$1 implements StatementVisitor, ExpressionVisit
     visitTransplantedType(type: TransplantedType<unknown>, context: any): any;
     visitWrappedNodeExpr(ast: WrappedNodeExpr<any>, context: any): any;
     visitReadVarExpr(ast: ReadVarExpr, context: any): any;
-    visitWriteVarExpr(ast: WriteVarExpr, context: any): any;
-    visitWriteKeyExpr(ast: WriteKeyExpr, context: any): any;
-    visitWritePropExpr(ast: WritePropExpr, context: any): any;
     visitDynamicImportExpr(ast: DynamicImportExpr, context: any): any;
     visitInvokeFunctionExpr(ast: InvokeFunctionExpr, context: any): any;
     visitTaggedTemplateLiteralExpr(ast: TaggedTemplateLiteralExpr, context: any): any;
@@ -1454,26 +1416,26 @@ declare class RecursiveAstVisitor$1 implements StatementVisitor, ExpressionVisit
 }
 declare function leadingComment(text: string, multiline?: boolean, trailingNewline?: boolean): LeadingComment;
 declare function jsDocComment(tags?: JSDocTag[]): JSDocComment;
-declare function variable(name: string, type?: Type | null, sourceSpan?: ParseSourceSpan | null): ReadVarExpr;
-declare function importExpr(id: ExternalReference, typeParams?: Type[] | null, sourceSpan?: ParseSourceSpan | null): ExternalExpr;
-declare function importType(id: ExternalReference, typeParams?: Type[] | null, typeModifiers?: TypeModifier): ExpressionType | null;
-declare function expressionType(expr: Expression, typeModifiers?: TypeModifier, typeParams?: Type[] | null): ExpressionType;
+declare function variable(name: string, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null): ReadVarExpr;
+declare function importExpr(id: ExternalReference, typeParams?: Type$1[] | null, sourceSpan?: ParseSourceSpan$1 | null): ExternalExpr;
+declare function importType(id: ExternalReference, typeParams?: Type$1[] | null, typeModifiers?: TypeModifier): ExpressionType | null;
+declare function expressionType(expr: Expression, typeModifiers?: TypeModifier, typeParams?: Type$1[] | null): ExpressionType;
 declare function transplantedType<T>(type: T, typeModifiers?: TypeModifier): TransplantedType<T>;
 declare function typeofExpr(expr: Expression): TypeofExpr;
-declare function literalArr(values: Expression[], type?: Type | null, sourceSpan?: ParseSourceSpan | null): LiteralArrayExpr;
+declare function literalArr(values: Expression[], type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null): LiteralArrayExpr;
 declare function literalMap(values: {
     key: string;
     quoted: boolean;
     value: Expression;
 }[], type?: MapType | null): LiteralMapExpr;
-declare function unary(operator: UnaryOperator, expr: Expression, type?: Type, sourceSpan?: ParseSourceSpan | null): UnaryOperatorExpr;
-declare function not(expr: Expression, sourceSpan?: ParseSourceSpan | null): NotExpr;
-declare function fn(params: FnParam[], body: Statement[], type?: Type | null, sourceSpan?: ParseSourceSpan | null, name?: string | null): FunctionExpr;
-declare function arrowFn(params: FnParam[], body: Expression | Statement[], type?: Type | null, sourceSpan?: ParseSourceSpan | null): ArrowFunctionExpr;
-declare function ifStmt(condition: Expression, thenClause: Statement[], elseClause?: Statement[], sourceSpan?: ParseSourceSpan, leadingComments?: LeadingComment[]): IfStmt;
-declare function taggedTemplate(tag: Expression, template: TemplateLiteralExpr, type?: Type | null, sourceSpan?: ParseSourceSpan | null): TaggedTemplateLiteralExpr;
-declare function literal(value: any, type?: Type | null, sourceSpan?: ParseSourceSpan | null): LiteralExpr;
-declare function localizedString(metaBlock: I18nMeta, messageParts: LiteralPiece[], placeholderNames: PlaceholderPiece[], expressions: Expression[], sourceSpan?: ParseSourceSpan | null): LocalizedString;
+declare function unary(operator: UnaryOperator, expr: Expression, type?: Type$1, sourceSpan?: ParseSourceSpan$1 | null): UnaryOperatorExpr;
+declare function not(expr: Expression, sourceSpan?: ParseSourceSpan$1 | null): NotExpr;
+declare function fn(params: FnParam[], body: Statement[], type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null, name?: string | null): FunctionExpr;
+declare function arrowFn(params: FnParam[], body: Expression | Statement[], type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null): ArrowFunctionExpr;
+declare function ifStmt(condition: Expression, thenClause: Statement[], elseClause?: Statement[], sourceSpan?: ParseSourceSpan$1, leadingComments?: LeadingComment[]): IfStmt;
+declare function taggedTemplate(tag: Expression, template: TemplateLiteralExpr, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null): TaggedTemplateLiteralExpr;
+declare function literal(value: any, type?: Type$1 | null, sourceSpan?: ParseSourceSpan$1 | null): LiteralExpr;
+declare function localizedString(metaBlock: I18nMeta, messageParts: LiteralPiece[], placeholderNames: PlaceholderPiece[], expressions: Expression[], sourceSpan?: ParseSourceSpan$1 | null): LocalizedString;
 declare function isNull(exp: Expression): boolean;
 declare const enum JSDocTagName {
     Desc = "desc",
@@ -1592,8 +1554,6 @@ type output_ast_d_TemplateLiteralExpr = TemplateLiteralExpr;
 declare const output_ast_d_TemplateLiteralExpr: typeof TemplateLiteralExpr;
 type output_ast_d_TransplantedType<T> = TransplantedType<T>;
 declare const output_ast_d_TransplantedType: typeof TransplantedType;
-type output_ast_d_Type = Type;
-declare const output_ast_d_Type: typeof Type;
 type output_ast_d_TypeModifier = TypeModifier;
 declare const output_ast_d_TypeModifier: typeof TypeModifier;
 type output_ast_d_TypeVisitor = TypeVisitor;
@@ -1607,12 +1567,6 @@ type output_ast_d_VoidExpr = VoidExpr;
 declare const output_ast_d_VoidExpr: typeof VoidExpr;
 type output_ast_d_WrappedNodeExpr<T> = WrappedNodeExpr<T>;
 declare const output_ast_d_WrappedNodeExpr: typeof WrappedNodeExpr;
-type output_ast_d_WriteKeyExpr = WriteKeyExpr;
-declare const output_ast_d_WriteKeyExpr: typeof WriteKeyExpr;
-type output_ast_d_WritePropExpr = WritePropExpr;
-declare const output_ast_d_WritePropExpr: typeof WritePropExpr;
-type output_ast_d_WriteVarExpr = WriteVarExpr;
-declare const output_ast_d_WriteVarExpr: typeof WriteVarExpr;
 declare const output_ast_d_areAllEquivalent: typeof areAllEquivalent;
 declare const output_ast_d_arrowFn: typeof arrowFn;
 declare const output_ast_d_expressionType: typeof expressionType;
@@ -1635,16 +1589,20 @@ declare const output_ast_d_typeofExpr: typeof typeofExpr;
 declare const output_ast_d_unary: typeof unary;
 declare const output_ast_d_variable: typeof variable;
 declare namespace output_ast_d {
-  export { output_ast_d_ArrayType as ArrayType, output_ast_d_ArrowFunctionExpr as ArrowFunctionExpr, output_ast_d_BOOL_TYPE as BOOL_TYPE, output_ast_d_BinaryOperator as BinaryOperator, output_ast_d_BinaryOperatorExpr as BinaryOperatorExpr, output_ast_d_BuiltinType as BuiltinType, output_ast_d_BuiltinTypeName as BuiltinTypeName, output_ast_d_CommaExpr as CommaExpr, output_ast_d_ConditionalExpr as ConditionalExpr, output_ast_d_DYNAMIC_TYPE as DYNAMIC_TYPE, output_ast_d_DeclareFunctionStmt as DeclareFunctionStmt, output_ast_d_DeclareVarStmt as DeclareVarStmt, output_ast_d_DynamicImportExpr as DynamicImportExpr, output_ast_d_Expression as Expression, output_ast_d_ExpressionStatement as ExpressionStatement, output_ast_d_ExpressionType as ExpressionType, output_ast_d_ExternalExpr as ExternalExpr, output_ast_d_ExternalReference as ExternalReference, output_ast_d_FUNCTION_TYPE as FUNCTION_TYPE, output_ast_d_FnParam as FnParam, output_ast_d_FunctionExpr as FunctionExpr, output_ast_d_INFERRED_TYPE as INFERRED_TYPE, output_ast_d_INT_TYPE as INT_TYPE, output_ast_d_IfStmt as IfStmt, output_ast_d_InstantiateExpr as InstantiateExpr, output_ast_d_InvokeFunctionExpr as InvokeFunctionExpr, output_ast_d_JSDocComment as JSDocComment, output_ast_d_JSDocTagName as JSDocTagName, output_ast_d_LeadingComment as LeadingComment, output_ast_d_LiteralArrayExpr as LiteralArrayExpr, output_ast_d_LiteralExpr as LiteralExpr, output_ast_d_LiteralMapEntry as LiteralMapEntry, output_ast_d_LiteralMapExpr as LiteralMapExpr, output_ast_d_LiteralPiece as LiteralPiece, output_ast_d_LocalizedString as LocalizedString, output_ast_d_MapType as MapType, output_ast_d_NONE_TYPE as NONE_TYPE, output_ast_d_NULL_EXPR as NULL_EXPR, output_ast_d_NUMBER_TYPE as NUMBER_TYPE, output_ast_d_NotExpr as NotExpr, output_ast_d_ParenthesizedExpr as ParenthesizedExpr, output_ast_d_PlaceholderPiece as PlaceholderPiece, output_ast_d_ReadKeyExpr as ReadKeyExpr, output_ast_d_ReadPropExpr as ReadPropExpr, output_ast_d_ReadVarExpr as ReadVarExpr, RecursiveAstVisitor$1 as RecursiveAstVisitor, output_ast_d_ReturnStatement as ReturnStatement, output_ast_d_STRING_TYPE as STRING_TYPE, output_ast_d_Statement as Statement, output_ast_d_StmtModifier as StmtModifier, output_ast_d_TYPED_NULL_EXPR as TYPED_NULL_EXPR, output_ast_d_TaggedTemplateLiteralExpr as TaggedTemplateLiteralExpr, output_ast_d_TemplateLiteralElementExpr as TemplateLiteralElementExpr, output_ast_d_TemplateLiteralExpr as TemplateLiteralExpr, output_ast_d_TransplantedType as TransplantedType, output_ast_d_Type as Type, output_ast_d_TypeModifier as TypeModifier, output_ast_d_TypeofExpr as TypeofExpr, output_ast_d_UnaryOperator as UnaryOperator, output_ast_d_UnaryOperatorExpr as UnaryOperatorExpr, output_ast_d_VoidExpr as VoidExpr, output_ast_d_WrappedNodeExpr as WrappedNodeExpr, output_ast_d_WriteKeyExpr as WriteKeyExpr, output_ast_d_WritePropExpr as WritePropExpr, output_ast_d_WriteVarExpr as WriteVarExpr, output_ast_d_areAllEquivalent as areAllEquivalent, output_ast_d_arrowFn as arrowFn, output_ast_d_expressionType as expressionType, output_ast_d_fn as fn, output_ast_d_ifStmt as ifStmt, output_ast_d_importExpr as importExpr, output_ast_d_importType as importType, output_ast_d_isNull as isNull, output_ast_d_jsDocComment as jsDocComment, output_ast_d_leadingComment as leadingComment, output_ast_d_literal as literal, output_ast_d_literalArr as literalArr, output_ast_d_literalMap as literalMap, output_ast_d_localizedString as localizedString, output_ast_d_not as not, output_ast_d_nullSafeIsEquivalent as nullSafeIsEquivalent, output_ast_d_taggedTemplate as taggedTemplate, output_ast_d_transplantedType as transplantedType, output_ast_d_typeofExpr as typeofExpr, output_ast_d_unary as unary, output_ast_d_variable as variable };
+  export { output_ast_d_ArrayType as ArrayType, output_ast_d_ArrowFunctionExpr as ArrowFunctionExpr, output_ast_d_BOOL_TYPE as BOOL_TYPE, output_ast_d_BinaryOperator as BinaryOperator, output_ast_d_BinaryOperatorExpr as BinaryOperatorExpr, output_ast_d_BuiltinType as BuiltinType, output_ast_d_BuiltinTypeName as BuiltinTypeName, output_ast_d_CommaExpr as CommaExpr, output_ast_d_ConditionalExpr as ConditionalExpr, output_ast_d_DYNAMIC_TYPE as DYNAMIC_TYPE, output_ast_d_DeclareFunctionStmt as DeclareFunctionStmt, output_ast_d_DeclareVarStmt as DeclareVarStmt, output_ast_d_DynamicImportExpr as DynamicImportExpr, output_ast_d_Expression as Expression, output_ast_d_ExpressionStatement as ExpressionStatement, output_ast_d_ExpressionType as ExpressionType, output_ast_d_ExternalExpr as ExternalExpr, output_ast_d_ExternalReference as ExternalReference, output_ast_d_FUNCTION_TYPE as FUNCTION_TYPE, output_ast_d_FnParam as FnParam, output_ast_d_FunctionExpr as FunctionExpr, output_ast_d_INFERRED_TYPE as INFERRED_TYPE, output_ast_d_INT_TYPE as INT_TYPE, output_ast_d_IfStmt as IfStmt, output_ast_d_InstantiateExpr as InstantiateExpr, output_ast_d_InvokeFunctionExpr as InvokeFunctionExpr, output_ast_d_JSDocComment as JSDocComment, output_ast_d_JSDocTagName as JSDocTagName, output_ast_d_LeadingComment as LeadingComment, output_ast_d_LiteralArrayExpr as LiteralArrayExpr, output_ast_d_LiteralExpr as LiteralExpr, output_ast_d_LiteralMapEntry as LiteralMapEntry, output_ast_d_LiteralMapExpr as LiteralMapExpr, output_ast_d_LiteralPiece as LiteralPiece, output_ast_d_LocalizedString as LocalizedString, output_ast_d_MapType as MapType, output_ast_d_NONE_TYPE as NONE_TYPE, output_ast_d_NULL_EXPR as NULL_EXPR, output_ast_d_NUMBER_TYPE as NUMBER_TYPE, output_ast_d_NotExpr as NotExpr, output_ast_d_ParenthesizedExpr as ParenthesizedExpr, output_ast_d_PlaceholderPiece as PlaceholderPiece, output_ast_d_ReadKeyExpr as ReadKeyExpr, output_ast_d_ReadPropExpr as ReadPropExpr, output_ast_d_ReadVarExpr as ReadVarExpr, RecursiveAstVisitor$1 as RecursiveAstVisitor, output_ast_d_ReturnStatement as ReturnStatement, output_ast_d_STRING_TYPE as STRING_TYPE, output_ast_d_Statement as Statement, output_ast_d_StmtModifier as StmtModifier, output_ast_d_TYPED_NULL_EXPR as TYPED_NULL_EXPR, output_ast_d_TaggedTemplateLiteralExpr as TaggedTemplateLiteralExpr, output_ast_d_TemplateLiteralElementExpr as TemplateLiteralElementExpr, output_ast_d_TemplateLiteralExpr as TemplateLiteralExpr, output_ast_d_TransplantedType as TransplantedType, Type$1 as Type, output_ast_d_TypeModifier as TypeModifier, output_ast_d_TypeofExpr as TypeofExpr, output_ast_d_UnaryOperator as UnaryOperator, output_ast_d_UnaryOperatorExpr as UnaryOperatorExpr, output_ast_d_VoidExpr as VoidExpr, output_ast_d_WrappedNodeExpr as WrappedNodeExpr, output_ast_d_areAllEquivalent as areAllEquivalent, output_ast_d_arrowFn as arrowFn, output_ast_d_expressionType as expressionType, output_ast_d_fn as fn, output_ast_d_ifStmt as ifStmt, output_ast_d_importExpr as importExpr, output_ast_d_importType as importType, output_ast_d_isNull as isNull, output_ast_d_jsDocComment as jsDocComment, output_ast_d_leadingComment as leadingComment, output_ast_d_literal as literal, output_ast_d_literalArr as literalArr, output_ast_d_literalMap as literalMap, output_ast_d_localizedString as localizedString, output_ast_d_not as not, output_ast_d_nullSafeIsEquivalent as nullSafeIsEquivalent, output_ast_d_taggedTemplate as taggedTemplate, output_ast_d_transplantedType as transplantedType, output_ast_d_typeofExpr as typeofExpr, output_ast_d_unary as unary, output_ast_d_variable as variable };
   export type { output_ast_d_CookedRawString as CookedRawString, output_ast_d_ExpressionVisitor as ExpressionVisitor, output_ast_d_JSDocTag as JSDocTag, output_ast_d_MessagePiece as MessagePiece, output_ast_d_StatementVisitor as StatementVisitor, output_ast_d_TypeVisitor as TypeVisitor };
 }
 
+declare function SECURITY_SCHEMA(): {
+    [k: string]: SecurityContext;
+};
+
 declare class CompilerConfig {
-    defaultEncapsulation: ViewEncapsulation | null;
+    defaultEncapsulation: ViewEncapsulation$1 | null;
     preserveWhitespaces: boolean;
     strictInjectionParameters: boolean;
     constructor({ defaultEncapsulation, preserveWhitespaces, strictInjectionParameters, }?: {
-        defaultEncapsulation?: ViewEncapsulation;
+        defaultEncapsulation?: ViewEncapsulation$1;
         preserveWhitespaces?: boolean;
         strictInjectionParameters?: boolean;
     });
@@ -1765,13 +1723,6 @@ declare class PropertyRead extends ASTWithName {
     constructor(span: ParseSpan, sourceSpan: AbsoluteSourceSpan, nameSpan: AbsoluteSourceSpan, receiver: AST, name: string);
     visit(visitor: AstVisitor, context?: any): any;
 }
-declare class PropertyWrite extends ASTWithName {
-    receiver: AST;
-    name: string;
-    value: AST;
-    constructor(span: ParseSpan, sourceSpan: AbsoluteSourceSpan, nameSpan: AbsoluteSourceSpan, receiver: AST, name: string, value: AST);
-    visit(visitor: AstVisitor, context?: any): any;
-}
 declare class SafePropertyRead extends ASTWithName {
     receiver: AST;
     name: string;
@@ -1790,18 +1741,25 @@ declare class SafeKeyedRead extends AST {
     constructor(span: ParseSpan, sourceSpan: AbsoluteSourceSpan, receiver: AST, key: AST);
     visit(visitor: AstVisitor, context?: any): any;
 }
-declare class KeyedWrite extends AST {
-    receiver: AST;
-    key: AST;
-    value: AST;
-    constructor(span: ParseSpan, sourceSpan: AbsoluteSourceSpan, receiver: AST, key: AST, value: AST);
-    visit(visitor: AstVisitor, context?: any): any;
+/** Possible types for a pipe. */
+declare enum BindingPipeType {
+    /**
+     * Pipe is being referenced by its name, for example:
+     * `@Pipe({name: 'foo'}) class FooPipe` and `{{123 | foo}}`.
+     */
+    ReferencedByName = 0,
+    /**
+     * Pipe is being referenced by its class name, for example:
+     * `@Pipe() class FooPipe` and `{{123 | FooPipe}}`.
+     */
+    ReferencedDirectly = 1
 }
 declare class BindingPipe extends ASTWithName {
     exp: AST;
     name: string;
     args: any[];
-    constructor(span: ParseSpan, sourceSpan: AbsoluteSourceSpan, exp: AST, name: string, args: any[], nameSpan: AbsoluteSourceSpan);
+    readonly type: BindingPipeType;
+    constructor(span: ParseSpan, sourceSpan: AbsoluteSourceSpan, exp: AST, name: string, args: any[], type: BindingPipeType, nameSpan: AbsoluteSourceSpan);
     visit(visitor: AstVisitor, context?: any): any;
 }
 declare class LiteralPrimitive extends AST {
@@ -2006,7 +1964,6 @@ interface AstVisitor {
     visitImplicitReceiver(ast: ImplicitReceiver, context: any): any;
     visitInterpolation(ast: Interpolation, context: any): any;
     visitKeyedRead(ast: KeyedRead, context: any): any;
-    visitKeyedWrite(ast: KeyedWrite, context: any): any;
     visitLiteralArray(ast: LiteralArray, context: any): any;
     visitLiteralMap(ast: LiteralMap, context: any): any;
     visitLiteralPrimitive(ast: LiteralPrimitive, context: any): any;
@@ -2016,7 +1973,6 @@ interface AstVisitor {
     visitVoidExpression(ast: TypeofExpression, context: any): any;
     visitNonNullAssert(ast: NonNullAssert, context: any): any;
     visitPropertyRead(ast: PropertyRead, context: any): any;
-    visitPropertyWrite(ast: PropertyWrite, context: any): any;
     visitSafePropertyRead(ast: SafePropertyRead, context: any): any;
     visitSafeKeyedRead(ast: SafeKeyedRead, context: any): any;
     visitCall(ast: Call, context: any): any;
@@ -2045,7 +2001,6 @@ declare class RecursiveAstVisitor implements AstVisitor {
     visitThisReceiver(ast: ThisReceiver, context: any): any;
     visitInterpolation(ast: Interpolation, context: any): any;
     visitKeyedRead(ast: KeyedRead, context: any): any;
-    visitKeyedWrite(ast: KeyedWrite, context: any): any;
     visitLiteralArray(ast: LiteralArray, context: any): any;
     visitLiteralMap(ast: LiteralMap, context: any): any;
     visitLiteralPrimitive(ast: LiteralPrimitive, context: any): any;
@@ -2054,7 +2009,6 @@ declare class RecursiveAstVisitor implements AstVisitor {
     visitVoidExpression(ast: VoidExpression, context: any): void;
     visitNonNullAssert(ast: NonNullAssert, context: any): any;
     visitPropertyRead(ast: PropertyRead, context: any): any;
-    visitPropertyWrite(ast: PropertyWrite, context: any): any;
     visitSafePropertyRead(ast: SafePropertyRead, context: any): any;
     visitSafeKeyedRead(ast: SafeKeyedRead, context: any): any;
     visitCall(ast: Call, context: any): any;
@@ -2069,34 +2023,37 @@ declare class ParsedProperty {
     name: string;
     expression: ASTWithSource;
     type: ParsedPropertyType;
-    sourceSpan: ParseSourceSpan;
-    readonly keySpan: ParseSourceSpan;
-    valueSpan: ParseSourceSpan | undefined;
+    sourceSpan: ParseSourceSpan$1;
+    readonly keySpan: ParseSourceSpan$1;
+    valueSpan: ParseSourceSpan$1 | undefined;
     readonly isLiteral: boolean;
+    readonly isLegacyAnimation: boolean;
     readonly isAnimation: boolean;
-    constructor(name: string, expression: ASTWithSource, type: ParsedPropertyType, sourceSpan: ParseSourceSpan, keySpan: ParseSourceSpan, valueSpan: ParseSourceSpan | undefined);
+    constructor(name: string, expression: ASTWithSource, type: ParsedPropertyType, sourceSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1, valueSpan: ParseSourceSpan$1 | undefined);
 }
 declare enum ParsedPropertyType {
     DEFAULT = 0,
     LITERAL_ATTR = 1,
     ANIMATION = 2,
-    TWO_WAY = 3
+    LEGACY_ANIMATION = 3,
+    TWO_WAY = 4
 }
 declare enum ParsedEventType {
     Regular = 0,
     Animation = 1,
-    TwoWay = 2
+    LegacyAnimation = 2,
+    TwoWay = 3
 }
 declare class ParsedEvent {
     name: string;
     targetOrPhase: string | null;
     type: ParsedEventType;
     handler: ASTWithSource;
-    sourceSpan: ParseSourceSpan;
-    handlerSpan: ParseSourceSpan;
-    readonly keySpan: ParseSourceSpan;
-    constructor(name: string, targetOrPhase: string | null, type: ParsedEventType.TwoWay, handler: ASTWithSource<NonNullAssert | PropertyRead | KeyedRead>, sourceSpan: ParseSourceSpan, handlerSpan: ParseSourceSpan, keySpan: ParseSourceSpan);
-    constructor(name: string, targetOrPhase: string | null, type: ParsedEventType, handler: ASTWithSource, sourceSpan: ParseSourceSpan, handlerSpan: ParseSourceSpan, keySpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    handlerSpan: ParseSourceSpan$1;
+    readonly keySpan: ParseSourceSpan$1;
+    constructor(name: string, targetOrPhase: string | null, type: ParsedEventType.TwoWay, handler: ASTWithSource<NonNullAssert | PropertyRead | KeyedRead>, sourceSpan: ParseSourceSpan$1, handlerSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1);
+    constructor(name: string, targetOrPhase: string | null, type: ParsedEventType, handler: ASTWithSource, sourceSpan: ParseSourceSpan$1, handlerSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1);
 }
 /**
  * ParsedVariable represents a variable declaration in a microsyntax expression.
@@ -2104,18 +2061,19 @@ declare class ParsedEvent {
 declare class ParsedVariable {
     readonly name: string;
     readonly value: string;
-    readonly sourceSpan: ParseSourceSpan;
-    readonly keySpan: ParseSourceSpan;
-    readonly valueSpan?: ParseSourceSpan | undefined;
-    constructor(name: string, value: string, sourceSpan: ParseSourceSpan, keySpan: ParseSourceSpan, valueSpan?: ParseSourceSpan | undefined);
+    readonly sourceSpan: ParseSourceSpan$1;
+    readonly keySpan: ParseSourceSpan$1;
+    readonly valueSpan?: ParseSourceSpan$1 | undefined;
+    constructor(name: string, value: string, sourceSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1, valueSpan?: ParseSourceSpan$1 | undefined);
 }
 declare enum BindingType {
     Property = 0,
     Attribute = 1,
     Class = 2,
     Style = 3,
-    Animation = 4,
-    TwoWay = 5
+    LegacyAnimation = 4,
+    TwoWay = 5,
+    AnimationBinding = 6
 }
 declare class BoundElementProperty {
     name: string;
@@ -2123,10 +2081,10 @@ declare class BoundElementProperty {
     securityContext: SecurityContext;
     value: ASTWithSource;
     unit: string | null;
-    sourceSpan: ParseSourceSpan;
-    readonly keySpan: ParseSourceSpan | undefined;
-    valueSpan: ParseSourceSpan | undefined;
-    constructor(name: string, type: BindingType, securityContext: SecurityContext, value: ASTWithSource, unit: string | null, sourceSpan: ParseSourceSpan, keySpan: ParseSourceSpan | undefined, valueSpan: ParseSourceSpan | undefined);
+    sourceSpan: ParseSourceSpan$1;
+    readonly keySpan: ParseSourceSpan$1 | undefined;
+    valueSpan: ParseSourceSpan$1 | undefined;
+    constructor(name: string, type: BindingType, securityContext: SecurityContext, value: ASTWithSource, unit: string | null, sourceSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1 | undefined, valueSpan: ParseSourceSpan$1 | undefined);
 }
 
 declare enum TokenType {
@@ -2213,14 +2171,13 @@ declare const enum ParseFlags {
     Action = 1
 }
 declare class Parser {
-    private _lexer;
-    private errors;
-    constructor(_lexer: Lexer);
+    private readonly _lexer;
+    private readonly _supportsDirectPipeReferences;
+    constructor(_lexer: Lexer, _supportsDirectPipeReferences?: boolean);
     parseAction(input: string, location: string, absoluteOffset: number, interpolationConfig?: InterpolationConfig): ASTWithSource;
     parseBinding(input: string, location: string, absoluteOffset: number, interpolationConfig?: InterpolationConfig): ASTWithSource;
     private checkSimpleExpression;
     parseSimpleBinding(input: string, location: string, absoluteOffset: number, interpolationConfig?: InterpolationConfig): ASTWithSource;
-    private _reportError;
     private _parseBindingAst;
     /**
      * Parse microsyntax template expression and return a list of bindings or
@@ -2264,7 +2221,7 @@ declare class Parser {
      * `SplitInterpolation` with splits that look like
      *   <raw text> <expression> <raw text> ... <raw text> <expression> <raw text>
      */
-    splitInterpolation(input: string, location: string, interpolatedTokens: InterpolatedAttributeToken[] | InterpolatedTextToken[] | null, interpolationConfig?: InterpolationConfig): SplitInterpolation;
+    splitInterpolation(input: string, location: string, errors: ParserError[], interpolatedTokens: InterpolatedAttributeToken[] | InterpolatedTextToken[] | null, interpolationConfig?: InterpolationConfig): SplitInterpolation;
     wrapLiteralPrimitive(input: string | null, location: string, absoluteOffset: number): ASTWithSource;
     private _stripComments;
     private _commentStart;
@@ -2289,6 +2246,7 @@ declare class HtmlParser extends Parser$1 {
     parse(source: string, url: string, options?: TokenizeOptions): ParseTreeResult;
 }
 
+declare function escapeRegExp(s: string): string;
 declare class Version {
     full: string;
     readonly major: string;
@@ -2395,6 +2353,301 @@ declare class Xtb extends Serializer {
     createNameMapper(message: Message): PlaceholderMapper;
 }
 
+interface CompilerFacade {
+    compilePipe(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3PipeMetadataFacade): any;
+    compilePipeDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, declaration: R3DeclarePipeFacade): any;
+    compileInjectable(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3InjectableMetadataFacade): any;
+    compileInjectableDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3DeclareInjectableFacade): any;
+    compileInjector(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3InjectorMetadataFacade): any;
+    compileInjectorDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, declaration: R3DeclareInjectorFacade): any;
+    compileNgModule(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3NgModuleMetadataFacade): any;
+    compileNgModuleDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, declaration: R3DeclareNgModuleFacade): any;
+    compileDirective(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3DirectiveMetadataFacade): any;
+    compileDirectiveDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, declaration: R3DeclareDirectiveFacade): any;
+    compileComponent(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3ComponentMetadataFacade): any;
+    compileComponentDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, declaration: R3DeclareComponentFacade): any;
+    compileFactory(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3FactoryDefMetadataFacade): any;
+    compileFactoryDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3DeclareFactoryFacade): any;
+    createParseSourceSpan(kind: string, typeName: string, sourceUrl: string): ParseSourceSpan;
+    FactoryTarget: typeof FactoryTarget;
+    ResourceLoader: Function & {
+        prototype: ResourceLoader$1;
+    };
+}
+interface CoreEnvironment {
+    [name: string]: unknown;
+}
+type ResourceLoader$1 = {
+    get(url: string): Promise<string> | string;
+};
+type Provider = unknown;
+type Type = Function;
+type OpaqueValue = unknown;
+declare enum FactoryTarget {
+    Directive = 0,
+    Component = 1,
+    Injectable = 2,
+    Pipe = 3,
+    NgModule = 4
+}
+interface R3DependencyMetadataFacade {
+    token: OpaqueValue;
+    attribute: string | null;
+    host: boolean;
+    optional: boolean;
+    self: boolean;
+    skipSelf: boolean;
+}
+interface R3DeclareDependencyMetadataFacade {
+    token: OpaqueValue;
+    attribute?: boolean;
+    host?: boolean;
+    optional?: boolean;
+    self?: boolean;
+    skipSelf?: boolean;
+}
+interface R3PipeMetadataFacade {
+    name: string;
+    type: Type;
+    pipeName: string | null;
+    pure: boolean;
+    isStandalone: boolean;
+}
+interface R3InjectableMetadataFacade {
+    name: string;
+    type: Type;
+    typeArgumentCount: number;
+    providedIn?: Type | 'root' | 'platform' | 'any' | null;
+    useClass?: OpaqueValue;
+    useFactory?: OpaqueValue;
+    useExisting?: OpaqueValue;
+    useValue?: OpaqueValue;
+    deps?: R3DependencyMetadataFacade[];
+}
+interface R3NgModuleMetadataFacade {
+    type: Type;
+    bootstrap: Function[];
+    declarations: Function[];
+    imports: Function[];
+    exports: Function[];
+    schemas: {
+        name: string;
+    }[] | null;
+    id: string | null;
+}
+interface R3InjectorMetadataFacade {
+    name: string;
+    type: Type;
+    providers: Provider[];
+    imports: OpaqueValue[];
+}
+interface R3HostDirectiveMetadataFacade {
+    directive: Type;
+    inputs?: string[];
+    outputs?: string[];
+}
+interface R3DirectiveMetadataFacade {
+    name: string;
+    type: Type;
+    typeSourceSpan: ParseSourceSpan;
+    selector: string | null;
+    queries: R3QueryMetadataFacade[];
+    host: {
+        [key: string]: string;
+    };
+    propMetadata: {
+        [key: string]: OpaqueValue[];
+    };
+    lifecycle: {
+        usesOnChanges: boolean;
+    };
+    inputs: (string | {
+        name: string;
+        alias?: string;
+        required?: boolean;
+    })[];
+    outputs: string[];
+    usesInheritance: boolean;
+    exportAs: string[] | null;
+    providers: Provider[] | null;
+    viewQueries: R3QueryMetadataFacade[];
+    isStandalone: boolean;
+    hostDirectives: R3HostDirectiveMetadataFacade[] | null;
+    isSignal: boolean;
+}
+interface R3ComponentMetadataFacade extends R3DirectiveMetadataFacade {
+    template: string;
+    preserveWhitespaces: boolean;
+    animations: OpaqueValue[] | undefined;
+    declarations: R3TemplateDependencyFacade[];
+    styles: string[];
+    encapsulation: ViewEncapsulation;
+    viewProviders: Provider[] | null;
+    interpolation?: [string, string];
+    changeDetection?: ChangeDetectionStrategy;
+}
+type LegacyInputPartialMapping$1 = string | [bindingPropertyName: string, classPropertyName: string, transformFunction?: Function];
+interface R3DeclareDirectiveFacade {
+    selector?: string;
+    type: Type;
+    version: string;
+    inputs?: {
+        [fieldName: string]: {
+            classPropertyName: string;
+            publicName: string;
+            isSignal: boolean;
+            isRequired: boolean;
+            transformFunction: Function | null;
+        } | LegacyInputPartialMapping$1;
+    };
+    outputs?: {
+        [classPropertyName: string]: string;
+    };
+    host?: {
+        attributes?: {
+            [key: string]: OpaqueValue;
+        };
+        listeners?: {
+            [key: string]: string;
+        };
+        properties?: {
+            [key: string]: string;
+        };
+        classAttribute?: string;
+        styleAttribute?: string;
+    };
+    queries?: R3DeclareQueryMetadataFacade[];
+    viewQueries?: R3DeclareQueryMetadataFacade[];
+    providers?: OpaqueValue;
+    exportAs?: string[];
+    usesInheritance?: boolean;
+    usesOnChanges?: boolean;
+    isStandalone?: boolean;
+    isSignal?: boolean;
+    hostDirectives?: R3HostDirectiveMetadataFacade[] | null;
+}
+interface R3DeclareComponentFacade extends R3DeclareDirectiveFacade {
+    template: string;
+    isInline?: boolean;
+    styles?: string[];
+    dependencies?: R3DeclareTemplateDependencyFacade[];
+    components?: R3DeclareDirectiveDependencyFacade[];
+    directives?: R3DeclareDirectiveDependencyFacade[];
+    pipes?: {
+        [pipeName: string]: OpaqueValue | (() => OpaqueValue);
+    };
+    deferBlockDependencies?: (() => Promise<Type> | null)[];
+    viewProviders?: OpaqueValue;
+    animations?: OpaqueValue;
+    changeDetection?: ChangeDetectionStrategy;
+    encapsulation?: ViewEncapsulation;
+    interpolation?: [string, string];
+    preserveWhitespaces?: boolean;
+}
+type R3DeclareTemplateDependencyFacade = {
+    kind: string;
+} & (R3DeclareDirectiveDependencyFacade | R3DeclarePipeDependencyFacade | R3DeclareNgModuleDependencyFacade);
+interface R3DeclareDirectiveDependencyFacade {
+    kind?: 'directive' | 'component';
+    selector: string;
+    type: OpaqueValue | (() => OpaqueValue);
+    inputs?: string[];
+    outputs?: string[];
+    exportAs?: string[];
+}
+interface R3DeclarePipeDependencyFacade {
+    kind?: 'pipe';
+    name: string;
+    type: OpaqueValue | (() => OpaqueValue);
+}
+interface R3DeclareNgModuleDependencyFacade {
+    kind: 'ngmodule';
+    type: OpaqueValue | (() => OpaqueValue);
+}
+declare enum R3TemplateDependencyKind$1 {
+    Directive = 0,
+    Pipe = 1,
+    NgModule = 2
+}
+interface R3TemplateDependencyFacade {
+    kind: R3TemplateDependencyKind$1;
+    type: OpaqueValue | (() => OpaqueValue);
+}
+interface R3FactoryDefMetadataFacade {
+    name: string;
+    type: Type;
+    typeArgumentCount: number;
+    deps: R3DependencyMetadataFacade[] | null;
+    target: FactoryTarget;
+}
+interface R3DeclareFactoryFacade {
+    type: Type;
+    deps: R3DeclareDependencyMetadataFacade[] | 'invalid' | null;
+    target: FactoryTarget;
+}
+interface R3DeclareInjectableFacade {
+    type: Type;
+    providedIn?: Type | 'root' | 'platform' | 'any' | null;
+    useClass?: OpaqueValue;
+    useFactory?: OpaqueValue;
+    useExisting?: OpaqueValue;
+    useValue?: OpaqueValue;
+    deps?: R3DeclareDependencyMetadataFacade[];
+}
+declare enum ViewEncapsulation {
+    Emulated = 0,
+    None = 2,
+    ShadowDom = 3
+}
+type ChangeDetectionStrategy = number;
+interface R3QueryMetadataFacade {
+    propertyName: string;
+    first: boolean;
+    predicate: OpaqueValue | string[];
+    descendants: boolean;
+    emitDistinctChangesOnly: boolean;
+    read: OpaqueValue | null;
+    static: boolean;
+    isSignal: boolean;
+}
+interface R3DeclareQueryMetadataFacade {
+    propertyName: string;
+    first?: boolean;
+    predicate: OpaqueValue | string[];
+    descendants?: boolean;
+    read?: OpaqueValue;
+    static?: boolean;
+    emitDistinctChangesOnly?: boolean;
+    isSignal?: boolean;
+}
+interface R3DeclareInjectorFacade {
+    type: Type;
+    imports?: OpaqueValue[];
+    providers?: OpaqueValue[];
+}
+interface R3DeclareNgModuleFacade {
+    type: Type;
+    bootstrap?: OpaqueValue[] | (() => OpaqueValue[]);
+    declarations?: OpaqueValue[] | (() => OpaqueValue[]);
+    imports?: OpaqueValue[] | (() => OpaqueValue[]);
+    exports?: OpaqueValue[] | (() => OpaqueValue[]);
+    schemas?: OpaqueValue[];
+    id?: OpaqueValue;
+}
+interface R3DeclarePipeFacade {
+    type: Type;
+    version: string;
+    name: string;
+    pure?: boolean;
+    isStandalone?: boolean;
+}
+interface ParseSourceSpan {
+    start: any;
+    end: any;
+    details: any;
+    fullStart: any;
+}
+
 interface R3Reference {
     value: Expression;
     type: Expression;
@@ -2404,7 +2657,7 @@ interface R3Reference {
  */
 interface R3CompiledExpression {
     expression: Expression;
-    type: Type;
+    type: Type$1;
     statements: Statement[];
 }
 declare function getSafePropertyAccessString(accessor: string, name: string): string;
@@ -2480,7 +2733,7 @@ interface R3ConstructorFactoryMetadata {
     /**
      * Type of the target being created by the factory.
      */
-    target: FactoryTarget$1;
+    target: FactoryTarget;
 }
 declare enum R3FactoryDelegateType {
     Class = 0,
@@ -2495,13 +2748,6 @@ interface R3ExpressionFactoryMetadata extends R3ConstructorFactoryMetadata {
     expression: Expression;
 }
 type R3FactoryMetadata = R3ConstructorFactoryMetadata | R3DelegatedFnOrClassMetadata | R3ExpressionFactoryMetadata;
-declare enum FactoryTarget$1 {
-    Directive = 0,
-    Component = 1,
-    Injectable = 2,
-    Pipe = 3,
-    NgModule = 4
-}
 interface R3DependencyMetadata {
     /**
      * An expression representing the token or value to be injected.
@@ -2578,19 +2824,19 @@ declare class EmitterVisitorContext {
     private _lines;
     constructor(_indent: number);
     println(from?: {
-        sourceSpan: ParseSourceSpan | null;
+        sourceSpan: ParseSourceSpan$1 | null;
     } | null, lastPart?: string): void;
     lineIsEmpty(): boolean;
     lineLength(): number;
     print(from: {
-        sourceSpan: ParseSourceSpan | null;
+        sourceSpan: ParseSourceSpan$1 | null;
     } | null, part: string, newLine?: boolean): void;
     removeEmptyLastLine(): void;
     incIndent(): void;
     decIndent(): void;
     toSource(): string;
     toSourceMapGenerator(genFilePath: string, startsAtLine?: number): SourceMapGenerator;
-    spanOf(line: number, column: number): ParseSourceSpan | null;
+    spanOf(line: number, column: number): ParseSourceSpan$1 | null;
 }
 
 interface ExternalReferenceResolver {
@@ -2649,6 +2895,40 @@ declare abstract class ResourceLoader {
     abstract get(url: string): Promise<string> | string;
 }
 
+declare class CompilerFacadeImpl implements CompilerFacade {
+    private jitEvaluator;
+    FactoryTarget: typeof FactoryTarget;
+    ResourceLoader: typeof ResourceLoader;
+    private elementSchemaRegistry;
+    constructor(jitEvaluator?: JitEvaluator);
+    compilePipe(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, facade: R3PipeMetadataFacade): any;
+    compilePipeDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, declaration: R3DeclarePipeFacade): any;
+    compileInjectable(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, facade: R3InjectableMetadataFacade): any;
+    compileInjectableDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, facade: R3DeclareInjectableFacade): any;
+    compileInjector(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, facade: R3InjectorMetadataFacade): any;
+    compileInjectorDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, declaration: R3DeclareInjectorFacade): any;
+    compileNgModule(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, facade: R3NgModuleMetadataFacade): any;
+    compileNgModuleDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, declaration: R3DeclareNgModuleFacade): any;
+    compileDirective(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, facade: R3DirectiveMetadataFacade): any;
+    compileDirectiveDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, declaration: R3DeclareDirectiveFacade): any;
+    private compileDirectiveFromMeta;
+    compileComponent(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, facade: R3ComponentMetadataFacade): any;
+    compileComponentDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, declaration: R3DeclareComponentFacade): any;
+    private compileComponentFromMeta;
+    compileFactory(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3FactoryDefMetadataFacade): any;
+    compileFactoryDeclaration(angularCoreEnv: CoreEnvironment, sourceMapUrl: string, meta: R3DeclareFactoryFacade): any;
+    createParseSourceSpan(kind: string, typeName: string, sourceUrl: string): ParseSourceSpan$1;
+    /**
+     * JIT compiles an expression and returns the result of executing that expression.
+     *
+     * @param def the definition which will be compiled and executed to get the value to patch
+     * @param context an object map of @angular/core symbol names to symbols which will be available
+     * in the context of the compiled expression
+     * @param sourceUrl a URL to use for the source map of the compiled expression
+     * @param preStatements a collection of statements that should be evaluated before the expression.
+     */
+    private jitExpression;
+}
 declare function publishFacade(global: any): void;
 
 declare class HtmlTagDefinition implements TagDefinition {
@@ -2866,12 +3146,12 @@ interface R3DeclareComponentMetadata extends R3DeclareDirectiveMetadata {
      * Strategy used for detecting changes in the component.
      * Defaults to `ChangeDetectionStrategy.Default`.
      */
-    changeDetection?: ChangeDetectionStrategy;
+    changeDetection?: ChangeDetectionStrategy$1;
     /**
      * An encapsulation policy for the component's styling.
      * Defaults to `ViewEncapsulation.Emulated`.
      */
-    encapsulation?: ViewEncapsulation;
+    encapsulation?: ViewEncapsulation$1;
     /**
      * Overrides the default interpolation start and end delimiters. Defaults to {{ and }}.
      */
@@ -3051,13 +3331,6 @@ interface R3DeclareFactoryMetadata extends R3PartialDeclaration {
      */
     target: FactoryTarget;
 }
-declare enum FactoryTarget {
-    Directive = 0,
-    Component = 1,
-    Injectable = 2,
-    Pipe = 3,
-    NgModule = 4
-}
 /**
  * Describes the shape of the object that the `ɵɵngDeclareInjectable()` function accepts.
  *
@@ -3185,7 +3458,7 @@ interface R3DeclareHostDirectiveMetadata {
 }
 
 interface Node {
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 /**
@@ -3196,21 +3469,21 @@ interface Node {
  */
 declare class Comment implements Node {
     value: string;
-    sourceSpan: ParseSourceSpan;
-    constructor(value: string, sourceSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    constructor(value: string, sourceSpan: ParseSourceSpan$1);
     visit<Result>(_visitor: Visitor<Result>): Result;
 }
 declare class Text implements Node {
     value: string;
-    sourceSpan: ParseSourceSpan;
-    constructor(value: string, sourceSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    constructor(value: string, sourceSpan: ParseSourceSpan$1);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class BoundText implements Node {
     value: AST;
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
     i18n?: I18nMeta$1 | undefined;
-    constructor(value: AST, sourceSpan: ParseSourceSpan, i18n?: I18nMeta$1 | undefined);
+    constructor(value: AST, sourceSpan: ParseSourceSpan$1, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 /**
@@ -3222,11 +3495,11 @@ declare class BoundText implements Node {
 declare class TextAttribute implements Node {
     name: string;
     value: string;
-    sourceSpan: ParseSourceSpan;
-    readonly keySpan: ParseSourceSpan | undefined;
-    valueSpan?: ParseSourceSpan | undefined;
+    sourceSpan: ParseSourceSpan$1;
+    readonly keySpan: ParseSourceSpan$1 | undefined;
+    valueSpan?: ParseSourceSpan$1 | undefined;
     i18n?: I18nMeta$1 | undefined;
-    constructor(name: string, value: string, sourceSpan: ParseSourceSpan, keySpan: ParseSourceSpan | undefined, valueSpan?: ParseSourceSpan | undefined, i18n?: I18nMeta$1 | undefined);
+    constructor(name: string, value: string, sourceSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1 | undefined, valueSpan?: ParseSourceSpan$1 | undefined, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class BoundAttribute implements Node {
@@ -3235,11 +3508,11 @@ declare class BoundAttribute implements Node {
     securityContext: SecurityContext;
     value: AST;
     unit: string | null;
-    sourceSpan: ParseSourceSpan;
-    readonly keySpan: ParseSourceSpan;
-    valueSpan: ParseSourceSpan | undefined;
+    sourceSpan: ParseSourceSpan$1;
+    readonly keySpan: ParseSourceSpan$1;
+    valueSpan: ParseSourceSpan$1 | undefined;
     i18n: I18nMeta$1 | undefined;
-    constructor(name: string, type: BindingType, securityContext: SecurityContext, value: AST, unit: string | null, sourceSpan: ParseSourceSpan, keySpan: ParseSourceSpan, valueSpan: ParseSourceSpan | undefined, i18n: I18nMeta$1 | undefined);
+    constructor(name: string, type: BindingType, securityContext: SecurityContext, value: AST, unit: string | null, sourceSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1, valueSpan: ParseSourceSpan$1 | undefined, i18n: I18nMeta$1 | undefined);
     static fromBoundElementProperty(prop: BoundElementProperty, i18n?: I18nMeta$1): BoundAttribute;
     visit<Result>(visitor: Visitor<Result>): Result;
 }
@@ -3249,10 +3522,10 @@ declare class BoundEvent implements Node {
     handler: AST;
     target: string | null;
     phase: string | null;
-    sourceSpan: ParseSourceSpan;
-    handlerSpan: ParseSourceSpan;
-    readonly keySpan: ParseSourceSpan;
-    constructor(name: string, type: ParsedEventType, handler: AST, target: string | null, phase: string | null, sourceSpan: ParseSourceSpan, handlerSpan: ParseSourceSpan, keySpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    handlerSpan: ParseSourceSpan$1;
+    readonly keySpan: ParseSourceSpan$1;
+    constructor(name: string, type: ParsedEventType, handler: AST, target: string | null, phase: string | null, sourceSpan: ParseSourceSpan$1, handlerSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1);
     static fromParsedEvent(event: ParsedEvent): BoundEvent;
     visit<Result>(visitor: Visitor<Result>): Result;
 }
@@ -3264,25 +3537,26 @@ declare class Element implements Node {
     directives: Directive[];
     children: Node[];
     references: Reference[];
-    sourceSpan: ParseSourceSpan;
-    startSourceSpan: ParseSourceSpan;
-    endSourceSpan: ParseSourceSpan | null;
+    isSelfClosing: boolean;
+    sourceSpan: ParseSourceSpan$1;
+    startSourceSpan: ParseSourceSpan$1;
+    endSourceSpan: ParseSourceSpan$1 | null;
     i18n?: I18nMeta$1 | undefined;
-    constructor(name: string, attributes: TextAttribute[], inputs: BoundAttribute[], outputs: BoundEvent[], directives: Directive[], children: Node[], references: Reference[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, i18n?: I18nMeta$1 | undefined);
+    constructor(name: string, attributes: TextAttribute[], inputs: BoundAttribute[], outputs: BoundEvent[], directives: Directive[], children: Node[], references: Reference[], isSelfClosing: boolean, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare abstract class DeferredTrigger implements Node {
-    nameSpan: ParseSourceSpan | null;
-    sourceSpan: ParseSourceSpan;
-    prefetchSpan: ParseSourceSpan | null;
-    whenOrOnSourceSpan: ParseSourceSpan | null;
-    hydrateSpan: ParseSourceSpan | null;
-    constructor(nameSpan: ParseSourceSpan | null, sourceSpan: ParseSourceSpan, prefetchSpan: ParseSourceSpan | null, whenOrOnSourceSpan: ParseSourceSpan | null, hydrateSpan: ParseSourceSpan | null);
+    nameSpan: ParseSourceSpan$1 | null;
+    sourceSpan: ParseSourceSpan$1;
+    prefetchSpan: ParseSourceSpan$1 | null;
+    whenOrOnSourceSpan: ParseSourceSpan$1 | null;
+    hydrateSpan: ParseSourceSpan$1 | null;
+    constructor(nameSpan: ParseSourceSpan$1 | null, sourceSpan: ParseSourceSpan$1, prefetchSpan: ParseSourceSpan$1 | null, whenOrOnSourceSpan: ParseSourceSpan$1 | null, hydrateSpan: ParseSourceSpan$1 | null);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class BoundDeferredTrigger extends DeferredTrigger {
     value: AST;
-    constructor(value: AST, sourceSpan: ParseSourceSpan, prefetchSpan: ParseSourceSpan | null, whenSourceSpan: ParseSourceSpan, hydrateSpan: ParseSourceSpan | null);
+    constructor(value: AST, sourceSpan: ParseSourceSpan$1, prefetchSpan: ParseSourceSpan$1 | null, whenSourceSpan: ParseSourceSpan$1, hydrateSpan: ParseSourceSpan$1 | null);
 }
 declare class NeverDeferredTrigger extends DeferredTrigger {
 }
@@ -3292,32 +3566,32 @@ declare class ImmediateDeferredTrigger extends DeferredTrigger {
 }
 declare class HoverDeferredTrigger extends DeferredTrigger {
     reference: string | null;
-    constructor(reference: string | null, nameSpan: ParseSourceSpan, sourceSpan: ParseSourceSpan, prefetchSpan: ParseSourceSpan | null, onSourceSpan: ParseSourceSpan | null, hydrateSpan: ParseSourceSpan | null);
+    constructor(reference: string | null, nameSpan: ParseSourceSpan$1, sourceSpan: ParseSourceSpan$1, prefetchSpan: ParseSourceSpan$1 | null, onSourceSpan: ParseSourceSpan$1 | null, hydrateSpan: ParseSourceSpan$1 | null);
 }
 declare class TimerDeferredTrigger extends DeferredTrigger {
     delay: number;
-    constructor(delay: number, nameSpan: ParseSourceSpan, sourceSpan: ParseSourceSpan, prefetchSpan: ParseSourceSpan | null, onSourceSpan: ParseSourceSpan | null, hydrateSpan: ParseSourceSpan | null);
+    constructor(delay: number, nameSpan: ParseSourceSpan$1, sourceSpan: ParseSourceSpan$1, prefetchSpan: ParseSourceSpan$1 | null, onSourceSpan: ParseSourceSpan$1 | null, hydrateSpan: ParseSourceSpan$1 | null);
 }
 declare class InteractionDeferredTrigger extends DeferredTrigger {
     reference: string | null;
-    constructor(reference: string | null, nameSpan: ParseSourceSpan, sourceSpan: ParseSourceSpan, prefetchSpan: ParseSourceSpan | null, onSourceSpan: ParseSourceSpan | null, hydrateSpan: ParseSourceSpan | null);
+    constructor(reference: string | null, nameSpan: ParseSourceSpan$1, sourceSpan: ParseSourceSpan$1, prefetchSpan: ParseSourceSpan$1 | null, onSourceSpan: ParseSourceSpan$1 | null, hydrateSpan: ParseSourceSpan$1 | null);
 }
 declare class ViewportDeferredTrigger extends DeferredTrigger {
     reference: string | null;
-    constructor(reference: string | null, nameSpan: ParseSourceSpan, sourceSpan: ParseSourceSpan, prefetchSpan: ParseSourceSpan | null, onSourceSpan: ParseSourceSpan | null, hydrateSpan: ParseSourceSpan | null);
+    constructor(reference: string | null, nameSpan: ParseSourceSpan$1, sourceSpan: ParseSourceSpan$1, prefetchSpan: ParseSourceSpan$1 | null, onSourceSpan: ParseSourceSpan$1 | null, hydrateSpan: ParseSourceSpan$1 | null);
 }
 declare class BlockNode {
-    nameSpan: ParseSourceSpan;
-    sourceSpan: ParseSourceSpan;
-    startSourceSpan: ParseSourceSpan;
-    endSourceSpan: ParseSourceSpan | null;
-    constructor(nameSpan: ParseSourceSpan, sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null);
+    nameSpan: ParseSourceSpan$1;
+    sourceSpan: ParseSourceSpan$1;
+    startSourceSpan: ParseSourceSpan$1;
+    endSourceSpan: ParseSourceSpan$1 | null;
+    constructor(nameSpan: ParseSourceSpan$1, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null);
 }
 declare class DeferredBlockPlaceholder extends BlockNode implements Node {
     children: Node[];
     minimumTime: number | null;
     i18n?: I18nMeta$1 | undefined;
-    constructor(children: Node[], minimumTime: number | null, nameSpan: ParseSourceSpan, sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, i18n?: I18nMeta$1 | undefined);
+    constructor(children: Node[], minimumTime: number | null, nameSpan: ParseSourceSpan$1, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class DeferredBlockLoading extends BlockNode implements Node {
@@ -3325,13 +3599,13 @@ declare class DeferredBlockLoading extends BlockNode implements Node {
     afterTime: number | null;
     minimumTime: number | null;
     i18n?: I18nMeta$1 | undefined;
-    constructor(children: Node[], afterTime: number | null, minimumTime: number | null, nameSpan: ParseSourceSpan, sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, i18n?: I18nMeta$1 | undefined);
+    constructor(children: Node[], afterTime: number | null, minimumTime: number | null, nameSpan: ParseSourceSpan$1, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class DeferredBlockError extends BlockNode implements Node {
     children: Node[];
     i18n?: I18nMeta$1 | undefined;
-    constructor(children: Node[], nameSpan: ParseSourceSpan, sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, i18n?: I18nMeta$1 | undefined);
+    constructor(children: Node[], nameSpan: ParseSourceSpan$1, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 interface DeferredBlockTriggers {
@@ -3349,7 +3623,7 @@ declare class DeferredBlock extends BlockNode implements Node {
     placeholder: DeferredBlockPlaceholder | null;
     loading: DeferredBlockLoading | null;
     error: DeferredBlockError | null;
-    mainBlockSpan: ParseSourceSpan;
+    mainBlockSpan: ParseSourceSpan$1;
     i18n?: I18nMeta$1 | undefined;
     readonly triggers: Readonly<DeferredBlockTriggers>;
     readonly prefetchTriggers: Readonly<DeferredBlockTriggers>;
@@ -3357,7 +3631,7 @@ declare class DeferredBlock extends BlockNode implements Node {
     private readonly definedTriggers;
     private readonly definedPrefetchTriggers;
     private readonly definedHydrateTriggers;
-    constructor(children: Node[], triggers: DeferredBlockTriggers, prefetchTriggers: DeferredBlockTriggers, hydrateTriggers: DeferredBlockTriggers, placeholder: DeferredBlockPlaceholder | null, loading: DeferredBlockLoading | null, error: DeferredBlockError | null, nameSpan: ParseSourceSpan, sourceSpan: ParseSourceSpan, mainBlockSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, i18n?: I18nMeta$1 | undefined);
+    constructor(children: Node[], triggers: DeferredBlockTriggers, prefetchTriggers: DeferredBlockTriggers, hydrateTriggers: DeferredBlockTriggers, placeholder: DeferredBlockPlaceholder | null, loading: DeferredBlockLoading | null, error: DeferredBlockError | null, nameSpan: ParseSourceSpan$1, sourceSpan: ParseSourceSpan$1, mainBlockSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
     visitAll(visitor: Visitor<unknown>): void;
     private visitTriggers;
@@ -3375,38 +3649,38 @@ declare class SwitchBlock extends BlockNode implements Node {
      * These blocks are only captured to allow for autocompletion in the language service. They
      * aren't meant to be processed in any other way.
      */
-    unknownBlocks: UnknownBlock[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, nameSpan: ParseSourceSpan);
+    unknownBlocks: UnknownBlock[], sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, nameSpan: ParseSourceSpan$1);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class SwitchBlockCase extends BlockNode implements Node {
     expression: AST | null;
     children: Node[];
     i18n?: I18nMeta$1 | undefined;
-    constructor(expression: AST | null, children: Node[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, nameSpan: ParseSourceSpan, i18n?: I18nMeta$1 | undefined);
+    constructor(expression: AST | null, children: Node[], sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, nameSpan: ParseSourceSpan$1, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class ForLoopBlock extends BlockNode implements Node {
     item: Variable;
     expression: ASTWithSource;
     trackBy: ASTWithSource;
-    trackKeywordSpan: ParseSourceSpan;
+    trackKeywordSpan: ParseSourceSpan$1;
     contextVariables: Variable[];
     children: Node[];
     empty: ForLoopBlockEmpty | null;
-    mainBlockSpan: ParseSourceSpan;
+    mainBlockSpan: ParseSourceSpan$1;
     i18n?: I18nMeta$1 | undefined;
-    constructor(item: Variable, expression: ASTWithSource, trackBy: ASTWithSource, trackKeywordSpan: ParseSourceSpan, contextVariables: Variable[], children: Node[], empty: ForLoopBlockEmpty | null, sourceSpan: ParseSourceSpan, mainBlockSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, nameSpan: ParseSourceSpan, i18n?: I18nMeta$1 | undefined);
+    constructor(item: Variable, expression: ASTWithSource, trackBy: ASTWithSource, trackKeywordSpan: ParseSourceSpan$1, contextVariables: Variable[], children: Node[], empty: ForLoopBlockEmpty | null, sourceSpan: ParseSourceSpan$1, mainBlockSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, nameSpan: ParseSourceSpan$1, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class ForLoopBlockEmpty extends BlockNode implements Node {
     children: Node[];
     i18n?: I18nMeta$1 | undefined;
-    constructor(children: Node[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, nameSpan: ParseSourceSpan, i18n?: I18nMeta$1 | undefined);
+    constructor(children: Node[], sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, nameSpan: ParseSourceSpan$1, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class IfBlock extends BlockNode implements Node {
     branches: IfBlockBranch[];
-    constructor(branches: IfBlockBranch[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, nameSpan: ParseSourceSpan);
+    constructor(branches: IfBlockBranch[], sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, nameSpan: ParseSourceSpan$1);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class IfBlockBranch extends BlockNode implements Node {
@@ -3414,23 +3688,23 @@ declare class IfBlockBranch extends BlockNode implements Node {
     children: Node[];
     expressionAlias: Variable | null;
     i18n?: I18nMeta$1 | undefined;
-    constructor(expression: AST | null, children: Node[], expressionAlias: Variable | null, sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, nameSpan: ParseSourceSpan, i18n?: I18nMeta$1 | undefined);
+    constructor(expression: AST | null, children: Node[], expressionAlias: Variable | null, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, nameSpan: ParseSourceSpan$1, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class UnknownBlock implements Node {
     name: string;
-    sourceSpan: ParseSourceSpan;
-    nameSpan: ParseSourceSpan;
-    constructor(name: string, sourceSpan: ParseSourceSpan, nameSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    nameSpan: ParseSourceSpan$1;
+    constructor(name: string, sourceSpan: ParseSourceSpan$1, nameSpan: ParseSourceSpan$1);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class LetDeclaration implements Node {
     name: string;
     value: AST;
-    sourceSpan: ParseSourceSpan;
-    nameSpan: ParseSourceSpan;
-    valueSpan: ParseSourceSpan;
-    constructor(name: string, value: AST, sourceSpan: ParseSourceSpan, nameSpan: ParseSourceSpan, valueSpan: ParseSourceSpan);
+    sourceSpan: ParseSourceSpan$1;
+    nameSpan: ParseSourceSpan$1;
+    valueSpan: ParseSourceSpan$1;
+    constructor(name: string, value: AST, sourceSpan: ParseSourceSpan$1, nameSpan: ParseSourceSpan$1, valueSpan: ParseSourceSpan$1);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class Component implements Node {
@@ -3443,11 +3717,12 @@ declare class Component implements Node {
     directives: Directive[];
     children: Node[];
     references: Reference[];
-    sourceSpan: ParseSourceSpan;
-    startSourceSpan: ParseSourceSpan;
-    endSourceSpan: ParseSourceSpan | null;
+    isSelfClosing: boolean;
+    sourceSpan: ParseSourceSpan$1;
+    startSourceSpan: ParseSourceSpan$1;
+    endSourceSpan: ParseSourceSpan$1 | null;
     i18n?: I18nMeta$1 | undefined;
-    constructor(componentName: string, tagName: string | null, fullName: string, attributes: TextAttribute[], inputs: BoundAttribute[], outputs: BoundEvent[], directives: Directive[], children: Node[], references: Reference[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, i18n?: I18nMeta$1 | undefined);
+    constructor(componentName: string, tagName: string | null, fullName: string, attributes: TextAttribute[], inputs: BoundAttribute[], outputs: BoundEvent[], directives: Directive[], children: Node[], references: Reference[], isSelfClosing: boolean, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class Directive implements Node {
@@ -3456,11 +3731,11 @@ declare class Directive implements Node {
     inputs: BoundAttribute[];
     outputs: BoundEvent[];
     references: Reference[];
-    sourceSpan: ParseSourceSpan;
-    startSourceSpan: ParseSourceSpan;
-    endSourceSpan: ParseSourceSpan | null;
+    sourceSpan: ParseSourceSpan$1;
+    startSourceSpan: ParseSourceSpan$1;
+    endSourceSpan: ParseSourceSpan$1 | null;
     i18n?: I18nMeta$1 | undefined;
-    constructor(name: string, attributes: TextAttribute[], inputs: BoundAttribute[], outputs: BoundEvent[], references: Reference[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, i18n?: I18nMeta$1 | undefined);
+    constructor(name: string, attributes: TextAttribute[], inputs: BoundAttribute[], outputs: BoundEvent[], references: Reference[], sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class Template implements Node {
@@ -3473,41 +3748,43 @@ declare class Template implements Node {
     children: Node[];
     references: Reference[];
     variables: Variable[];
-    sourceSpan: ParseSourceSpan;
-    startSourceSpan: ParseSourceSpan;
-    endSourceSpan: ParseSourceSpan | null;
+    isSelfClosing: boolean;
+    sourceSpan: ParseSourceSpan$1;
+    startSourceSpan: ParseSourceSpan$1;
+    endSourceSpan: ParseSourceSpan$1 | null;
     i18n?: I18nMeta$1 | undefined;
-    constructor(tagName: string | null, attributes: TextAttribute[], inputs: BoundAttribute[], outputs: BoundEvent[], directives: Directive[], templateAttrs: (BoundAttribute | TextAttribute)[], children: Node[], references: Reference[], variables: Variable[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, i18n?: I18nMeta$1 | undefined);
+    constructor(tagName: string | null, attributes: TextAttribute[], inputs: BoundAttribute[], outputs: BoundEvent[], directives: Directive[], templateAttrs: (BoundAttribute | TextAttribute)[], children: Node[], references: Reference[], variables: Variable[], isSelfClosing: boolean, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class Content implements Node {
     selector: string;
     attributes: TextAttribute[];
     children: Node[];
-    sourceSpan: ParseSourceSpan;
-    startSourceSpan: ParseSourceSpan;
-    endSourceSpan: ParseSourceSpan | null;
+    isSelfClosing: boolean;
+    sourceSpan: ParseSourceSpan$1;
+    startSourceSpan: ParseSourceSpan$1;
+    endSourceSpan: ParseSourceSpan$1 | null;
     i18n?: I18nMeta$1 | undefined;
     readonly name = "ng-content";
-    constructor(selector: string, attributes: TextAttribute[], children: Node[], sourceSpan: ParseSourceSpan, startSourceSpan: ParseSourceSpan, endSourceSpan: ParseSourceSpan | null, i18n?: I18nMeta$1 | undefined);
+    constructor(selector: string, attributes: TextAttribute[], children: Node[], isSelfClosing: boolean, sourceSpan: ParseSourceSpan$1, startSourceSpan: ParseSourceSpan$1, endSourceSpan: ParseSourceSpan$1 | null, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class Variable implements Node {
     name: string;
     value: string;
-    sourceSpan: ParseSourceSpan;
-    readonly keySpan: ParseSourceSpan;
-    valueSpan?: ParseSourceSpan | undefined;
-    constructor(name: string, value: string, sourceSpan: ParseSourceSpan, keySpan: ParseSourceSpan, valueSpan?: ParseSourceSpan | undefined);
+    sourceSpan: ParseSourceSpan$1;
+    readonly keySpan: ParseSourceSpan$1;
+    valueSpan?: ParseSourceSpan$1 | undefined;
+    constructor(name: string, value: string, sourceSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1, valueSpan?: ParseSourceSpan$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class Reference implements Node {
     name: string;
     value: string;
-    sourceSpan: ParseSourceSpan;
-    readonly keySpan: ParseSourceSpan;
-    valueSpan?: ParseSourceSpan | undefined;
-    constructor(name: string, value: string, sourceSpan: ParseSourceSpan, keySpan: ParseSourceSpan, valueSpan?: ParseSourceSpan | undefined);
+    sourceSpan: ParseSourceSpan$1;
+    readonly keySpan: ParseSourceSpan$1;
+    valueSpan?: ParseSourceSpan$1 | undefined;
+    constructor(name: string, value: string, sourceSpan: ParseSourceSpan$1, keySpan: ParseSourceSpan$1, valueSpan?: ParseSourceSpan$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 declare class Icu implements Node {
@@ -3517,13 +3794,13 @@ declare class Icu implements Node {
     placeholders: {
         [name: string]: Text | BoundText;
     };
-    sourceSpan: ParseSourceSpan;
+    sourceSpan: ParseSourceSpan$1;
     i18n?: I18nMeta$1 | undefined;
     constructor(vars: {
         [name: string]: BoundText;
     }, placeholders: {
         [name: string]: Text | BoundText;
-    }, sourceSpan: ParseSourceSpan, i18n?: I18nMeta$1 | undefined);
+    }, sourceSpan: ParseSourceSpan$1, i18n?: I18nMeta$1 | undefined);
     visit<Result>(visitor: Visitor<Result>): Result;
 }
 /**
@@ -3534,8 +3811,8 @@ declare class HostElement implements Node {
     readonly tagNames: string[];
     readonly bindings: BoundAttribute[];
     readonly listeners: BoundEvent[];
-    readonly sourceSpan: ParseSourceSpan;
-    constructor(tagNames: string[], bindings: BoundAttribute[], listeners: BoundEvent[], sourceSpan: ParseSourceSpan);
+    readonly sourceSpan: ParseSourceSpan$1;
+    constructor(tagNames: string[], bindings: BoundAttribute[], listeners: BoundEvent[], sourceSpan: ParseSourceSpan$1);
     visit<Result>(): Result;
 }
 interface Visitor<Result = any> {
@@ -3616,7 +3893,7 @@ interface R3DirectiveMetadata {
     /**
      * A source span for the directive type.
      */
-    typeSourceSpan: ParseSourceSpan;
+    typeSourceSpan: ParseSourceSpan$1;
     /**
      * Dependencies of the directive's constructor.
      */
@@ -3802,7 +4079,7 @@ interface R3ComponentMetadata<DeclarationT extends R3TemplateDependency> extends
      * - `ViewEncapsulation.None`: Apply component styles globally without any sort of encapsulation.
      * - `ViewEncapsulation.ShadowDom`: Use the browser's native Shadow DOM API to encapsulate styles.
      */
-    encapsulation: ViewEncapsulation;
+    encapsulation: ViewEncapsulation$1;
     /**
      * A collection of animation triggers that will be used in the component template.
      */
@@ -3833,7 +4110,7 @@ interface R3ComponentMetadata<DeclarationT extends R3TemplateDependency> extends
      * statically resolved during analysis phase. Whereas in local compilation mode the value is the
      * expression as appears in the decorator.
      */
-    changeDetection: ChangeDetectionStrategy | Expression | null;
+    changeDetection: ChangeDetectionStrategy$1 | Expression | null;
     /**
      * Relative path to the component's template from the root of the project.
      * Used to generate debugging information.
@@ -4176,15 +4453,15 @@ declare class BindingParser {
     errors: ParseError[];
     constructor(_exprParser: Parser, _interpolationConfig: InterpolationConfig, _schemaRegistry: ElementSchemaRegistry, errors: ParseError[]);
     get interpolationConfig(): InterpolationConfig;
-    createBoundHostProperties(properties: HostProperties, sourceSpan: ParseSourceSpan): ParsedProperty[] | null;
-    createDirectiveHostEventAsts(hostListeners: HostListeners, sourceSpan: ParseSourceSpan): ParsedEvent[] | null;
-    parseInterpolation(value: string, sourceSpan: ParseSourceSpan, interpolatedTokens: InterpolatedAttributeToken[] | InterpolatedTextToken[] | null): ASTWithSource;
+    createBoundHostProperties(properties: HostProperties, sourceSpan: ParseSourceSpan$1): ParsedProperty[] | null;
+    createDirectiveHostEventAsts(hostListeners: HostListeners, sourceSpan: ParseSourceSpan$1): ParsedEvent[] | null;
+    parseInterpolation(value: string, sourceSpan: ParseSourceSpan$1, interpolatedTokens: InterpolatedAttributeToken[] | InterpolatedTextToken[] | null): ASTWithSource;
     /**
      * Similar to `parseInterpolation`, but treats the provided string as a single expression
      * element that would normally appear within the interpolation prefix and suffix (`{{` and `}}`).
      * This is used for parsing the switch expression in ICUs.
      */
-    parseInterpolationExpression(expression: string, sourceSpan: ParseSourceSpan): ASTWithSource;
+    parseInterpolationExpression(expression: string, sourceSpan: ParseSourceSpan$1): ASTWithSource;
     /**
      * Parses the bindings in a microsyntax expression, and converts them to
      * `ParsedProperty` or `ParsedVariable`.
@@ -4197,7 +4474,7 @@ declare class BindingParser {
      * @param targetProps target property bindings in the template
      * @param targetVars target variables in the template
      */
-    parseInlineTemplateBinding(tplKey: string, tplValue: string, sourceSpan: ParseSourceSpan, absoluteValueOffset: number, targetMatchableAttrs: string[][], targetProps: ParsedProperty[], targetVars: ParsedVariable[], isIvyAst: boolean): void;
+    parseInlineTemplateBinding(tplKey: string, tplValue: string, sourceSpan: ParseSourceSpan$1, absoluteValueOffset: number, targetMatchableAttrs: string[][], targetProps: ParsedProperty[], targetVars: ParsedVariable[], isIvyAst: boolean): void;
     /**
      * Parses the bindings in a microsyntax expression, e.g.
      * ```html
@@ -4211,24 +4488,27 @@ declare class BindingParser {
      * @param absoluteValueOffset start of the `tplValue`
      */
     private _parseTemplateBindings;
-    parseLiteralAttr(name: string, value: string | null, sourceSpan: ParseSourceSpan, absoluteOffset: number, valueSpan: ParseSourceSpan | undefined, targetMatchableAttrs: string[][], targetProps: ParsedProperty[], keySpan: ParseSourceSpan): void;
-    parsePropertyBinding(name: string, expression: string, isHost: boolean, isPartOfAssignmentBinding: boolean, sourceSpan: ParseSourceSpan, absoluteOffset: number, valueSpan: ParseSourceSpan | undefined, targetMatchableAttrs: string[][], targetProps: ParsedProperty[], keySpan: ParseSourceSpan): void;
-    parsePropertyInterpolation(name: string, value: string, sourceSpan: ParseSourceSpan, valueSpan: ParseSourceSpan | undefined, targetMatchableAttrs: string[][], targetProps: ParsedProperty[], keySpan: ParseSourceSpan, interpolatedTokens: InterpolatedAttributeToken[] | InterpolatedTextToken[] | null): boolean;
+    parseLiteralAttr(name: string, value: string | null, sourceSpan: ParseSourceSpan$1, absoluteOffset: number, valueSpan: ParseSourceSpan$1 | undefined, targetMatchableAttrs: string[][], targetProps: ParsedProperty[], keySpan: ParseSourceSpan$1): void;
+    private _isLegacyAnimationProp;
+    parsePropertyBinding(name: string, expression: string, isHost: boolean, isPartOfAssignmentBinding: boolean, sourceSpan: ParseSourceSpan$1, absoluteOffset: number, valueSpan: ParseSourceSpan$1 | undefined, targetMatchableAttrs: string[][], targetProps: ParsedProperty[], keySpan: ParseSourceSpan$1): void;
+    private _parseLegacyAnimationSourceSpan;
+    parsePropertyInterpolation(name: string, value: string, sourceSpan: ParseSourceSpan$1, valueSpan: ParseSourceSpan$1 | undefined, targetMatchableAttrs: string[][], targetProps: ParsedProperty[], keySpan: ParseSourceSpan$1, interpolatedTokens: InterpolatedAttributeToken[] | InterpolatedTextToken[] | null): boolean;
     private _parsePropertyAst;
     private _parseAnimation;
-    parseBinding(value: string, isHostBinding: boolean, sourceSpan: ParseSourceSpan, absoluteOffset: number): ASTWithSource;
+    private _parseLegacyAnimation;
+    parseBinding(value: string, isHostBinding: boolean, sourceSpan: ParseSourceSpan$1, absoluteOffset: number): ASTWithSource;
     createBoundElementProperty(elementSelector: string | null, boundProp: ParsedProperty, skipValidation?: boolean, mapPropertyName?: boolean): BoundElementProperty;
-    parseEvent(name: string, expression: string, isAssignmentEvent: boolean, sourceSpan: ParseSourceSpan, handlerSpan: ParseSourceSpan, targetMatchableAttrs: string[][], targetEvents: ParsedEvent[], keySpan: ParseSourceSpan): void;
+    parseEvent(name: string, expression: string, isAssignmentEvent: boolean, sourceSpan: ParseSourceSpan$1, handlerSpan: ParseSourceSpan$1, targetMatchableAttrs: string[][], targetEvents: ParsedEvent[], keySpan: ParseSourceSpan$1): void;
     calcPossibleSecurityContexts(selector: string, propName: string, isAttribute: boolean): SecurityContext[];
     parseEventListenerName(rawName: string): {
         eventName: string;
         target: string | null;
     };
-    parseAnimationEventName(rawName: string): {
+    parseLegacyAnimationEventName(rawName: string): {
         eventName: string;
         phase: string | null;
     };
-    private _parseAnimationEvent;
+    private _parseLegacyAnimationEvent;
     private _parseRegularEvent;
     private _parseAction;
     private _reportError;
@@ -4361,7 +4641,7 @@ declare function parseTemplate(template: string, templateUrl: string, options?: 
 /**
  * Construct a `BindingParser` with a default configuration.
  */
-declare function makeBindingParser(interpolationConfig?: InterpolationConfig): BindingParser;
+declare function makeBindingParser(interpolationConfig?: InterpolationConfig, selectorlessEnabled?: boolean): BindingParser;
 /**
  * Information about the template which was extracted during parsing.
  *
@@ -4710,7 +4990,7 @@ interface R3PipeMetadata {
     /**
      * Name of the pipe.
      */
-    pipeName: string;
+    pipeName: string | null;
     /**
      * Dependencies of the pipe's constructor.
      */
@@ -4844,49 +5124,23 @@ declare class Identifiers {
     static syntheticHostProperty: ExternalReference;
     static syntheticHostListener: ExternalReference;
     static attribute: ExternalReference;
-    static attributeInterpolate1: ExternalReference;
-    static attributeInterpolate2: ExternalReference;
-    static attributeInterpolate3: ExternalReference;
-    static attributeInterpolate4: ExternalReference;
-    static attributeInterpolate5: ExternalReference;
-    static attributeInterpolate6: ExternalReference;
-    static attributeInterpolate7: ExternalReference;
-    static attributeInterpolate8: ExternalReference;
-    static attributeInterpolateV: ExternalReference;
     static classProp: ExternalReference;
     static elementContainerStart: ExternalReference;
     static elementContainerEnd: ExternalReference;
     static elementContainer: ExternalReference;
     static styleMap: ExternalReference;
-    static styleMapInterpolate1: ExternalReference;
-    static styleMapInterpolate2: ExternalReference;
-    static styleMapInterpolate3: ExternalReference;
-    static styleMapInterpolate4: ExternalReference;
-    static styleMapInterpolate5: ExternalReference;
-    static styleMapInterpolate6: ExternalReference;
-    static styleMapInterpolate7: ExternalReference;
-    static styleMapInterpolate8: ExternalReference;
-    static styleMapInterpolateV: ExternalReference;
     static classMap: ExternalReference;
-    static classMapInterpolate1: ExternalReference;
-    static classMapInterpolate2: ExternalReference;
-    static classMapInterpolate3: ExternalReference;
-    static classMapInterpolate4: ExternalReference;
-    static classMapInterpolate5: ExternalReference;
-    static classMapInterpolate6: ExternalReference;
-    static classMapInterpolate7: ExternalReference;
-    static classMapInterpolate8: ExternalReference;
-    static classMapInterpolateV: ExternalReference;
     static styleProp: ExternalReference;
-    static stylePropInterpolate1: ExternalReference;
-    static stylePropInterpolate2: ExternalReference;
-    static stylePropInterpolate3: ExternalReference;
-    static stylePropInterpolate4: ExternalReference;
-    static stylePropInterpolate5: ExternalReference;
-    static stylePropInterpolate6: ExternalReference;
-    static stylePropInterpolate7: ExternalReference;
-    static stylePropInterpolate8: ExternalReference;
-    static stylePropInterpolateV: ExternalReference;
+    static interpolate: ExternalReference;
+    static interpolate1: ExternalReference;
+    static interpolate2: ExternalReference;
+    static interpolate3: ExternalReference;
+    static interpolate4: ExternalReference;
+    static interpolate5: ExternalReference;
+    static interpolate6: ExternalReference;
+    static interpolate7: ExternalReference;
+    static interpolate8: ExternalReference;
+    static interpolateV: ExternalReference;
     static nextContext: ExternalReference;
     static resetView: ExternalReference;
     static templateCreate: ExternalReference;
@@ -4954,16 +5208,8 @@ declare class Identifiers {
     static pipeBindV: ExternalReference;
     static domProperty: ExternalReference;
     static property: ExternalReference;
-    static propertyInterpolate: ExternalReference;
-    static propertyInterpolate1: ExternalReference;
-    static propertyInterpolate2: ExternalReference;
-    static propertyInterpolate3: ExternalReference;
-    static propertyInterpolate4: ExternalReference;
-    static propertyInterpolate5: ExternalReference;
-    static propertyInterpolate6: ExternalReference;
-    static propertyInterpolate7: ExternalReference;
-    static propertyInterpolate8: ExternalReference;
-    static propertyInterpolateV: ExternalReference;
+    static animationIn: ExternalReference;
+    static animationOut: ExternalReference;
     static i18n: ExternalReference;
     static i18nAttributes: ExternalReference;
     static i18nExp: ExternalReference;
@@ -4984,6 +5230,7 @@ declare class Identifiers {
     static forwardRef: ExternalReference;
     static resolveForwardRef: ExternalReference;
     static replaceMetadata: ExternalReference;
+    static getReplaceMetadataURL: ExternalReference;
     static ɵɵdefineInjectable: ExternalReference;
     static declareInjectable: ExternalReference;
     static InjectableDeclaration: ExternalReference;
@@ -5100,7 +5347,7 @@ declare function parseHostBindings(host: {
  * @param sourceSpan source span where host bindings were defined.
  * @returns array of errors associated with a given set of host bindings.
  */
-declare function verifyHostBindings(bindings: ParsedHostBindings, sourceSpan: ParseSourceSpan): ParseError[];
+declare function verifyHostBindings(bindings: ParsedHostBindings, sourceSpan: ParseSourceSpan$1): ParseError[];
 /**
  * Encapsulates a CSS stylesheet with emulated view encapsulation.
  * This allows a stylesheet to be used with an Angular component that
@@ -5351,6 +5598,49 @@ declare class R3TargetBinder<DirectiveT extends DirectiveMeta> implements Target
     bind(target: Target): BoundTarget<DirectiveT>;
 }
 
+/*!
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.dev/license
+ */
+
+/**
+ * Visitor that traverses all template and expression AST nodes in a template.
+ * Useful for cases where every single node needs to be visited.
+ */
+declare class CombinedRecursiveAstVisitor extends RecursiveAstVisitor implements RecursiveVisitor {
+    visit(node: AST | Node): void;
+    visitElement(element: Element): void;
+    visitTemplate(template: Template): void;
+    visitContent(content: Content): void;
+    visitBoundAttribute(attribute: BoundAttribute): void;
+    visitBoundEvent(attribute: BoundEvent): void;
+    visitBoundText(text: BoundText): void;
+    visitIcu(icu: Icu): void;
+    visitDeferredBlock(deferred: DeferredBlock): void;
+    visitDeferredTrigger(trigger: DeferredTrigger): void;
+    visitDeferredBlockPlaceholder(block: DeferredBlockPlaceholder): void;
+    visitDeferredBlockError(block: DeferredBlockError): void;
+    visitDeferredBlockLoading(block: DeferredBlockLoading): void;
+    visitSwitchBlock(block: SwitchBlock): void;
+    visitSwitchBlockCase(block: SwitchBlockCase): void;
+    visitForLoopBlock(block: ForLoopBlock): void;
+    visitForLoopBlockEmpty(block: ForLoopBlockEmpty): void;
+    visitIfBlock(block: IfBlock): void;
+    visitIfBlockBranch(block: IfBlockBranch): void;
+    visitLetDeclaration(decl: LetDeclaration): void;
+    visitComponent(component: Component): void;
+    visitDirective(directive: Directive): void;
+    visitVariable(variable: Variable): void;
+    visitReference(reference: Reference): void;
+    visitTextAttribute(attribute: TextAttribute): void;
+    visitText(text: Text): void;
+    visitUnknownBlock(block: UnknownBlock): void;
+    protected visitAllTemplateNodes(nodes: Node[]): void;
+}
+
 declare class DomElementSchemaRegistry extends ElementSchemaRegistry {
     private _schema;
     private _eventSchema;
@@ -5396,5 +5686,45 @@ declare class DomElementSchemaRegistry extends ElementSchemaRegistry {
 
 declare const VERSION: Version;
 
-export { AST, ASTWithName, ASTWithSource, AbsoluteSourceSpan, ArrayType, ArrowFunctionExpr, Attribute, Binary, BinaryOperator, BinaryOperatorExpr, BindingParser, BindingPipe, BindingType, Block, BlockParameter, BoundElementProperty, BuiltinType, BuiltinTypeName, CUSTOM_ELEMENTS_SCHEMA, Call, Chain, ChangeDetectionStrategy, CommaExpr, Comment$1 as Comment, CompilerConfig, Component$1 as Component, Conditional, ConditionalExpr, ConstantPool, CssSelector, DEFAULT_INTERPOLATION_CONFIG, DYNAMIC_TYPE, DeclarationListEmitMode, DeclareFunctionStmt, DeclareVarStmt, DeferBlockDepsEmitMode, Directive$1 as Directive, DomElementSchemaRegistry, DynamicImportExpr, EOF, Element$1 as Element, ElementSchemaRegistry, EmitterVisitorContext, EmptyExpr, Expansion, ExpansionCase, Expression, ExpressionBinding, ExpressionStatement, ExpressionType, ExternalExpr, ExternalReference, FactoryTarget$1 as FactoryTarget, ForwardRefHandling, FunctionExpr, HtmlParser, HtmlTagDefinition, I18NHtmlParser, IfStmt, ImplicitReceiver, InstantiateExpr, Interpolation, InterpolationConfig, InvokeFunctionExpr, JSDocComment, JitEvaluator, KeyedRead, KeyedWrite, LeadingComment, LetDeclaration$1 as LetDeclaration, Lexer, TokenType$1 as LexerTokenType, LiteralArray, LiteralArrayExpr, LiteralExpr, LiteralMap, LiteralMapExpr, LiteralPrimitive, LocalizedString, MapType, MessageBundle, NONE_TYPE, NO_ERRORS_SCHEMA, NodeWithI18n, NonNullAssert, NotExpr, ParenthesizedExpr, ParenthesizedExpression, ParseError, ParseErrorLevel, ParseFlags, ParseLocation, ParseSourceFile, ParseSourceSpan, ParseSpan, ParseTreeResult, ParsedEvent, ParsedEventType, ParsedProperty, ParsedPropertyType, ParsedVariable, Parser, ParserError, PrefixNot, PropertyRead, PropertyWrite, Identifiers as R3Identifiers, R3NgModuleMetadataKind, R3SelectorScopeMode, R3TargetBinder, R3TemplateDependencyKind, ReadKeyExpr, ReadPropExpr, ReadVarExpr, RecursiveAstVisitor, RecursiveVisitor$1 as RecursiveVisitor, ResourceLoader, ReturnStatement, STRING_TYPE, SafeCall, SafeKeyedRead, SafePropertyRead, SelectorContext, SelectorListContext, SelectorMatcher, SelectorlessMatcher, Serializer, SplitInterpolation, Statement, StmtModifier, StringToken, StringTokenKind, TagContentType, TaggedTemplateLiteral, TaggedTemplateLiteralExpr, TemplateBindingParseResult, TemplateLiteral, TemplateLiteralElement, TemplateLiteralElementExpr, TemplateLiteralExpr, Text$1 as Text, ThisReceiver, BlockNode as TmplAstBlockNode, BoundAttribute as TmplAstBoundAttribute, BoundDeferredTrigger as TmplAstBoundDeferredTrigger, BoundEvent as TmplAstBoundEvent, BoundText as TmplAstBoundText, Component as TmplAstComponent, Content as TmplAstContent, DeferredBlock as TmplAstDeferredBlock, DeferredBlockError as TmplAstDeferredBlockError, DeferredBlockLoading as TmplAstDeferredBlockLoading, DeferredBlockPlaceholder as TmplAstDeferredBlockPlaceholder, DeferredTrigger as TmplAstDeferredTrigger, Directive as TmplAstDirective, Element as TmplAstElement, ForLoopBlock as TmplAstForLoopBlock, ForLoopBlockEmpty as TmplAstForLoopBlockEmpty, HostElement as TmplAstHostElement, HoverDeferredTrigger as TmplAstHoverDeferredTrigger, Icu as TmplAstIcu, IdleDeferredTrigger as TmplAstIdleDeferredTrigger, IfBlock as TmplAstIfBlock, IfBlockBranch as TmplAstIfBlockBranch, ImmediateDeferredTrigger as TmplAstImmediateDeferredTrigger, InteractionDeferredTrigger as TmplAstInteractionDeferredTrigger, LetDeclaration as TmplAstLetDeclaration, NeverDeferredTrigger as TmplAstNeverDeferredTrigger, RecursiveVisitor as TmplAstRecursiveVisitor, Reference as TmplAstReference, SwitchBlock as TmplAstSwitchBlock, SwitchBlockCase as TmplAstSwitchBlockCase, Template as TmplAstTemplate, Text as TmplAstText, TextAttribute as TmplAstTextAttribute, TimerDeferredTrigger as TmplAstTimerDeferredTrigger, UnknownBlock as TmplAstUnknownBlock, Variable as TmplAstVariable, ViewportDeferredTrigger as TmplAstViewportDeferredTrigger, Token, TokenType, TransplantedType, TreeError, Type, TypeModifier, TypeofExpr, TypeofExpression, Unary, UnaryOperator, UnaryOperatorExpr, VERSION, VariableBinding, Version, ViewEncapsulation, VoidExpr, VoidExpression, WrappedNodeExpr, WriteKeyExpr, WritePropExpr, WriteVarExpr, Xliff, Xliff2, Xmb, XmlParser, Xtb, compileClassDebugInfo, compileClassMetadata, compileComponentClassMetadata, compileComponentDeclareClassMetadata, compileComponentFromMetadata, compileDeclareClassMetadata, compileDeclareComponentFromMetadata, compileDeclareDirectiveFromMetadata, compileDeclareFactoryFunction, compileDeclareInjectableFromMetadata, compileDeclareInjectorFromMetadata, compileDeclareNgModuleFromMetadata, compileDeclarePipeFromMetadata, compileDeferResolverFunction, compileDirectiveFromMetadata, compileFactoryFunction, compileHmrInitializer, compileHmrUpdateCallback, compileInjectable, compileInjector, compileNgModule, compileOpaqueAsyncClassMetadata, compilePipeFromMetadata, computeMsgId, core_d as core, createCssSelectorFromNode, createInjectableType, createMayBeForwardRefExpression, devOnlyGuardedExpression, emitDistinctChangesOnlyDefaultValue, encapsulateStyle, findMatchingDirectivesAndPipes, getHtmlTagDefinition, getNsPrefix, getSafePropertyAccessString, identifierName, isNgContainer, isNgContent, isNgTemplate, jsDocComment, leadingComment, literal, literalMap, makeBindingParser, mergeNsAndName, output_ast_d as outputAst, parseHostBindings, parseTemplate, preserveWhitespacesDefault, publishFacade, r3JitTypeSourceSpan, sanitizeIdentifier, splitNsName, visitAll as tmplAstVisitAll, verifyHostBindings, visitAll$1 as visitAll };
+/**
+ * A set of flags to be used with Queries.
+ *
+ * NOTE: Ensure changes here are in sync with `packages/core/src/render3/interfaces/query.ts`
+ */
+declare const enum QueryFlags {
+    /**
+     * No flags
+     */
+    none = 0,
+    /**
+     * Whether or not the query should descend into children.
+     */
+    descendants = 1,
+    /**
+     * The query can be computed statically and hence can be assigned eagerly.
+     *
+     * NOTE: Backwards compatibility with ViewEngine.
+     */
+    isStatic = 2,
+    /**
+     * If the `QueryList` should fire change event only if actual change to query was computed (vs old
+     * behavior where the change was fired whenever the query was recomputed, even if the recomputed
+     * query resulted in the same list.)
+     */
+    emitDistinctChangesOnly = 4
+}
+
+/*!
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.dev/license
+ */
+/**
+ * Utility function to enable source locations. Intended to be used **only** inside unit tests.
+ */
+declare function setEnableTemplateSourceLocations(value: boolean): void;
+
+export { AST, ASTWithName, ASTWithSource, AbsoluteSourceSpan, ArrayType, ArrowFunctionExpr, Attribute, Binary, BinaryOperator, BinaryOperatorExpr, BindingParser, BindingPipe, BindingPipeType, BindingType, Block, BlockParameter, BoundElementProperty, BuiltinType, BuiltinTypeName, CUSTOM_ELEMENTS_SCHEMA, Call, Chain, ChangeDetectionStrategy$1 as ChangeDetectionStrategy, CombinedRecursiveAstVisitor, CommaExpr, Comment$1 as Comment, CompilerConfig, CompilerFacadeImpl, Component$1 as Component, Conditional, ConditionalExpr, ConstantPool, CssSelector, DEFAULT_INTERPOLATION_CONFIG, DYNAMIC_TYPE, DeclarationListEmitMode, DeclareFunctionStmt, DeclareVarStmt, DeferBlockDepsEmitMode, Directive$1 as Directive, DomElementSchemaRegistry, DynamicImportExpr, EOF, Element$1 as Element, ElementSchemaRegistry, EmitterVisitorContext, EmptyExpr, Expansion, ExpansionCase, Expression, ExpressionBinding, ExpressionStatement, ExpressionType, ExternalExpr, ExternalReference, FactoryTarget, ForwardRefHandling, FunctionExpr, HtmlParser, HtmlTagDefinition, I18NHtmlParser, IfStmt, ImplicitReceiver, InstantiateExpr, Interpolation, InterpolationConfig, InvokeFunctionExpr, JSDocComment, JitEvaluator, KeyedRead, LeadingComment, LetDeclaration$1 as LetDeclaration, Lexer, TokenType$1 as LexerTokenType, LiteralArray, LiteralArrayExpr, LiteralExpr, LiteralMap, LiteralMapExpr, LiteralPrimitive, LocalizedString, MapType, MessageBundle, NONE_TYPE, NO_ERRORS_SCHEMA, NodeWithI18n, NonNullAssert, NotExpr, ParenthesizedExpr, ParenthesizedExpression, ParseError, ParseErrorLevel, ParseFlags, ParseLocation, ParseSourceFile, ParseSourceSpan$1 as ParseSourceSpan, ParseSpan, ParseTreeResult, ParsedEvent, ParsedEventType, ParsedProperty, ParsedPropertyType, ParsedVariable, Parser, ParserError, PrefixNot, PropertyRead, QueryFlags, Identifiers as R3Identifiers, R3NgModuleMetadataKind, R3SelectorScopeMode, R3TargetBinder, R3TemplateDependencyKind, ReadKeyExpr, ReadPropExpr, ReadVarExpr, RecursiveAstVisitor, RecursiveVisitor$1 as RecursiveVisitor, ResourceLoader, ReturnStatement, SECURITY_SCHEMA, STRING_TYPE, SafeCall, SafeKeyedRead, SafePropertyRead, SelectorContext, SelectorListContext, SelectorMatcher, SelectorlessMatcher, Serializer, SplitInterpolation, Statement, StmtModifier, StringToken, StringTokenKind, TagContentType, TaggedTemplateLiteral, TaggedTemplateLiteralExpr, TemplateBindingParseResult, TemplateLiteral, TemplateLiteralElement, TemplateLiteralElementExpr, TemplateLiteralExpr, Text$1 as Text, ThisReceiver, BlockNode as TmplAstBlockNode, BoundAttribute as TmplAstBoundAttribute, BoundDeferredTrigger as TmplAstBoundDeferredTrigger, BoundEvent as TmplAstBoundEvent, BoundText as TmplAstBoundText, Component as TmplAstComponent, Content as TmplAstContent, DeferredBlock as TmplAstDeferredBlock, DeferredBlockError as TmplAstDeferredBlockError, DeferredBlockLoading as TmplAstDeferredBlockLoading, DeferredBlockPlaceholder as TmplAstDeferredBlockPlaceholder, DeferredTrigger as TmplAstDeferredTrigger, Directive as TmplAstDirective, Element as TmplAstElement, ForLoopBlock as TmplAstForLoopBlock, ForLoopBlockEmpty as TmplAstForLoopBlockEmpty, HostElement as TmplAstHostElement, HoverDeferredTrigger as TmplAstHoverDeferredTrigger, Icu as TmplAstIcu, IdleDeferredTrigger as TmplAstIdleDeferredTrigger, IfBlock as TmplAstIfBlock, IfBlockBranch as TmplAstIfBlockBranch, ImmediateDeferredTrigger as TmplAstImmediateDeferredTrigger, InteractionDeferredTrigger as TmplAstInteractionDeferredTrigger, LetDeclaration as TmplAstLetDeclaration, NeverDeferredTrigger as TmplAstNeverDeferredTrigger, RecursiveVisitor as TmplAstRecursiveVisitor, Reference as TmplAstReference, SwitchBlock as TmplAstSwitchBlock, SwitchBlockCase as TmplAstSwitchBlockCase, Template as TmplAstTemplate, Text as TmplAstText, TextAttribute as TmplAstTextAttribute, TimerDeferredTrigger as TmplAstTimerDeferredTrigger, UnknownBlock as TmplAstUnknownBlock, Variable as TmplAstVariable, ViewportDeferredTrigger as TmplAstViewportDeferredTrigger, Token, TokenType, TransplantedType, TreeError, Type$1 as Type, TypeModifier, TypeofExpr, TypeofExpression, Unary, UnaryOperator, UnaryOperatorExpr, VERSION, VariableBinding, Version, ViewEncapsulation$1 as ViewEncapsulation, VoidExpr, VoidExpression, WrappedNodeExpr, Xliff, Xliff2, Xmb, XmlParser, Xtb, compileClassDebugInfo, compileClassMetadata, compileComponentClassMetadata, compileComponentDeclareClassMetadata, compileComponentFromMetadata, compileDeclareClassMetadata, compileDeclareComponentFromMetadata, compileDeclareDirectiveFromMetadata, compileDeclareFactoryFunction, compileDeclareInjectableFromMetadata, compileDeclareInjectorFromMetadata, compileDeclareNgModuleFromMetadata, compileDeclarePipeFromMetadata, compileDeferResolverFunction, compileDirectiveFromMetadata, compileFactoryFunction, compileHmrInitializer, compileHmrUpdateCallback, compileInjectable, compileInjector, compileNgModule, compileOpaqueAsyncClassMetadata, compilePipeFromMetadata, computeMsgId, core_d as core, createCssSelectorFromNode, createInjectableType, createMayBeForwardRefExpression, devOnlyGuardedExpression, emitDistinctChangesOnlyDefaultValue, encapsulateStyle, escapeRegExp, findMatchingDirectivesAndPipes, getHtmlTagDefinition, getNsPrefix, getSafePropertyAccessString, identifierName, isNgContainer, isNgContent, isNgTemplate, jsDocComment, leadingComment, literal, literalMap, makeBindingParser, mergeNsAndName, output_ast_d as outputAst, parseHostBindings, parseTemplate, preserveWhitespacesDefault, publishFacade, r3JitTypeSourceSpan, sanitizeIdentifier, setEnableTemplateSourceLocations, splitNsName, visitAll as tmplAstVisitAll, verifyHostBindings, visitAll$1 as visitAll };
 export type { AnimationTriggerNames, AstVisitor, BoundTarget, CompileClassMetadataFn, CompileIdentifierMetadata, DeclareComponentTemplateInfo, DirectiveMatcher, DirectiveMeta, DirectiveOwner, ExpressionVisitor, InputOutputPropertySet, InterpolationPiece, LegacyInputPartialMapping, LexerRange, LiteralMapKey, MaybeForwardRefExpression, Node$1 as Node, ParseTemplateOptions, ParsedHostBindings, ParsedTemplate, R3ClassDebugInfo, R3ClassMetadata, R3CompiledExpression, R3ComponentDeferMetadata, R3ComponentMetadata, R3DeclareClassMetadata, R3DeclareClassMetadataAsync, R3DeclareComponentMetadata, R3DeclareDependencyMetadata, R3DeclareDirectiveDependencyMetadata, R3DeclareDirectiveMetadata, R3DeclareFactoryMetadata, R3DeclareHostDirectiveMetadata, R3DeclareInjectableMetadata, R3DeclareInjectorMetadata, R3DeclareNgModuleDependencyMetadata, R3DeclareNgModuleMetadata, R3DeclarePipeDependencyMetadata, R3DeclarePipeMetadata, R3DeclareQueryMetadata, R3DeclareTemplateDependencyMetadata, R3DeferPerBlockDependency, R3DeferPerComponentDependency, R3DeferResolverFunctionMetadata, R3DependencyMetadata, R3DirectiveDependencyMetadata, R3DirectiveMetadata, R3FactoryMetadata, R3HmrMetadata, R3HmrNamespaceDependency, R3HostDirectiveMetadata, R3HostMetadata, R3InjectableMetadata, R3InjectorMetadata, R3InputMetadata, R3NgModuleDependencyMetadata, R3NgModuleMetadata, R3NgModuleMetadataGlobal, R3PartialDeclaration, R3PipeDependencyMetadata, R3PipeMetadata, R3QueryMetadata, R3Reference, R3TemplateDependency, R3TemplateDependencyMetadata, ReferenceTarget, SchemaMetadata, ScopedNode, SourceMap, StatementVisitor, TagDefinition, Target, TargetBinder, TemplateBinding, TemplateBindingIdentifier, TemplateEntity, DeferredBlockTriggers as TmplAstDeferredBlockTriggers, Node as TmplAstNode, Visitor as TmplAstVisitor, TypeVisitor, Visitor$1 as Visitor };

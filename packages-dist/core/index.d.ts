@@ -1,21 +1,22 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
 import { SIGNAL, ValueEqualityFn as ValueEqualityFn$1 } from './graph.d-BcIOep_B.js';
-import { Signal, WritableSignal, OutputRef, Type as Type$1, ModuleWithProviders, EnvironmentProviders, Provider, TypeProvider, ValueProvider, ClassProvider, ConstructorProvider, ExistingProvider, FactoryProvider, StaticClassProvider, InjectionToken, ProviderToken, StaticProvider, Injector, ValueSansProvider, ExistingSansProvider, StaticClassSansProvider, ConstructorSansProvider, FactorySansProvider, ClassSansProvider, InternalInjectFlags, InjectOptions, ValueEqualityFn, isSignal, enableProfiling as enableProfiling$1 } from './chrome_dev_tools_performance.d-qv7drdAl.js';
-export { AbstractType, CreateSignalOptions, DestroyRef, DestroyableInjector, ImportedNgModuleProviders, OutputRefSubscription, signal, InternalEnvironmentProviders as ɵInternalEnvironmentProviders, JSACTION_EVENT_CONTRACT as ɵJSACTION_EVENT_CONTRACT, Writable as ɵWritable, isEnvironmentProviders as ɵisEnvironmentProviders, ɵunwrapWritableSignal } from './chrome_dev_tools_performance.d-qv7drdAl.js';
-import { InputSignalNode, TypeDecorator, AfterRenderRef, EffectCleanupRegisterFn, SchemaMetadata, CssSelectorList, InputFlags, InputTransformFunction, DirectiveDefFeature, HostBindingsFunction, TAttributes, ContentQueriesFunction, ViewQueriesFunction, ComponentTemplate, TConstantsOrFactory, ComponentDefFeature, ViewEncapsulation as ViewEncapsulation$1, ChangeDetectionStrategy as ChangeDetectionStrategy$1, TypeOrFactory, DependencyTypeList, ComponentDef, DirectiveDef, EmbeddedViewRef, ChangeDetectorRef, LView, ApplicationRef, ComponentFactory as ComponentFactory$1, NgModuleRef as NgModuleRef$1, EnvironmentInjector, DirectiveWithBindings, Binding, ComponentRef as ComponentRef$1, ElementRef, ComponentFactoryResolver as ComponentFactoryResolver$1, NgModuleFactory as NgModuleFactory$1, InternalNgModuleRef, ViewRef as ViewRef$1, PlatformRef, NgZone, ChangeDetectionScheduler, NotificationSource, ɵɵFactoryDeclaration as __FactoryDeclaration, ɵɵInjectableDeclaration as __InjectableDeclaration, ɵɵNgModuleDeclaration as __NgModuleDeclaration, ɵɵInjectorDeclaration as __InjectorDeclaration, DeferBlockState, TNode, LContainer, DeferBlockDependencyInterceptor, DeferBlockConfig, TView, TDeferBlockDetails, RNode, Component, TrustedHTML, CompilerOptions, HostDirectiveConfig, ComponentType, NgModuleScopeInfoFromDecorator, DependencyResolverFn, TDeferDetailsFlags, SanitizerFn, LocalRefExtractor, OpaqueViewState, GlobalTargetResolver, ProjectionSlots, QueryFlags, QueryList, RElement, RawScopeInfoFromDecorator, ClassDebugInfo, Directive, NgModule, Pipe, TrustedScriptURL, TrustedScript, PipeType, DirectiveType } from './discovery.d-o1MkoZAq.js';
-export { APP_BOOTSTRAP_LISTENER, BootstrapOptions, COMPILER_OPTIONS, CUSTOM_ELEMENTS_SCHEMA, Compiler, CompilerFactory, ComponentDecorator, CreateEffectOptions, DebugElement, DebugEventListener, DebugNode, DirectiveDecorator, EffectCleanupFn, EffectRef, EventEmitter, HostBinding, HostBindingDecorator, HostListener, HostListenerDecorator, InjectableType, InjectorType, Input, InputDecorator, ListenerOptions, ModuleWithComponentFactories, NO_ERRORS_SCHEMA, NgModuleDecorator, NgProbeToken, Output, OutputDecorator, PipeDecorator, Predicate, Renderer2, RendererFactory2, RendererStyleFlags2, RendererType2, Sanitizer, SecurityContext, asNativeElements, defineInjectable, effect, getDebugNode, inputBinding, outputBinding, twoWayBinding, AfterRenderManager as ɵAfterRenderManager, AnimationRendererType as ɵAnimationRendererType, AttributeMarker as ɵAttributeMarker, CONTAINER_HEADER_OFFSET as ɵCONTAINER_HEADER_OFFSET, DeferBlockBehavior as ɵDeferBlockBehavior, DeferBlockDetails as ɵDeferBlockDetails, EffectScheduler as ɵEffectScheduler, NG_INJ_DEF as ɵNG_INJ_DEF, NG_PROV_DEF as ɵNG_PROV_DEF, NavigateEvent as ɵNavigateEvent, Navigation as ɵNavigation, NavigationCurrentEntryChangeEvent as ɵNavigationCurrentEntryChangeEvent, NavigationDestination as ɵNavigationDestination, NavigationHistoryEntry as ɵNavigationHistoryEntry, NavigationInterceptOptions as ɵNavigationInterceptOptions, NavigationNavigateOptions as ɵNavigationNavigateOptions, NavigationOptions as ɵNavigationOptions, NavigationReloadOptions as ɵNavigationReloadOptions, NavigationResult as ɵNavigationResult, NavigationTransition as ɵNavigationTransition, NavigationTypeString as ɵNavigationTypeString, NavigationUpdateCurrentEntryOptions as ɵNavigationUpdateCurrentEntryOptions, NoopNgZone as ɵNoopNgZone, PipeDef as ɵPipeDef, RenderFlags as ɵRenderFlags, TracingAction as ɵTracingAction, TracingService as ɵTracingService, TracingSnapshot as ɵTracingSnapshot, ZONELESS_ENABLED as ɵZONELESS_ENABLED, getDebugNode as ɵgetDebugNode, getDeferBlocks as ɵgetDeferBlocks, getInjectableDef as ɵgetInjectableDef, injectChangeDetectorRef as ɵinjectChangeDetectorRef, isBoundToModule as ɵisBoundToModule, isInjectable as ɵisInjectable, ɵɵComponentDeclaration, ɵɵDirectiveDeclaration, ɵɵInjectorDef, ɵɵPipeDeclaration, ɵɵdefineInjectable, ɵɵdefineInjector } from './discovery.d-o1MkoZAq.js';
-import { WritableResource, ResourceStatus, ResourceRef, Resource, ResourceStreamingLoader, ResourceOptions } from './api.d-B58KU5QT.js';
-export { BaseResourceOptions, OutputEmitterRef, OutputOptions, PromiseResourceOptions, ResourceLoader, ResourceLoaderParams, ResourceStreamItem, StreamingResourceOptions, output, getOutputDestroyRef as ɵgetOutputDestroyRef } from './api.d-B58KU5QT.js';
+import { Signal, WritableSignal, OutputRef, Provider, EnvironmentProviders, Type as Type$1, ModuleWithProviders, TypeProvider, ValueProvider, ClassProvider, ConstructorProvider, ExistingProvider, FactoryProvider, StaticClassProvider, ProviderToken, StaticProvider, Injector, ValueSansProvider, ExistingSansProvider, StaticClassSansProvider, ConstructorSansProvider, FactorySansProvider, ClassSansProvider, InjectionToken, InternalInjectFlags, InjectOptions, ValueEqualityFn, EventCallback, isSignal, enableProfiling as enableProfiling$1 } from './chrome_dev_tools_performance.d-Dk_7kdX9.js';
+export { AbstractType, CreateSignalOptions, DestroyRef, DestroyableInjector, ImportedNgModuleProviders, OutputRefSubscription, signal, InternalEnvironmentProviders as ɵInternalEnvironmentProviders, JSACTION_EVENT_CONTRACT as ɵJSACTION_EVENT_CONTRACT, Writable as ɵWritable, isEnvironmentProviders as ɵisEnvironmentProviders, ɵunwrapWritableSignal } from './chrome_dev_tools_performance.d-Dk_7kdX9.js';
+import { InputSignalNode, TypeDecorator, AfterRenderRef, EffectCleanupRegisterFn, SchemaMetadata, ComponentDef, DirectiveDef, CssSelectorList, DirectiveDefFeature, HostBindingsFunction, TAttributes, ContentQueriesFunction, ViewQueriesFunction, ComponentTemplate, TConstantsOrFactory, ComponentDefFeature, ViewEncapsulation as ViewEncapsulation$1, ChangeDetectionStrategy as ChangeDetectionStrategy$1, TypeOrFactory, DependencyTypeList, InputFlags, InputTransformFunction, EmbeddedViewRef, LView, ApplicationRef, ChangeDetectorRef, ComponentFactory as ComponentFactory$1, NgModuleRef as NgModuleRef$1, EnvironmentInjector, DirectiveWithBindings, Binding, ComponentRef as ComponentRef$1, ElementRef, ComponentFactoryResolver as ComponentFactoryResolver$1, InternalNgModuleRef, NgModuleFactory as NgModuleFactory$1, ViewRef as ViewRef$1, PlatformRef, NgZone, ChangeDetectionScheduler, NotificationSource, ɵɵFactoryDeclaration as __FactoryDeclaration, ɵɵInjectableDeclaration as __InjectableDeclaration, ɵɵNgModuleDeclaration as __NgModuleDeclaration, ɵɵInjectorDeclaration as __InjectorDeclaration, DeferBlockDependencyInterceptor, DeferBlockConfig, DeferBlockState, TNode, LContainer, TView, TDeferBlockDetails, RNode, Component, TrustedHTML, DehydratedDeferBlock, CompilerOptions, HostDirectiveConfig, ComponentType, NgModuleScopeInfoFromDecorator, DependencyResolverFn, TDeferDetailsFlags, SanitizerFn, LocalRefExtractor, OpaqueViewState, GlobalTargetResolver, ProjectionSlots, QueryFlags, QueryList, RElement, RawScopeInfoFromDecorator, ClassDebugInfo, Directive, NgModule, Pipe, TrustedScriptURL, TrustedScript, PipeType, DirectiveType } from './discovery.d-AiW64LSq.js';
+export { APP_BOOTSTRAP_LISTENER, BootstrapOptions, COMPILER_OPTIONS, CUSTOM_ELEMENTS_SCHEMA, Compiler, CompilerFactory, ComponentDecorator, CreateEffectOptions, DebugElement, DebugEventListener, DebugNode, DirectiveDecorator, EffectCleanupFn, EffectRef, EventEmitter, HostBinding, HostBindingDecorator, HostListener, HostListenerDecorator, InjectableType, InjectorType, Input, InputDecorator, ListenerOptions, ModuleWithComponentFactories, NO_ERRORS_SCHEMA, NgModuleDecorator, NgProbeToken, Output, OutputDecorator, PipeDecorator, Predicate, Renderer2, RendererFactory2, RendererStyleFlags2, RendererType2, Sanitizer, SecurityContext, asNativeElements, defineInjectable, effect, getDebugNode, inputBinding, outputBinding, twoWayBinding, AfterRenderManager as ɵAfterRenderManager, AnimationRendererType as ɵAnimationRendererType, AttributeMarker as ɵAttributeMarker, CONTAINER_HEADER_OFFSET as ɵCONTAINER_HEADER_OFFSET, DeferBlockBehavior as ɵDeferBlockBehavior, DeferBlockDetails as ɵDeferBlockDetails, EffectScheduler as ɵEffectScheduler, INJECTOR_SCOPE as ɵINJECTOR_SCOPE, NG_INJ_DEF as ɵNG_INJ_DEF, NG_PROV_DEF as ɵNG_PROV_DEF, NavigateEvent as ɵNavigateEvent, Navigation as ɵNavigation, NavigationCurrentEntryChangeEvent as ɵNavigationCurrentEntryChangeEvent, NavigationDestination as ɵNavigationDestination, NavigationHistoryEntry as ɵNavigationHistoryEntry, NavigationInterceptOptions as ɵNavigationInterceptOptions, NavigationNavigateOptions as ɵNavigationNavigateOptions, NavigationOptions as ɵNavigationOptions, NavigationReloadOptions as ɵNavigationReloadOptions, NavigationResult as ɵNavigationResult, NavigationTransition as ɵNavigationTransition, NavigationTypeString as ɵNavigationTypeString, NavigationUpdateCurrentEntryOptions as ɵNavigationUpdateCurrentEntryOptions, NoopNgZone as ɵNoopNgZone, PipeDef as ɵPipeDef, R3Injector as ɵR3Injector, RenderFlags as ɵRenderFlags, TracingAction as ɵTracingAction, TracingService as ɵTracingService, TracingSnapshot as ɵTracingSnapshot, ZONELESS_ENABLED as ɵZONELESS_ENABLED, getDebugNode as ɵgetDebugNode, getDeferBlocks as ɵgetDeferBlocks, getInjectableDef as ɵgetInjectableDef, injectChangeDetectorRef as ɵinjectChangeDetectorRef, isBoundToModule as ɵisBoundToModule, isInjectable as ɵisInjectable, ɵɵComponentDeclaration, ɵɵDirectiveDeclaration, ɵɵInjectorDef, ɵɵPipeDeclaration, ɵɵdefineInjectable, ɵɵdefineInjector } from './discovery.d-AiW64LSq.js';
+import { ResourceOptions, ResourceRef, ResourceStreamingLoader, ResourceStatus, WritableResource, Resource } from './api.d-Dwpmmn5j.js';
+export { BaseResourceOptions, OutputEmitterRef, OutputOptions, PromiseResourceOptions, ResourceLoader, ResourceLoaderParams, ResourceStreamItem, StreamingResourceOptions, output, getOutputDestroyRef as ɵgetOutputDestroyRef } from './api.d-Dwpmmn5j.js';
+import './event_dispatcher.d-BReQpZfC.js';
 import { Observable, Subscribable } from 'rxjs';
 export { setAlternateWeakRefImpl as ɵsetAlternateWeakRefImpl } from './weak_ref.d-eGOEP9S1.js';
 export { setCurrentInjector as ɵsetCurrentInjector } from './primitives/di/index.js';
-import './event_dispatcher.d-DlbccpYq.js';
-import './signal.d-D6VJ67xi.js';
+import './signal.d-BcmOdASA.js';
+import '@angular/core/primitives/di';
 
 /**
  * @publicAPI
@@ -44,7 +45,7 @@ interface InputOptions<T, TransformT> {
 /**
  * Signal input options without the transform option.
  *
- * @publicAPI
+ * @publicApi 19.0
  */
 type InputOptionsWithoutTransform<T> = Omit<InputOptions<T, T>, 'transform'> & {
     transform?: undefined;
@@ -79,7 +80,7 @@ declare const ɵINPUT_SIGNAL_BRAND_WRITE_TYPE: unique symbol;
  *
  * @see {@link InputSignal} for additional information.
  *
- * @publicAPI
+ * @publicApi 19.0
  */
 interface InputSignalWithTransform<T, TransformT> extends Signal<T> {
     [SIGNAL]: InputSignalNode<T, TransformT>;
@@ -95,7 +96,7 @@ interface InputSignalWithTransform<T, TransformT> extends Signal<T> {
  *
  * @see {@link InputOptionsWithTransform} for inputs with transforms.
  *
- * @publicAPI
+ * @publicApi 19.0
  */
 interface InputSignal<T> extends InputSignalWithTransform<T, T> {
 }
@@ -316,7 +317,7 @@ interface ModelFunction {
  * }
  * ```
  *
- * @publicAPI
+ * @publicApi 19.0
  * @initializerApiFunction
  */
 declare const model: ModelFunction;
@@ -408,21 +409,13 @@ declare function importProvidersFrom(...sources: ImportProvidersSource[]): Envir
  */
 type SingleProvider = TypeProvider | ValueProvider | ClassProvider | ConstructorProvider | ExistingProvider | FactoryProvider | StaticClassProvider;
 
-type InjectorScope = 'root' | 'platform' | 'environment';
-/**
- * An internal token whose presence in an injector indicates that the injector should treat itself
- * as a root scoped injector when processing requests for unknown tokens which may indicate
- * they are provided in the root scope.
- */
-declare const INJECTOR_SCOPE: InjectionToken<InjectorScope | null>;
-
 /**
  * Type of the `viewChild` function. The viewChild function creates a singular view query.
  *
  * It is a special function that also provides access to required query results via the `.required`
  * property.
  *
- * @publicAPI
+ * @publicApi
  * @docsPrivate Ignored because `viewChild` is the canonical API entry.
  */
 interface ViewChildFunction {
@@ -473,7 +466,7 @@ interface ViewChildFunction {
  * }
  * ```
  *
- * @publicAPI
+ * @publicApi 19.0
  * @initializerApiFunction
  */
 declare const viewChild: ViewChildFunction;
@@ -490,7 +483,7 @@ declare function viewChildren<LocatorT, ReadT>(locator: ProviderToken<LocatorT> 
  * The contentChild function creates a singular content query. It is a special function that also
  * provides access to required query results via the `.required` property.
  *
- * @publicAPI
+ * @publicApi 19.0
  * @docsPrivate Ignored because `contentChild` is the canonical API entry.
  */
 interface ContentChildFunction {
@@ -544,8 +537,10 @@ interface ContentChildFunction {
  * }
  * ```
  *
+ * Note: By default `descendants` is `true` which means the query will traverse all descendants in the same template.
+ *
  * @initializerApiFunction
- * @publicAPI
+ * @publicApi 19.0
  */
 declare const contentChild: ContentChildFunction;
 declare function contentChildren<LocatorT>(locator: ProviderToken<LocatorT> | string, opts?: {
@@ -1674,24 +1669,26 @@ interface ForwardRefFn {
  * ### Circular standalone reference import example
  * ```angular-ts
  * @Component({
- *   standalone: true,
  *   imports: [ChildComponent],
  *   selector: 'app-parent',
- *   template: `<app-child [hideParent]="hideParent"></app-child>`,
+ *   template: `<app-child [hideParent]="hideParent()"></app-child>`,
  * })
  * export class ParentComponent {
- *   @Input() hideParent: boolean;
+ *    hideParent = input.required<boolean>();
  * }
  *
  *
  * @Component({
- *   standalone: true,
- *   imports: [CommonModule, forwardRef(() => ParentComponent)],
+ *   imports: [forwardRef(() => ParentComponent)],
  *   selector: 'app-child',
- *   template: `<app-parent *ngIf="!hideParent"></app-parent>`,
+ *   template: `
+ *    @if(!hideParent() {
+ *       <app-parent/>
+ *    }
+ *  `,
  * })
  * export class ChildComponent {
- *   @Input() hideParent: boolean;
+ *    hideParent = input.required<boolean>();
  * }
  * ```
  *
@@ -2178,7 +2175,7 @@ declare function computed<T>(computation: () => T, options?: CreateComputedOptio
 /**
  * Creates a writable signal whose value is initialized and reset by the linked, reactive computation.
  *
- * @publicApi
+ * @publicApi 20.0
  */
 declare function linkedSignal<D>(computation: () => D, options?: {
     equal?: ValueEqualityFn<NoInfer<D>>;
@@ -2189,7 +2186,7 @@ declare function linkedSignal<D>(computation: () => D, options?: {
  *
  * Note: The computation is reactive, meaning the linked signal will automatically update whenever any of the signals used within the computation change.
  *
- * @publicApi
+ * @publicApi 20.0
  */
 declare function linkedSignal<S, D>(options: {
     source: () => S;
@@ -2214,7 +2211,7 @@ type ɵFirstAvailable<T extends unknown[]> = T extends [infer H, ...infer R] ? [
 /**
  * Options passed to `afterEveryRender` and `afterNextRender`.
  *
- * @publicApi
+ * @publicApi 20.0
  */
 interface AfterRenderOptions {
     /**
@@ -2313,7 +2310,7 @@ declare function afterEveryRender<E = never, W = never, M = never>(spec: {
     write?: (...args: ɵFirstAvailable<[E]>) => W;
     mixedReadWrite?: (...args: ɵFirstAvailable<[W, E]>) => M;
     read?: (...args: ɵFirstAvailable<[M, W, E]>) => void;
-}, options?: Omit<AfterRenderOptions, 'phase'>): AfterRenderRef;
+}, options?: AfterRenderOptions): AfterRenderRef;
 /**
  * Register a callback to be invoked each time the application finishes rendering, during the
  * `mixedReadWrite` phase.
@@ -2451,7 +2448,7 @@ declare function afterNextRender<E = never, W = never, M = never>(spec: {
     write?: (...args: ɵFirstAvailable<[E]>) => W;
     mixedReadWrite?: (...args: ɵFirstAvailable<[W, E]>) => M;
     read?: (...args: ɵFirstAvailable<[M, W, E]>) => void;
-}, options?: Omit<AfterRenderOptions, 'phase'>): AfterRenderRef;
+}, options?: AfterRenderOptions): AfterRenderRef;
 /**
  * Register a callback to be invoked the next time the application finishes rendering, during the
  * `mixedReadWrite` phase.
@@ -2503,7 +2500,7 @@ declare function afterNextRender<E = never, W = never, M = never>(spec: {
  * }
  * ```
  *
- * @publicApi
+ * @publicApi 20.0
  */
 declare function afterNextRender(callback: VoidFunction, options?: AfterRenderOptions): AfterRenderRef;
 
@@ -2541,7 +2538,7 @@ type ɵFirstAvailableSignal<T extends unknown[]> = T extends [infer H, ...infer 
  *
  * @publicApi
  */
-declare function afterRenderEffect(callback: (onCleanup: EffectCleanupRegisterFn) => void, options?: Omit<AfterRenderOptions, 'phase'>): AfterRenderRef;
+declare function afterRenderEffect(callback: (onCleanup: EffectCleanupRegisterFn) => void, options?: AfterRenderOptions): AfterRenderRef;
 /**
  * Register effects that, when triggered, are invoked when the application finishes rendering,
  * during the specified phases. The available phases are:
@@ -2607,7 +2604,7 @@ declare function afterRenderEffect<E = never, W = never, M = never>(spec: {
     write?: (...args: [...ɵFirstAvailableSignal<[E]>, EffectCleanupRegisterFn]) => W;
     mixedReadWrite?: (...args: [...ɵFirstAvailableSignal<[W, E]>, EffectCleanupRegisterFn]) => M;
     read?: (...args: [...ɵFirstAvailableSignal<[M, W, E]>, EffectCleanupRegisterFn]) => void;
-}, options?: Omit<AfterRenderOptions, 'phase'>): AfterRenderRef;
+}, options?: AfterRenderOptions): AfterRenderRef;
 
 /**
  * Asserts that the current stack frame is not within a reactive context. Useful
@@ -3157,7 +3154,9 @@ declare class ViewRef<T> implements EmbeddedViewRef<T>, ChangeDetectorRefInterfa
      * @Component({
      *   selector: 'giant-list',
      *   template: `
-     *     <li *ngFor="let d of dataProvider.data">Data {{d}}</li>
+     *     @for(d of dataProvider.data; track $index) {
+     *        <li>Data {{d}}</li>
+     *     }
      *   `,
      * })
      * class GiantList {
@@ -3476,7 +3475,9 @@ declare function getNgModuleById<T>(id: string): Type$1<T>;
  *
  * @publicApi
  */
-declare abstract class TemplateRef<C> {
+declare class TemplateRef<C> {
+    private _declarationLView;
+    private _declarationTContainer;
     /**
      * The anchor element in the parent view for this embedded view.
      *
@@ -3488,7 +3489,7 @@ declare abstract class TemplateRef<C> {
      * data-binding and injection context from the original location.
      *
      */
-    abstract readonly elementRef: ElementRef;
+    readonly elementRef: ElementRef;
     /**
      * Instantiates an unattached embedded view based on this template.
      * @param context The data-binding context of the embedded view, as declared
@@ -3496,7 +3497,7 @@ declare abstract class TemplateRef<C> {
      * @param injector Injector to be used within the embedded view.
      * @returns The new embedded view object.
      */
-    abstract createEmbeddedView(context: C, injector?: Injector): EmbeddedViewRef<C>;
+    createEmbeddedView(context: C, injector?: Injector): EmbeddedViewRef<C>;
 }
 
 /**
@@ -3614,7 +3615,7 @@ declare abstract class ViewContainerRef {
      */
     abstract createEmbeddedView<C>(templateRef: TemplateRef<C>, context?: C, index?: number): EmbeddedViewRef<C>;
     /**
-     * Instantiates a single component and inserts its host view into this container.
+     * Instantiates a component and inserts its host view into this view container.
      *
      * @param componentType Component Type to use.
      * @param options An object that contains extra parameters:
@@ -3746,6 +3747,12 @@ declare function getPlatform(): PlatformRef | null;
  * @publicApi
  */
 declare function destroyPlatform(): void;
+/**
+ * The goal of this function is to bootstrap a platform injector,
+ * but avoid referencing `PlatformRef` class.
+ * This function is needed for bootstrapping a Standalone Component.
+ */
+declare function createOrReusePlatformInjector(providers?: StaticProvider[]): Injector;
 /**
  * @description
  * This function is used to provide initialization functions that will be executed upon
@@ -3930,8 +3937,7 @@ declare class ChangeDetectionSchedulerImpl implements ChangeDetectionScheduler {
  * in patch versions. There are known feature gaps and API ergonomic considerations. We will iterate
  * on the exact API based on the feedback and our understanding of the problem and solution space.
  *
- * @publicApi
- * @developerPreview
+ * @developerPreview 20.0
  * @see {@link /api/platform-browser/bootstrapApplication bootstrapApplication}
  */
 declare function provideZonelessChangeDetection(): EnvironmentProviders;
@@ -3976,7 +3982,7 @@ declare class PendingTasksInternal implements OnDestroy {
  * taskCleanup();
  * ```
  *
- * @publicApi
+ * @publicApi 20.0
  */
 declare class PendingTasks {
     private readonly internalPendingTasks;
@@ -3998,7 +4004,7 @@ declare class PendingTasks {
      * ```
      *
      * @param fn The asynchronous function to execute
-     * @developerPreview
+     * @developerPreview 19.0
      */
     run(fn: () => Promise<unknown>): void;
     /** @nocollapse */
@@ -4014,8 +4020,7 @@ declare class PendingTasks {
  * When Angular checks views a second time to ensure nothing has changed, `OnPush` components
  * will no longer be marked and not be checked.
  *
- * @developerPreview
- * @publicApi
+ * @developerPreview 20.0
  */
 declare function provideCheckNoChangesConfig(options: {
     exhaustive: false;
@@ -4030,8 +4035,7 @@ declare function provideCheckNoChangesConfig(options: {
  *   This is useful because the check that runs after regular change detection does not work for components using `ChangeDetectionStrategy.OnPush`.
  *   This check is will surface any existing errors hidden by `OnPush` components.
  *
- * @developerPreview
- * @publicApi
+ * @developerPreview 20.0
  */
 declare function provideCheckNoChangesConfig(options: {
     interval?: number;
@@ -4402,7 +4406,8 @@ declare class Testability implements PublicTestability {
     private registry;
     private _isZoneStable;
     private _callbacks;
-    private taskTrackingZone;
+    private _taskTrackingZone;
+    private _destroyRef?;
     constructor(_ngZone: NgZone, registry: TestabilityRegistry, testabilityGetter: GetTestability);
     private _watchAngularEvents;
     /**
@@ -4559,7 +4564,6 @@ declare const LOCALE_ID: InjectionToken<string>;
  * In standalone apps:
  * ```ts
  * import { LOCALE_ID, ApplicationConfig } from '@angular/core';
- * import { AppModule } from './app/app.module';
  *
  * const appConfig: ApplicationConfig = {
  *   providers: [{provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' }]
@@ -4590,7 +4594,6 @@ declare const DEFAULT_CURRENCY_CODE: InjectionToken<string>;
  * In standalone apps:
  * ```ts
  * import { LOCALE_ID, ApplicationConfig } from '@angular/core';
- * import { AppModule } from './app/app.module';
  *
  * const appConfig: ApplicationConfig = {
  *   providers: [{provide: TRANSLATIONS, useValue: translations }]
@@ -4625,7 +4628,6 @@ declare const TRANSLATIONS: InjectionToken<string>;
  * In standalone apps:
  * ```ts
  * import { LOCALE_ID, ApplicationConfig } from '@angular/core';
- * import { AppModule } from './app/app.module';
  *
  * const appConfig: ApplicationConfig = {
  *   providers: [{provide: TRANSLATIONS_FORMAT, useValue: 'xlf' }]
@@ -4802,6 +4804,22 @@ declare function ɵɵdeferEnableTimerScheduling(tView: TView, tDetails: TDeferBl
 declare function triggerResourceLoading(tDetails: TDeferBlockDetails, lView: LView, tNode: TNode): Promise<unknown>;
 
 /**
+ * Tell ivy what the `document` is for this platform.
+ *
+ * It is only necessary to call this if the current platform is not a browser.
+ *
+ * @param document The object representing the global `document` in this environment.
+ */
+declare function setDocument(document: Document | undefined): void;
+/**
+ * Access the object that represents the `document` for this platform.
+ *
+ * Ivy calls this whenever it needs to access the `document` object.
+ * For example to create the renderer or to do sanitization.
+ */
+declare function getDocument(): Document;
+
+/**
  * URL for the XSS security documentation.
  */
 declare const XSS_SECURITY_URL = "https://angular.dev/best-practices/security#preventing-cross-site-scripting-xss";
@@ -4907,7 +4925,9 @@ declare const enum RuntimeErrorCode {
     LOOP_TRACK_DUPLICATE_KEYS = -955,
     LOOP_TRACK_RECREATE = -956,
     RUNTIME_DEPS_INVALID_IMPORTED_TYPE = 980,
-    RUNTIME_DEPS_ORPHAN_COMPONENT = 981
+    RUNTIME_DEPS_ORPHAN_COMPONENT = 981,
+    MUST_PROVIDE_STREAM_OPTION = 990,
+    RESOURCE_COMPLETED_BEFORE_PRODUCING_VALUE = 991
 }
 /**
  * Class that represents a runtime error.
@@ -5057,6 +5077,12 @@ declare function annotateForHydration(appRef: ApplicationRef, doc: Document): {
 };
 
 /**
+ * Defines a name of an attribute that is added to the <body> tag
+ * in the `index.html` file in case a given route was configured
+ * with `RenderMode.Client`. 'cm' is an abbreviation for "Client Mode".
+ */
+declare const CLIENT_RENDER_MODE_FLAG = "ngcm";
+/**
  * Returns a set of providers required to setup hydration support
  * for an application that is server side rendered. This function is
  * included into the `provideClientHydration` public API function from
@@ -5095,6 +5121,10 @@ declare const IS_HYDRATION_DOM_REUSE_ENABLED: InjectionToken<boolean>;
  * is enabled.
  */
 declare const IS_INCREMENTAL_HYDRATION_ENABLED: InjectionToken<boolean>;
+/**
+ * A map of DOM elements with `jsaction` attributes grouped by action names.
+ */
+declare const JSACTION_BLOCK_ELEMENT_MAP: InjectionToken<Map<string, Set<Element>>>;
 
 /**
  * Register locale data to be used internally by Angular. See the
@@ -5476,7 +5506,7 @@ declare function _sanitizeUrl(url: string): string;
  *
  *  @usageNotes
  *  ```ts
- *  @Input({ transform: booleanAttribute }) status!: boolean;
+ *  status = input({ transform: booleanAttribute });
  *  ```
  * @param value Value to be transformed.
  *
@@ -5491,7 +5521,7 @@ declare function booleanAttribute(value: unknown): boolean;
  *
  *  @usageNotes
  *  ```ts
- *  @Input({ transform: numberAttribute }) id!: number;
+ *  status = input({ transform: numberAttribute });
  *  ```
  *
  * @publicApi
@@ -5557,7 +5587,7 @@ declare function disableProfiling(): void;
  * `resource` will cancel in-progress loads via the `AbortSignal` when destroyed or when a new
  * request object becomes available, which could prematurely abort mutations.
  *
- * @experimental
+ * @experimental 19.0
  */
 declare function resource<T, R>(options: ResourceOptions<T, R> & {
     defaultValue: NoInfer<T>;
@@ -5570,7 +5600,7 @@ declare function resource<T, R>(options: ResourceOptions<T, R> & {
  * `resource` will cancel in-progress loads via the `AbortSignal` when destroyed or when a new
  * request object becomes available, which could prematurely abort mutations.
  *
- * @experimental
+ * @experimental 19.0
  */
 declare function resource<T, R>(options: ResourceOptions<T, R>): ResourceRef<T | undefined>;
 type WrappedRequest = {
@@ -5583,10 +5613,11 @@ type WrappedRequest = {
 declare abstract class BaseWritableResource<T> implements WritableResource<T> {
     readonly value: WritableSignal<T>;
     abstract readonly status: Signal<ResourceStatus>;
-    abstract readonly error: Signal<unknown>;
+    abstract readonly error: Signal<Error | undefined>;
     abstract reload(): boolean;
     constructor(value: Signal<T>);
     abstract set(value: T): void;
+    private readonly isError;
     update(updateFn: (value: T) => T): void;
     readonly isLoading: Signal<boolean>;
     hasValue(): this is ResourceRef<Exclude<T, undefined>>;
@@ -5597,7 +5628,6 @@ declare abstract class BaseWritableResource<T> implements WritableResource<T> {
  */
 declare class ResourceImpl<T, R> extends BaseWritableResource<T> implements ResourceRef<T> {
     private readonly loaderFn;
-    private readonly defaultValue;
     private readonly equal;
     private readonly pendingTasks;
     /**
@@ -5613,9 +5643,10 @@ declare class ResourceImpl<T, R> extends BaseWritableResource<T> implements Reso
     private pendingController;
     private resolvePendingTask;
     private destroyed;
-    constructor(request: () => R, loaderFn: ResourceStreamingLoader<T, R>, defaultValue: T, equal: ValueEqualityFn$1<T> | undefined, injector: Injector);
+    private unregisterOnDestroy;
+    constructor(request: () => R, loaderFn: ResourceStreamingLoader<T, R>, defaultValue: T, equal: ValueEqualityFn$1<T> | undefined, injector: Injector, throwErrorsFromValue?: boolean);
     readonly status: Signal<ResourceStatus>;
-    readonly error: Signal<unknown>;
+    readonly error: Signal<Error | undefined>;
     /**
      * Called either directly via `WritableResource.set` or via `.value.set()`.
      */
@@ -5625,6 +5656,7 @@ declare class ResourceImpl<T, R> extends BaseWritableResource<T> implements Reso
     private loadEffect;
     private abortInProgressLoad;
 }
+declare function encapsulateResourceError(error: unknown): Error;
 
 /*!
  * @license
@@ -5640,6 +5672,84 @@ declare class ResourceImpl<T, R> extends BaseWritableResource<T> implements Reso
  * @param node Node from which to start the search.
  */
 declare function getClosestComponentName(node: Node): string | null;
+
+/**
+ * The following getter methods retrieve the definition from the type. Currently the retrieval
+ * honors inheritance, but in the future we may change the rule to require that definitions are
+ * explicit. This would require some sort of migration strategy.
+ */
+declare function getComponentDef<T>(type: any): ComponentDef<T> | null;
+/**
+ * Checks whether a given Component, Directive or Pipe is marked as standalone.
+ * This will return false if passed anything other than a Component, Directive, or Pipe class
+ * See [this guide](guide/components/importing) for additional information:
+ *
+ * @param type A reference to a Component, Directive or Pipe.
+ * @publicApi
+ */
+declare function isStandalone(type: Type$1<unknown>): boolean;
+
+/**
+ * TODO(incremental-hydration): Remove this file entirely once PromiseWithResolvers lands in stable
+ * node / TS.
+ */
+interface PromiseWithResolvers<T> {
+    promise: Promise<T>;
+    resolve: (value: T | PromiseLike<T>) => void;
+    reject: (reason?: any) => void;
+}
+
+/**
+ * An internal injection token to reference `DehydratedBlockRegistry` implementation
+ * in a tree-shakable way.
+ */
+declare const DEHYDRATED_BLOCK_REGISTRY: InjectionToken<DehydratedBlockRegistry>;
+/**
+ * The DehydratedBlockRegistry is used for incremental hydration purposes. It keeps
+ * track of the Defer Blocks that need hydration so we can effectively
+ * navigate up to the top dehydrated defer block and fire appropriate cleanup
+ * functions post hydration.
+ */
+declare class DehydratedBlockRegistry {
+    private registry;
+    private cleanupFns;
+    private jsActionMap;
+    private contract;
+    add(blockId: string, info: DehydratedDeferBlock): void;
+    get(blockId: string): DehydratedDeferBlock | null;
+    has(blockId: string): boolean;
+    cleanup(hydratedBlocks: string[]): void;
+    get size(): number;
+    addCleanupFn(blockId: string, fn: Function): void;
+    invokeTriggerCleanupFns(blockId: string): void;
+    hydrating: Map<string, PromiseWithResolvers<void>>;
+    private awaitingCallbacks;
+    awaitParentBlock(topmostParentBlock: string, callback: Function): void;
+    /** @nocollapse */
+    static ɵprov: unknown;
+}
+
+/**
+ * Helper service to schedule `setTimeout`s for batches of defer blocks,
+ * to avoid calling `setTimeout` for each defer block (e.g. if defer blocks
+ * are created inside a for loop).
+ */
+declare class TimerScheduler {
+    executingCallbacks: boolean;
+    timeoutId: number | null;
+    invokeTimerAt: number | null;
+    current: Array<number | VoidFunction>;
+    deferred: Array<number | VoidFunction>;
+    add(delay: number, callback: VoidFunction, ngZone: NgZone): void;
+    remove(callback: VoidFunction): void;
+    private addToQueue;
+    private removeFromQueue;
+    private scheduleTimer;
+    private clearTimeout;
+    ngOnDestroy(): void;
+    /** @nocollapse */
+    static ɵprov: unknown;
+}
 
 type AnimationFunction = (el: Element, completeFn: Function) => void;
 type AnimationType = string | AnimationFunction;
@@ -6303,6 +6413,20 @@ declare function ɵɵdeferPrefetchOnViewport(triggerIndex: number, walkUpTimes?:
  */
 declare function ɵɵdeferHydrateOnViewport(): void;
 
+declare function ɵɵanimateIn(value: AnimationType): typeof ɵɵanimateIn;
+/**
+ * Instruction to handle the `[animate.out]` behavior.
+ * It registers an animation with the ElementRegistry to be run when the element
+ * is scheduled for removal from the DOM.
+ *
+ * @param value The value bound to `[animate.out]`, which can be a string of CSS classes
+ *              or an AnimationFunction.
+ * @returns This function returns itself so that it may be chained.
+ *
+ * @codeGenApi
+ */
+declare function ɵɵanimateOut(value: AnimationType): typeof ɵɵanimateOut;
+
 /**
  * Advances to an element for later binding instructions.
  *
@@ -6342,559 +6466,6 @@ declare function ɵɵadvance(delta?: number): void;
  * @codeGenApi
  */
 declare function ɵɵattribute(name: string, value: any, sanitizer?: SanitizerFn | null, namespace?: string): typeof ɵɵattribute;
-
-/**
- *
- * Update an interpolated attribute on an element with single bound value surrounded by text.
- *
- * Used when the value passed to a property has 1 interpolated value in it:
- *
- * ```html
- * <div attr.title="prefix{{v0}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵattributeInterpolate1('title', 'prefix', v0, 'suffix');
- * ```
- *
- * @param attrName The name of the attribute to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵattributeInterpolate1(attrName: string, prefix: string, v0: any, suffix?: string, sanitizer?: SanitizerFn, namespace?: string): typeof ɵɵattributeInterpolate1;
-/**
- *
- * Update an interpolated attribute on an element with 2 bound values surrounded by text.
- *
- * Used when the value passed to a property has 2 interpolated values in it:
- *
- * ```html
- * <div attr.title="prefix{{v0}}-{{v1}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵattributeInterpolate2('title', 'prefix', v0, '-', v1, 'suffix');
- * ```
- *
- * @param attrName The name of the attribute to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵattributeInterpolate2(attrName: string, prefix: string, v0: any, i0: string, v1: any, suffix?: string, sanitizer?: SanitizerFn, namespace?: string): typeof ɵɵattributeInterpolate2;
-/**
- *
- * Update an interpolated attribute on an element with 3 bound values surrounded by text.
- *
- * Used when the value passed to a property has 3 interpolated values in it:
- *
- * ```html
- * <div attr.title="prefix{{v0}}-{{v1}}-{{v2}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵattributeInterpolate3(
- * 'title', 'prefix', v0, '-', v1, '-', v2, 'suffix');
- * ```
- *
- * @param attrName The name of the attribute to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵattributeInterpolate3(attrName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, suffix?: string, sanitizer?: SanitizerFn, namespace?: string): typeof ɵɵattributeInterpolate3;
-/**
- *
- * Update an interpolated attribute on an element with 4 bound values surrounded by text.
- *
- * Used when the value passed to a property has 4 interpolated values in it:
- *
- * ```html
- * <div attr.title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵattributeInterpolate4(
- * 'title', 'prefix', v0, '-', v1, '-', v2, '-', v3, 'suffix');
- * ```
- *
- * @param attrName The name of the attribute to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵattributeInterpolate4(attrName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, suffix?: string, sanitizer?: SanitizerFn, namespace?: string): typeof ɵɵattributeInterpolate4;
-/**
- *
- * Update an interpolated attribute on an element with 5 bound values surrounded by text.
- *
- * Used when the value passed to a property has 5 interpolated values in it:
- *
- * ```html
- * <div attr.title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵattributeInterpolate5(
- * 'title', 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, 'suffix');
- * ```
- *
- * @param attrName The name of the attribute to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵattributeInterpolate5(attrName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, suffix?: string, sanitizer?: SanitizerFn, namespace?: string): typeof ɵɵattributeInterpolate5;
-/**
- *
- * Update an interpolated attribute on an element with 6 bound values surrounded by text.
- *
- * Used when the value passed to a property has 6 interpolated values in it:
- *
- * ```html
- * <div attr.title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵattributeInterpolate6(
- *    'title', 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, 'suffix');
- * ```
- *
- * @param attrName The name of the attribute to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵattributeInterpolate6(attrName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, suffix?: string, sanitizer?: SanitizerFn, namespace?: string): typeof ɵɵattributeInterpolate6;
-/**
- *
- * Update an interpolated attribute on an element with 7 bound values surrounded by text.
- *
- * Used when the value passed to a property has 7 interpolated values in it:
- *
- * ```html
- * <div attr.title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵattributeInterpolate7(
- *    'title', 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, 'suffix');
- * ```
- *
- * @param attrName The name of the attribute to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param i5 Static value used for concatenation only.
- * @param v6 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵattributeInterpolate7(attrName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, suffix?: string, sanitizer?: SanitizerFn, namespace?: string): typeof ɵɵattributeInterpolate7;
-/**
- *
- * Update an interpolated attribute on an element with 8 bound values surrounded by text.
- *
- * Used when the value passed to a property has 8 interpolated values in it:
- *
- * ```html
- * <div attr.title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}-{{v7}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵattributeInterpolate8(
- *  'title', 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, '-', v7, 'suffix');
- * ```
- *
- * @param attrName The name of the attribute to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param i5 Static value used for concatenation only.
- * @param v6 Value checked for change.
- * @param i6 Static value used for concatenation only.
- * @param v7 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵattributeInterpolate8(attrName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, i6: string, v7: any, suffix?: string, sanitizer?: SanitizerFn, namespace?: string): typeof ɵɵattributeInterpolate8;
-/**
- * Update an interpolated attribute on an element with 9 or more bound values surrounded by text.
- *
- * Used when the number of interpolated values exceeds 8.
- *
- * ```html
- * <div
- *  title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}-{{v7}}-{{v8}}-{{v9}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵattributeInterpolateV(
- *  'title', ['prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, '-', v7, '-', v9,
- *  'suffix']);
- * ```
- *
- * @param attrName The name of the attribute to update.
- * @param values The collection of values and the strings in-between those values, beginning with
- * a string prefix and ending with a string suffix.
- * (e.g. `['prefix', value0, '-', value1, '-', value2, ..., value99, 'suffix']`)
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵattributeInterpolateV(attrName: string, values: any[], sanitizer?: SanitizerFn, namespace?: string): typeof ɵɵattributeInterpolateV;
-
-/**
- *
- * Update an interpolated class on an element with single bound value surrounded by text.
- *
- * Used when the value passed to a property has 1 interpolated value in it:
- *
- * ```html
- * <div class="prefix{{v0}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵclassMapInterpolate1('prefix', v0, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵclassMapInterpolate1(prefix: string, v0: any, suffix?: string): void;
-/**
- *
- * Update an interpolated class on an element with 2 bound values surrounded by text.
- *
- * Used when the value passed to a property has 2 interpolated values in it:
- *
- * ```html
- * <div class="prefix{{v0}}-{{v1}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵclassMapInterpolate2('prefix', v0, '-', v1, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵclassMapInterpolate2(prefix: string, v0: any, i0: string, v1: any, suffix?: string): void;
-/**
- *
- * Update an interpolated class on an element with 3 bound values surrounded by text.
- *
- * Used when the value passed to a property has 3 interpolated values in it:
- *
- * ```html
- * <div class="prefix{{v0}}-{{v1}}-{{v2}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵclassMapInterpolate3(
- * 'prefix', v0, '-', v1, '-', v2, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵclassMapInterpolate3(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, suffix?: string): void;
-/**
- *
- * Update an interpolated class on an element with 4 bound values surrounded by text.
- *
- * Used when the value passed to a property has 4 interpolated values in it:
- *
- * ```html
- * <div class="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵclassMapInterpolate4(
- * 'prefix', v0, '-', v1, '-', v2, '-', v3, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵclassMapInterpolate4(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, suffix?: string): void;
-/**
- *
- * Update an interpolated class on an element with 5 bound values surrounded by text.
- *
- * Used when the value passed to a property has 5 interpolated values in it:
- *
- * ```html
- * <div class="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵclassMapInterpolate5(
- * 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵclassMapInterpolate5(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, suffix?: string): void;
-/**
- *
- * Update an interpolated class on an element with 6 bound values surrounded by text.
- *
- * Used when the value passed to a property has 6 interpolated values in it:
- *
- * ```html
- * <div class="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵclassMapInterpolate6(
- *    'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵclassMapInterpolate6(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, suffix?: string): void;
-/**
- *
- * Update an interpolated class on an element with 7 bound values surrounded by text.
- *
- * Used when the value passed to a property has 7 interpolated values in it:
- *
- * ```html
- * <div class="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵclassMapInterpolate7(
- *    'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param i5 Static value used for concatenation only.
- * @param v6 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵclassMapInterpolate7(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, suffix?: string): void;
-/**
- *
- * Update an interpolated class on an element with 8 bound values surrounded by text.
- *
- * Used when the value passed to a property has 8 interpolated values in it:
- *
- * ```html
- * <div class="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}-{{v7}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵclassMapInterpolate8(
- *  'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, '-', v7, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param i5 Static value used for concatenation only.
- * @param v6 Value checked for change.
- * @param i6 Static value used for concatenation only.
- * @param v7 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵclassMapInterpolate8(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, i6: string, v7: any, suffix?: string): void;
-/**
- * Update an interpolated class on an element with 9 or more bound values surrounded by text.
- *
- * Used when the number of interpolated values exceeds 8.
- *
- * ```html
- * <div
- *  class="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}-{{v7}}-{{v8}}-{{v9}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵclassMapInterpolateV(
- *  ['prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, '-', v7, '-', v9,
- *  'suffix']);
- * ```
- *.
- * @param values The collection of values and the strings in-between those values, beginning with
- * a string prefix and ending with a string suffix.
- * (e.g. `['prefix', value0, '-', value1, '-', value2, ..., value99, 'suffix']`)
- * @codeGenApi
- */
-declare function ɵɵclassMapInterpolateV(values: any[]): void;
 
 /*!
  * @license
@@ -7319,9 +6890,6 @@ declare function ɵɵi18nPostprocess(message: string, replacements?: {
     [key: string]: string | string[];
 }): string;
 
-/** Shorthand for an event listener callback function to reduce duplication. */
-type EventCallback = (event?: any) => any;
-
 /**
  * Adds an event listener to the current node.
  *
@@ -7518,362 +7086,6 @@ declare function ɵɵprojection(nodeIndex: number, selectorIndex?: number, attrs
 declare function ɵɵproperty<T>(propName: string, value: T, sanitizer?: SanitizerFn | null): typeof ɵɵproperty;
 
 /**
- *
- * Update an interpolated property on an element with a lone bound value
- *
- * Used when the value passed to a property has 1 interpolated value in it, an no additional text
- * surrounds that interpolated value:
- *
- * ```html
- * <div title="{{v0}}"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵpropertyInterpolate('title', v0);
- * ```
- *
- * If the property name also exists as an input property on one of the element's directives,
- * the component property will be set instead of the element property. This check must
- * be conducted at runtime so child components that add new `@Inputs` don't have to be re-compiled.
- *
- * @param propName The name of the property to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵpropertyInterpolate(propName: string, v0: any, sanitizer?: SanitizerFn): typeof ɵɵpropertyInterpolate;
-/**
- *
- * Update an interpolated property on an element with single bound value surrounded by text.
- *
- * Used when the value passed to a property has 1 interpolated value in it:
- *
- * ```html
- * <div title="prefix{{v0}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵpropertyInterpolate1('title', 'prefix', v0, 'suffix');
- * ```
- *
- * If the property name also exists as an input property on one of the element's directives,
- * the component property will be set instead of the element property. This check must
- * be conducted at runtime so child components that add new `@Inputs` don't have to be re-compiled.
- *
- * @param propName The name of the property to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵpropertyInterpolate1(propName: string, prefix: string, v0: any, suffix?: string, sanitizer?: SanitizerFn): typeof ɵɵpropertyInterpolate1;
-/**
- *
- * Update an interpolated property on an element with 2 bound values surrounded by text.
- *
- * Used when the value passed to a property has 2 interpolated values in it:
- *
- * ```html
- * <div title="prefix{{v0}}-{{v1}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵpropertyInterpolate2('title', 'prefix', v0, '-', v1, 'suffix');
- * ```
- *
- * If the property name also exists as an input property on one of the element's directives,
- * the component property will be set instead of the element property. This check must
- * be conducted at runtime so child components that add new `@Inputs` don't have to be re-compiled.
- *
- * @param propName The name of the property to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵpropertyInterpolate2(propName: string, prefix: string, v0: any, i0: string, v1: any, suffix?: string, sanitizer?: SanitizerFn): typeof ɵɵpropertyInterpolate2;
-/**
- *
- * Update an interpolated property on an element with 3 bound values surrounded by text.
- *
- * Used when the value passed to a property has 3 interpolated values in it:
- *
- * ```html
- * <div title="prefix{{v0}}-{{v1}}-{{v2}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵpropertyInterpolate3(
- * 'title', 'prefix', v0, '-', v1, '-', v2, 'suffix');
- * ```
- *
- * If the property name also exists as an input property on one of the element's directives,
- * the component property will be set instead of the element property. This check must
- * be conducted at runtime so child components that add new `@Inputs` don't have to be re-compiled.
- *
- * @param propName The name of the property to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵpropertyInterpolate3(propName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, suffix?: string, sanitizer?: SanitizerFn): typeof ɵɵpropertyInterpolate3;
-/**
- *
- * Update an interpolated property on an element with 4 bound values surrounded by text.
- *
- * Used when the value passed to a property has 4 interpolated values in it:
- *
- * ```html
- * <div title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵpropertyInterpolate4(
- * 'title', 'prefix', v0, '-', v1, '-', v2, '-', v3, 'suffix');
- * ```
- *
- * If the property name also exists as an input property on one of the element's directives,
- * the component property will be set instead of the element property. This check must
- * be conducted at runtime so child components that add new `@Inputs` don't have to be re-compiled.
- *
- * @param propName The name of the property to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵpropertyInterpolate4(propName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, suffix?: string, sanitizer?: SanitizerFn): typeof ɵɵpropertyInterpolate4;
-/**
- *
- * Update an interpolated property on an element with 5 bound values surrounded by text.
- *
- * Used when the value passed to a property has 5 interpolated values in it:
- *
- * ```html
- * <div title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵpropertyInterpolate5(
- * 'title', 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, 'suffix');
- * ```
- *
- * If the property name also exists as an input property on one of the element's directives,
- * the component property will be set instead of the element property. This check must
- * be conducted at runtime so child components that add new `@Inputs` don't have to be re-compiled.
- *
- * @param propName The name of the property to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵpropertyInterpolate5(propName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, suffix?: string, sanitizer?: SanitizerFn): typeof ɵɵpropertyInterpolate5;
-/**
- *
- * Update an interpolated property on an element with 6 bound values surrounded by text.
- *
- * Used when the value passed to a property has 6 interpolated values in it:
- *
- * ```html
- * <div title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵpropertyInterpolate6(
- *    'title', 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, 'suffix');
- * ```
- *
- * If the property name also exists as an input property on one of the element's directives,
- * the component property will be set instead of the element property. This check must
- * be conducted at runtime so child components that add new `@Inputs` don't have to be re-compiled.
- *
- * @param propName The name of the property to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵpropertyInterpolate6(propName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, suffix?: string, sanitizer?: SanitizerFn): typeof ɵɵpropertyInterpolate6;
-/**
- *
- * Update an interpolated property on an element with 7 bound values surrounded by text.
- *
- * Used when the value passed to a property has 7 interpolated values in it:
- *
- * ```html
- * <div title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵpropertyInterpolate7(
- *    'title', 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, 'suffix');
- * ```
- *
- * If the property name also exists as an input property on one of the element's directives,
- * the component property will be set instead of the element property. This check must
- * be conducted at runtime so child components that add new `@Inputs` don't have to be re-compiled.
- *
- * @param propName The name of the property to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param i5 Static value used for concatenation only.
- * @param v6 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵpropertyInterpolate7(propName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, suffix?: string, sanitizer?: SanitizerFn): typeof ɵɵpropertyInterpolate7;
-/**
- *
- * Update an interpolated property on an element with 8 bound values surrounded by text.
- *
- * Used when the value passed to a property has 8 interpolated values in it:
- *
- * ```html
- * <div title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}-{{v7}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵpropertyInterpolate8(
- *  'title', 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, '-', v7, 'suffix');
- * ```
- *
- * If the property name also exists as an input property on one of the element's directives,
- * the component property will be set instead of the element property. This check must
- * be conducted at runtime so child components that add new `@Inputs` don't have to be re-compiled.
- *
- * @param propName The name of the property to update
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param i5 Static value used for concatenation only.
- * @param v6 Value checked for change.
- * @param i6 Static value used for concatenation only.
- * @param v7 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵpropertyInterpolate8(propName: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, i6: string, v7: any, suffix?: string, sanitizer?: SanitizerFn): typeof ɵɵpropertyInterpolate8;
-/**
- * Update an interpolated property on an element with 9 or more bound values surrounded by text.
- *
- * Used when the number of interpolated values exceeds 8.
- *
- * ```html
- * <div
- *  title="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}-{{v7}}-{{v8}}-{{v9}}suffix"></div>
- * ```
- *
- * Its compiled representation is::
- *
- * ```ts
- * ɵɵpropertyInterpolateV(
- *  'title', ['prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, '-', v7, '-', v9,
- *  'suffix']);
- * ```
- *
- * If the property name also exists as an input property on one of the element's directives,
- * the component property will be set instead of the element property. This check must
- * be conducted at runtime so child components that add new `@Inputs` don't have to be re-compiled.
- *
- * @param propName The name of the property to update.
- * @param values The collection of values and the strings in between those values, beginning with a
- * string prefix and ending with a string suffix.
- * (e.g. `['prefix', value0, '-', value1, '-', value2, ..., value99, 'suffix']`)
- * @param sanitizer An optional sanitizer function
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵpropertyInterpolateV(propName: string, values: any[], sanitizer?: SanitizerFn): typeof ɵɵpropertyInterpolateV;
-
-/**
  * Registers a QueryList, associated with a content query, for later refresh (part of a view
  * refresh).
  *
@@ -7951,8 +7163,6 @@ declare function ɵɵviewQuerySignal(target: Signal<unknown>, predicate: Provide
  */
 declare function ɵɵqueryAdvance(indexOffset?: number): void;
 
-/** Store a value in the `data` at a given `index`. */
-declare function store<T>(tView: TView, lView: LView, index: number, value: T): void;
 /**
  * Retrieves a local reference from the current contextViewData.
  *
@@ -7964,582 +7174,6 @@ declare function store<T>(tView: TView, lView: LView, index: number, value: T): 
  * @codeGenApi
  */
 declare function ɵɵreference<T>(index: number): T;
-
-/**
- *
- * Update an interpolated style on an element with single bound value surrounded by text.
- *
- * Used when the value passed to a property has 1 interpolated value in it:
- *
- * ```html
- * <div style="key: {{v0}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstyleMapInterpolate1('key: ', v0, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵstyleMapInterpolate1(prefix: string, v0: any, suffix?: string): void;
-/**
- *
- * Update an interpolated style on an element with 2 bound values surrounded by text.
- *
- * Used when the value passed to a property has 2 interpolated values in it:
- *
- * ```html
- * <div style="key: {{v0}}; key1: {{v1}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstyleMapInterpolate2('key: ', v0, '; key1: ', v1, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵstyleMapInterpolate2(prefix: string, v0: any, i0: string, v1: any, suffix?: string): void;
-/**
- *
- * Update an interpolated style on an element with 3 bound values surrounded by text.
- *
- * Used when the value passed to a property has 3 interpolated values in it:
- *
- * ```html
- * <div style="key: {{v0}}; key2: {{v1}}; key2: {{v2}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstyleMapInterpolate3(
- *     'key: ', v0, '; key1: ', v1, '; key2: ', v2, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵstyleMapInterpolate3(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, suffix?: string): void;
-/**
- *
- * Update an interpolated style on an element with 4 bound values surrounded by text.
- *
- * Used when the value passed to a property has 4 interpolated values in it:
- *
- * ```html
- * <div style="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstyleMapInterpolate4(
- *     'key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵstyleMapInterpolate4(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, suffix?: string): void;
-/**
- *
- * Update an interpolated style on an element with 5 bound values surrounded by text.
- *
- * Used when the value passed to a property has 5 interpolated values in it:
- *
- * ```html
- * <div style="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}; key4: {{v4}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstyleMapInterpolate5(
- *     'key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, '; key4: ', v4, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵstyleMapInterpolate5(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, suffix?: string): void;
-/**
- *
- * Update an interpolated style on an element with 6 bound values surrounded by text.
- *
- * Used when the value passed to a property has 6 interpolated values in it:
- *
- * ```html
- * <div style="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}; key4: {{v4}};
- *             key5: {{v5}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstyleMapInterpolate6(
- *    'key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, '; key4: ', v4, '; key5: ', v5,
- *    'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵstyleMapInterpolate6(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, suffix?: string): void;
-/**
- *
- * Update an interpolated style on an element with 7 bound values surrounded by text.
- *
- * Used when the value passed to a property has 7 interpolated values in it:
- *
- * ```html
- * <div style="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}; key4: {{v4}}; key5: {{v5}};
- *             key6: {{v6}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstyleMapInterpolate7(
- *    'key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, '; key4: ', v4, '; key5: ', v5,
- *    '; key6: ', v6, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param i5 Static value used for concatenation only.
- * @param v6 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵstyleMapInterpolate7(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, suffix?: string): void;
-/**
- *
- * Update an interpolated style on an element with 8 bound values surrounded by text.
- *
- * Used when the value passed to a property has 8 interpolated values in it:
- *
- * ```html
- * <div style="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}; key4: {{v4}}; key5: {{v5}};
- *             key6: {{v6}}; key7: {{v7}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstyleMapInterpolate8(
- *    'key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, '; key4: ', v4, '; key5: ', v5,
- *    '; key6: ', v6, '; key7: ', v7, 'suffix');
- * ```
- *
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param i5 Static value used for concatenation only.
- * @param v6 Value checked for change.
- * @param i6 Static value used for concatenation only.
- * @param v7 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @codeGenApi
- */
-declare function ɵɵstyleMapInterpolate8(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, i6: string, v7: any, suffix?: string): void;
-/**
- * Update an interpolated style on an element with 9 or more bound values surrounded by text.
- *
- * Used when the number of interpolated values exceeds 8.
- *
- * ```html
- * <div
- *  class="key: {{v0}}; key1: {{v1}}; key2: {{v2}}; key3: {{v3}}; key4: {{v4}}; key5: {{v5}};
- *         key6: {{v6}}; key7: {{v7}}; key8: {{v8}}; key9: {{v9}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstyleMapInterpolateV(
- *    ['key: ', v0, '; key1: ', v1, '; key2: ', v2, '; key3: ', v3, '; key4: ', v4, '; key5: ', v5,
- *     '; key6: ', v6, '; key7: ', v7, '; key8: ', v8, '; key9: ', v9, 'suffix']);
- * ```
- *.
- * @param values The collection of values and the strings in-between those values, beginning with
- * a string prefix and ending with a string suffix.
- * (e.g. `['prefix', value0, '; key2: ', value1, '; key2: ', value2, ..., value99, 'suffix']`)
- * @codeGenApi
- */
-declare function ɵɵstyleMapInterpolateV(values: any[]): void;
-
-/**
- *
- * Update an interpolated style property on an element with single bound value surrounded by text.
- *
- * Used when the value passed to a property has 1 interpolated value in it:
- *
- * ```html
- * <div style.color="prefix{{v0}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstylePropInterpolate1(0, 'prefix', v0, 'suffix');
- * ```
- *
- * @param styleIndex Index of style to update. This index value refers to the
- *        index of the style in the style bindings array that was passed into
- *        `styling`.
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param valueSuffix Optional suffix. Used with scalar values to add unit such as `px`.
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵstylePropInterpolate1(prop: string, prefix: string, v0: any, suffix?: string, valueSuffix?: string | null): typeof ɵɵstylePropInterpolate1;
-/**
- *
- * Update an interpolated style property on an element with 2 bound values surrounded by text.
- *
- * Used when the value passed to a property has 2 interpolated values in it:
- *
- * ```html
- * <div style.color="prefix{{v0}}-{{v1}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstylePropInterpolate2(0, 'prefix', v0, '-', v1, 'suffix');
- * ```
- *
- * @param styleIndex Index of style to update. This index value refers to the
- *        index of the style in the style bindings array that was passed into
- *        `styling`.
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param valueSuffix Optional suffix. Used with scalar values to add unit such as `px`.
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵstylePropInterpolate2(prop: string, prefix: string, v0: any, i0: string, v1: any, suffix?: string, valueSuffix?: string | null): typeof ɵɵstylePropInterpolate2;
-/**
- *
- * Update an interpolated style property on an element with 3 bound values surrounded by text.
- *
- * Used when the value passed to a property has 3 interpolated values in it:
- *
- * ```html
- * <div style.color="prefix{{v0}}-{{v1}}-{{v2}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstylePropInterpolate3(0, 'prefix', v0, '-', v1, '-', v2, 'suffix');
- * ```
- *
- * @param styleIndex Index of style to update. This index value refers to the
- *        index of the style in the style bindings array that was passed into
- *        `styling`.
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param valueSuffix Optional suffix. Used with scalar values to add unit such as `px`.
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵstylePropInterpolate3(prop: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, suffix?: string, valueSuffix?: string | null): typeof ɵɵstylePropInterpolate3;
-/**
- *
- * Update an interpolated style property on an element with 4 bound values surrounded by text.
- *
- * Used when the value passed to a property has 4 interpolated values in it:
- *
- * ```html
- * <div style.color="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstylePropInterpolate4(0, 'prefix', v0, '-', v1, '-', v2, '-', v3, 'suffix');
- * ```
- *
- * @param styleIndex Index of style to update. This index value refers to the
- *        index of the style in the style bindings array that was passed into
- *        `styling`.
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param valueSuffix Optional suffix. Used with scalar values to add unit such as `px`.
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵstylePropInterpolate4(prop: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, suffix?: string, valueSuffix?: string | null): typeof ɵɵstylePropInterpolate4;
-/**
- *
- * Update an interpolated style property on an element with 5 bound values surrounded by text.
- *
- * Used when the value passed to a property has 5 interpolated values in it:
- *
- * ```html
- * <div style.color="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstylePropInterpolate5(0, 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, 'suffix');
- * ```
- *
- * @param styleIndex Index of style to update. This index value refers to the
- *        index of the style in the style bindings array that was passed into
- *        `styling`.
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param valueSuffix Optional suffix. Used with scalar values to add unit such as `px`.
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵstylePropInterpolate5(prop: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, suffix?: string, valueSuffix?: string | null): typeof ɵɵstylePropInterpolate5;
-/**
- *
- * Update an interpolated style property on an element with 6 bound values surrounded by text.
- *
- * Used when the value passed to a property has 6 interpolated values in it:
- *
- * ```html
- * <div style.color="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstylePropInterpolate6(0, 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, 'suffix');
- * ```
- *
- * @param styleIndex Index of style to update. This index value refers to the
- *        index of the style in the style bindings array that was passed into
- *        `styling`.
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param valueSuffix Optional suffix. Used with scalar values to add unit such as `px`.
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵstylePropInterpolate6(prop: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, suffix?: string, valueSuffix?: string | null): typeof ɵɵstylePropInterpolate6;
-/**
- *
- * Update an interpolated style property on an element with 7 bound values surrounded by text.
- *
- * Used when the value passed to a property has 7 interpolated values in it:
- *
- * ```html
- * <div style.color="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstylePropInterpolate7(
- *    0, 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, 'suffix');
- * ```
- *
- * @param styleIndex Index of style to update. This index value refers to the
- *        index of the style in the style bindings array that was passed into
- *        `styling`.
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param i5 Static value used for concatenation only.
- * @param v6 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param valueSuffix Optional suffix. Used with scalar values to add unit such as `px`.
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵstylePropInterpolate7(prop: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, suffix?: string, valueSuffix?: string | null): typeof ɵɵstylePropInterpolate7;
-/**
- *
- * Update an interpolated style property on an element with 8 bound values surrounded by text.
- *
- * Used when the value passed to a property has 8 interpolated values in it:
- *
- * ```html
- * <div style.color="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}-{{v7}}suffix"></div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstylePropInterpolate8(0, 'prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6,
- * '-', v7, 'suffix');
- * ```
- *
- * @param styleIndex Index of style to update. This index value refers to the
- *        index of the style in the style bindings array that was passed into
- *        `styling`.
- * @param prefix Static value used for concatenation only.
- * @param v0 Value checked for change.
- * @param i0 Static value used for concatenation only.
- * @param v1 Value checked for change.
- * @param i1 Static value used for concatenation only.
- * @param v2 Value checked for change.
- * @param i2 Static value used for concatenation only.
- * @param v3 Value checked for change.
- * @param i3 Static value used for concatenation only.
- * @param v4 Value checked for change.
- * @param i4 Static value used for concatenation only.
- * @param v5 Value checked for change.
- * @param i5 Static value used for concatenation only.
- * @param v6 Value checked for change.
- * @param i6 Static value used for concatenation only.
- * @param v7 Value checked for change.
- * @param suffix Static value used for concatenation only.
- * @param valueSuffix Optional suffix. Used with scalar values to add unit such as `px`.
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵstylePropInterpolate8(prop: string, prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, i6: string, v7: any, suffix?: string, valueSuffix?: string | null): typeof ɵɵstylePropInterpolate8;
-/**
- * Update an interpolated style property on an element with 9 or more bound values surrounded by
- * text.
- *
- * Used when the number of interpolated values exceeds 8.
- *
- * ```html
- * <div
- *  style.color="prefix{{v0}}-{{v1}}-{{v2}}-{{v3}}-{{v4}}-{{v5}}-{{v6}}-{{v7}}-{{v8}}-{{v9}}suffix">
- * </div>
- * ```
- *
- * Its compiled representation is:
- *
- * ```ts
- * ɵɵstylePropInterpolateV(
- *  0, ['prefix', v0, '-', v1, '-', v2, '-', v3, '-', v4, '-', v5, '-', v6, '-', v7, '-', v9,
- *  'suffix']);
- * ```
- *
- * @param styleIndex Index of style to update. This index value refers to the
- *        index of the style in the style bindings array that was passed into
- *        `styling`..
- * @param values The collection of values and the strings in-between those values, beginning with
- * a string prefix and ending with a string suffix.
- * (e.g. `['prefix', value0, '-', value1, '-', value2, ..., value99, 'suffix']`)
- * @param valueSuffix Optional suffix. Used with scalar values to add unit such as `px`.
- * @returns itself, so that it may be chained.
- * @codeGenApi
- */
-declare function ɵɵstylePropInterpolateV(prop: string, values: any[], valueSuffix?: string | null): typeof ɵɵstylePropInterpolateV;
 
 /**
  * Update a style binding on an element with the provided value.
@@ -8958,6 +7592,169 @@ declare function ɵɵreadContextLet<T>(index: number): T;
  */
 declare function ɵɵattachSourceLocations(templatePath: string, locations: [index: number, offset: number, line: number, column: number][]): void;
 
+/*!
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.dev/license
+ */
+
+/**
+ * Interpolate a value with a single bound value and no prefixes or suffixes.
+ *
+ * @param v0 Value checked for change.
+ * @returns Interpolated string or NO_CHANGE if none of the bound values have changed.
+ * @codeGenApi
+ */
+declare function ɵɵinterpolate(v0: any): string | NO_CHANGE;
+/**
+ * Interpolate a value with a single bound value.
+ *
+ * @param prefix Static value used for concatenation only.
+ * @param v0 Value checked for change.
+ * @param suffix Static value used for concatenation only.
+ * @returns Interpolated string or NO_CHANGE if none of the bound values have changed.
+ * @codeGenApi
+ */
+declare function ɵɵinterpolate1(prefix: string, v0: any, suffix?: string): string | NO_CHANGE;
+/**
+ * Interpolate a value with two bound values.
+ *
+ * @param prefix Static value used for concatenation only.
+ * @param v0 Value checked for change.
+ * @param i0 Static value used for concatenation only.
+ * @param v1 Value checked for change.
+ * @param suffix Static value used for concatenation only.
+ * @returns Interpolated string or NO_CHANGE if none of the bound values have changed.
+ * @codeGenApi
+ */
+declare function ɵɵinterpolate2(prefix: string, v0: any, i0: string, v1: any, suffix?: string): string | NO_CHANGE;
+/**
+ * Interpolate a value with three bound values.
+ *
+ * @param prefix Static value used for concatenation only.
+ * @param v0 Value checked for change.
+ * @param i0 Static value used for concatenation only.
+ * @param v1 Value checked for change.
+ * @param i1 Static value used for concatenation only.
+ * @param v2 Value checked for change.
+ * @param suffix Static value used for concatenation only.
+ * @returns Interpolated string or NO_CHANGE if none of the bound values have changed.
+ * @codeGenApi
+ */
+declare function ɵɵinterpolate3(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, suffix?: string): string | NO_CHANGE;
+/**
+ * Interpolate a value with four bound values.
+ *
+ * @param prefix Static value used for concatenation only.
+ * @param v0 Value checked for change.
+ * @param i0 Static value used for concatenation only.
+ * @param v1 Value checked for change.
+ * @param i1 Static value used for concatenation only.
+ * @param v2 Value checked for change.
+ * @param i2 Static value used for concatenation only.
+ * @param v3 Value checked for change.
+ * @param suffix Static value used for concatenation only.
+ * @returns Interpolated string or NO_CHANGE if none of the bound values have changed.
+ * @codeGenApi
+ */
+declare function ɵɵinterpolate4(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, suffix?: string): string | NO_CHANGE;
+/**
+ * Interpolate a value with five bound values.
+ *
+ * @param prefix Static value used for concatenation only.
+ * @param v0 Value checked for change.
+ * @param i0 Static value used for concatenation only.
+ * @param v1 Value checked for change.
+ * @param i1 Static value used for concatenation only.
+ * @param v2 Value checked for change.
+ * @param i2 Static value used for concatenation only.
+ * @param v3 Value checked for change.
+ * @param i3 Static value used for concatenation only.
+ * @param v4 Value checked for change.
+ * @param suffix Static value used for concatenation only.
+ * @returns Interpolated string or NO_CHANGE if none of the bound values have changed.
+ * @codeGenApi
+ */
+declare function ɵɵinterpolate5(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, suffix?: string): string | NO_CHANGE;
+/**
+ * Interpolate a value with six bound values.
+ *
+ * @param prefix Static value used for concatenation only.
+ * @param v0 Value checked for change.
+ * @param i0 Static value used for concatenation only.
+ * @param v1 Value checked for change.
+ * @param i1 Static value used for concatenation only.
+ * @param v2 Value checked for change.
+ * @param i2 Static value used for concatenation only.
+ * @param v3 Value checked for change.
+ * @param i3 Static value used for concatenation only.
+ * @param v4 Value checked for change.
+ * @param i4 Static value used for concatenation only.
+ * @param v5 Value checked for change.
+ * @param suffix Static value used for concatenation only.
+ * @returns Interpolated string or NO_CHANGE if none of the bound values have changed.
+ * @codeGenApi
+ */
+declare function ɵɵinterpolate6(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, suffix?: string): string | NO_CHANGE;
+/**
+ * Interpolate a value with seven bound values.
+ *
+ * @param prefix Static value used for concatenation only.
+ * @param v0 Value checked for change.
+ * @param i0 Static value used for concatenation only.
+ * @param v1 Value checked for change.
+ * @param i1 Static value used for concatenation only.
+ * @param v2 Value checked for change.
+ * @param i2 Static value used for concatenation only.
+ * @param v3 Value checked for change.
+ * @param i3 Static value used for concatenation only.
+ * @param v4 Value checked for change.
+ * @param i4 Static value used for concatenation only.
+ * @param v5 Value checked for change.
+ * @param i5 Static value used for concatenation only.
+ * @param v6 Value checked for change.
+ * @param suffix Static value used for concatenation only.
+ * @returns Interpolated string or NO_CHANGE if none of the bound values have changed.
+ * @codeGenApi
+ */
+declare function ɵɵinterpolate7(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, suffix?: string): string | NO_CHANGE;
+/**
+ * Interpolate a value with eight bound values.
+ *
+ * @param prefix Static value used for concatenation only.
+ * @param v0 Value checked for change.
+ * @param i0 Static value used for concatenation only.
+ * @param v1 Value checked for change.
+ * @param i1 Static value used for concatenation only.
+ * @param v2 Value checked for change.
+ * @param i2 Static value used for concatenation only.
+ * @param v3 Value checked for change.
+ * @param i3 Static value used for concatenation only.
+ * @param v4 Value checked for change.
+ * @param i4 Static value used for concatenation only.
+ * @param v5 Value checked for change.
+ * @param i5 Static value used for concatenation only.
+ * @param v6 Value checked for change.
+ * @param i6 Static value used for concatenation only.
+ * @param v7 Value checked for change.
+ * @param suffix Static value used for concatenation only.
+ * @returns Interpolated string or NO_CHANGE if none of the bound values have changed.
+ * @codeGenApi
+ */
+declare function ɵɵinterpolate8(prefix: string, v0: any, i0: string, v1: any, i1: string, v2: any, i2: string, v3: any, i3: string, v4: any, i4: string, v5: any, i5: string, v6: any, i6: string, v7: any, suffix?: string): string | NO_CHANGE;
+/**
+ * Interpolate a value with nine or more bound values.
+ *
+ * @param values The collection of values and the strings in-between those values, beginning with
+ * a string prefix and ending with a string suffix.
+ * (e.g. `['prefix', value0, '-', value1, '-', value2, ..., value99, 'suffix']`)
+ * @returns Interpolated string or NO_CHANGE if none of the bound values have changed.
+ * @codeGenApi
+ */
+declare function ɵɵinterpolateV(values: unknown[]): string | NO_CHANGE;
+
 /**
  * Create a pipe.
  *
@@ -9272,6 +8069,15 @@ type ImportMetaExtended = ImportMeta & {
     };
 };
 /**
+ * Gets the URL from which the client will fetch a new version of a component's metadata so it
+ * can be replaced during hot module reloading.
+ * @param id Unique ID for the component, generated during compile time.
+ * @param timestamp Time at which the request happened.
+ * @param base Base URL against which to resolve relative paths.
+ * @codeGenApi
+ */
+declare function ɵɵgetReplaceMetadataURL(id: string, timestamp: string, base: string): string;
+/**
  * Replaces the metadata of a component type and re-renders all live instances of the component.
  * @param type Class whose metadata will be replaced.
  * @param applyMetadata Callback that will apply a new set of metadata on the `type` when invoked.
@@ -9285,14 +8091,8 @@ type ImportMetaExtended = ImportMeta & {
  */
 declare function ɵɵreplaceMetadata(type: Type$1<unknown>, applyMetadata: (...args: [Type$1<unknown>, unknown[], ...unknown[]]) => void, namespaces: unknown[], locals: unknown[], importMeta?: ImportMetaExtended | null, id?: string | null): void;
 
-/**
- * Tell ivy what the `document` is for this platform.
- *
- * It is only necessary to call this if the current platform is not a browser.
- *
- * @param document The object representing the global `document` in this environment.
- */
-declare function setDocument(document: Document | undefined): void;
+/** Store a value in the `data` at a given `index`. */
+declare function store<T>(tView: TView, lView: LView, index: number, value: T): void;
 
 type Type = Function;
 type OpaqueValue = unknown;
@@ -9830,8 +8630,11 @@ declare function getInjectorResolutionPath(injector: Injector): Injector[];
 
 interface DebugSignalGraphNode {
     kind: string;
+    id: string;
+    epoch: number;
     label?: string;
     value?: unknown;
+    debuggableFn?: () => unknown;
 }
 interface DebugSignalGraphEdge {
     /**
@@ -10156,14 +8959,6 @@ interface DepsTrackerApi {
 }
 
 /**
- * Indicates whether to use the runtime dependency tracker for scope calculation in JIT compilation.
- * The value "false" means the old code path based on patching scope info into the types will be
- * used.
- *
- * @deprecated For migration purposes only, to be removed soon.
- */
-declare const USE_RUNTIME_DEPS_TRACKER_FOR_JIT = true;
-/**
  * An implementation of DepsTrackerApi which will be used for JIT and local compilation.
  */
 declare class DepsTracker implements DepsTrackerApi {
@@ -10355,16 +9150,6 @@ interface ComponentMirror<C> {
 declare function reflectComponentType<C>(component: Type$1<C>): ComponentMirror<C> | null;
 
 /**
- * Checks whether a given Component, Directive or Pipe is marked as standalone.
- * This will return false if passed anything other than a Component, Directive, or Pipe class
- * See [this guide](guide/components/importing) for additional information:
- *
- * @param type A reference to a Component, Directive or Pipe.
- * @publicApi
- */
-declare function isStandalone(type: Type$1<unknown>): boolean;
-
-/**
  * Set of config options available during the application bootstrap operation.
  *
  * @publicApi
@@ -10458,5 +9243,5 @@ declare const DOCUMENT: InjectionToken<Document>;
  */
 declare function provideNgReflectAttributes(): EnvironmentProviders;
 
-export { ANIMATIONS_DISABLED, ANIMATION_MODULE_TYPE, APP_ID, APP_INITIALIZER, AfterRenderRef, ApplicationInitStatus, ApplicationModule, ApplicationRef, Attribute, CSP_NONCE, ChangeDetectionStrategy$1 as ChangeDetectionStrategy, ChangeDetectorRef, ClassProvider, ClassSansProvider, CompilerOptions, Component, ComponentFactory$1 as ComponentFactory, ComponentFactoryResolver$1 as ComponentFactoryResolver, ComponentRef$1 as ComponentRef, ConstructorProvider, ConstructorSansProvider, ContentChild, ContentChildren, DEFAULT_CURRENCY_CODE, DOCUMENT, DefaultIterableDiffer, Directive, ENVIRONMENT_INITIALIZER, EffectCleanupRegisterFn, ElementRef, ElementRegistry, EmbeddedViewRef, EnvironmentInjector, EnvironmentProviders, ErrorHandler, ExistingProvider, ExistingSansProvider, FactoryProvider, FactorySansProvider, HOST_TAG_NAME, Host, HostAttributeToken, INJECTOR, Inject, InjectOptions, Injectable, InjectionToken, Injector, IterableDiffers, KeyValueDiffers, LOCALE_ID, MissingTranslationStrategy, ModuleWithProviders, NgModule, NgModuleFactory$1 as NgModuleFactory, NgModuleRef$1 as NgModuleRef, NgZone, Optional, OutputRef, PACKAGE_ROOT_URL, PLATFORM_ID, PLATFORM_INITIALIZER, PendingTasks, Pipe, PlatformRef, Provider, ProviderToken, Query, QueryList, REQUEST, REQUEST_CONTEXT, RESPONSE_INIT, Resource, ResourceOptions, ResourceRef, ResourceStatus, ResourceStreamingLoader, SchemaMetadata, Self, Signal, SimpleChange, SkipSelf, StaticClassProvider, StaticClassSansProvider, StaticProvider, TRANSLATIONS, TRANSLATIONS_FORMAT, TemplateRef, Testability, TestabilityRegistry, TransferState, Type$1 as Type, TypeDecorator, TypeProvider, VERSION, ValueEqualityFn, ValueProvider, ValueSansProvider, Version, ViewChild, ViewChildren, ViewContainerRef, ViewEncapsulation$1 as ViewEncapsulation, ViewRef$1 as ViewRef, WritableResource, WritableSignal, afterEveryRender, afterNextRender, afterRenderEffect, assertInInjectionContext, assertNotInReactiveContext, assertPlatform, booleanAttribute, computed, contentChild, contentChildren, createComponent, createEnvironmentInjector, createNgModule, createNgModuleRef, createPlatform, createPlatformFactory, destroyPlatform, enableProdMode, forwardRef, getModuleFactory, getNgModuleById, getPlatform, importProvidersFrom, inject, input, isDevMode, isSignal, isStandalone, linkedSignal, makeEnvironmentProviders, makeStateKey, mergeApplicationConfig, model, numberAttribute, platformCore, provideAppInitializer, provideBrowserGlobalErrorListeners, provideCheckNoChangesConfig, provideEnvironmentInitializer, provideNgReflectAttributes, providePlatformInitializer, provideZoneChangeDetection, provideZonelessChangeDetection, reflectComponentType, resolveForwardRef, resource, runInInjectionContext, setTestabilityGetter, untracked, viewChild, viewChildren, ALLOW_MULTIPLE_PLATFORMS as ɵALLOW_MULTIPLE_PLATFORMS, AcxChangeDetectionStrategy as ɵAcxChangeDetectionStrategy, AcxViewEncapsulation as ɵAcxViewEncapsulation, BypassType as ɵBypassType, ChangeDetectionScheduler as ɵChangeDetectionScheduler, ChangeDetectionSchedulerImpl as ɵChangeDetectionSchedulerImpl, ComponentDef as ɵComponentDef, ComponentFactory$1 as ɵComponentFactory, ComponentType as ɵComponentType, Console as ɵConsole, CssSelectorList as ɵCssSelectorList, CurrencyIndex as ɵCurrencyIndex, DEFAULT_LOCALE_ID as ɵDEFAULT_LOCALE_ID, DEFER_BLOCK_CONFIG as ɵDEFER_BLOCK_CONFIG, DEFER_BLOCK_DEPENDENCY_INTERCEPTOR as ɵDEFER_BLOCK_DEPENDENCY_INTERCEPTOR, DeferBlockConfig as ɵDeferBlockConfig, DeferBlockDependencyInterceptor as ɵDeferBlockDependencyInterceptor, DeferBlockState as ɵDeferBlockState, DirectiveDef as ɵDirectiveDef, DirectiveType as ɵDirectiveType, ENABLE_ROOT_COMPONENT_BOOTSTRAP as ɵENABLE_ROOT_COMPONENT_BOOTSTRAP, ExtraLocaleDataIndex as ɵExtraLocaleDataIndex, Framework as ɵFramework, IMAGE_CONFIG as ɵIMAGE_CONFIG, IMAGE_CONFIG_DEFAULTS as ɵIMAGE_CONFIG_DEFAULTS, INJECTOR_SCOPE as ɵINJECTOR_SCOPE, ɵINPUT_SIGNAL_BRAND_WRITE_TYPE, INTERNAL_APPLICATION_ERROR_HANDLER as ɵINTERNAL_APPLICATION_ERROR_HANDLER, IS_HYDRATION_DOM_REUSE_ENABLED as ɵIS_HYDRATION_DOM_REUSE_ENABLED, IS_INCREMENTAL_HYDRATION_ENABLED as ɵIS_INCREMENTAL_HYDRATION_ENABLED, InputSignalNode as ɵInputSignalNode, LContext as ɵLContext, LocaleDataIndex as ɵLocaleDataIndex, NG_COMP_DEF as ɵNG_COMP_DEF, NG_DIR_DEF as ɵNG_DIR_DEF, NG_ELEMENT_ID as ɵNG_ELEMENT_ID, NG_MOD_DEF as ɵNG_MOD_DEF, NG_PIPE_DEF as ɵNG_PIPE_DEF, NOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR as ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR, NO_CHANGE as ɵNO_CHANGE, NgModuleFactory as ɵNgModuleFactory, NotificationSource as ɵNotificationSource, PERFORMANCE_MARK_PREFIX as ɵPERFORMANCE_MARK_PREFIX, PROVIDED_NG_ZONE as ɵPROVIDED_NG_ZONE, PendingTasksInternal as ɵPendingTasksInternal, ProfilerEvent as ɵProfilerEvent, ReflectionCapabilities as ɵReflectionCapabilities, ComponentFactory as ɵRender3ComponentFactory, ComponentRef as ɵRender3ComponentRef, NgModuleRef as ɵRender3NgModuleRef, ResourceImpl as ɵResourceImpl, RuntimeError as ɵRuntimeError, RuntimeErrorCode as ɵRuntimeErrorCode, SIGNAL as ɵSIGNAL, SSR_CONTENT_INTEGRITY_MARKER as ɵSSR_CONTENT_INTEGRITY_MARKER, TESTABILITY as ɵTESTABILITY, TESTABILITY_GETTER as ɵTESTABILITY_GETTER, USE_RUNTIME_DEPS_TRACKER_FOR_JIT as ɵUSE_RUNTIME_DEPS_TRACKER_FOR_JIT, ViewRef as ɵViewRef, XSS_SECURITY_URL as ɵXSS_SECURITY_URL, _sanitizeHtml as ɵ_sanitizeHtml, _sanitizeUrl as ɵ_sanitizeUrl, allowSanitizationBypassAndThrow as ɵallowSanitizationBypassAndThrow, annotateForHydration as ɵannotateForHydration, bypassSanitizationTrustHtml as ɵbypassSanitizationTrustHtml, bypassSanitizationTrustResourceUrl as ɵbypassSanitizationTrustResourceUrl, bypassSanitizationTrustScript as ɵbypassSanitizationTrustScript, bypassSanitizationTrustStyle as ɵbypassSanitizationTrustStyle, bypassSanitizationTrustUrl as ɵbypassSanitizationTrustUrl, clearResolutionOfComponentResourcesQueue as ɵclearResolutionOfComponentResourcesQueue, compileComponent as ɵcompileComponent, compileDirective as ɵcompileDirective, compileNgModule as ɵcompileNgModule, compileNgModuleDefs as ɵcompileNgModuleDefs, compileNgModuleFactory as ɵcompileNgModuleFactory, compilePipe as ɵcompilePipe, convertToBitFlags as ɵconvertToBitFlags, createInjector as ɵcreateInjector, defaultIterableDiffers as ɵdefaultIterableDiffers, defaultKeyValueDiffers as ɵdefaultKeyValueDiffers, depsTracker as ɵdepsTracker, devModeEqual as ɵdevModeEqual, disableProfiling as ɵdisableProfiling, enableProfiling as ɵenableProfiling, findLocaleData as ɵfindLocaleData, flushModuleScopingQueueAsMuchAsPossible as ɵflushModuleScopingQueueAsMuchAsPossible, formatRuntimeError as ɵformatRuntimeError, generateStandaloneInDeclarationsError as ɵgenerateStandaloneInDeclarationsError, getAsyncClassMetadataFn as ɵgetAsyncClassMetadataFn, getClosestComponentName as ɵgetClosestComponentName, getDirectives as ɵgetDirectives, getHostElement as ɵgetHostElement, getLContext as ɵgetLContext, getLocaleCurrencyCode as ɵgetLocaleCurrencyCode, getLocalePluralCase as ɵgetLocalePluralCase, getSanitizationBypassType as ɵgetSanitizationBypassType, ɵgetUnknownElementStrictMode, ɵgetUnknownPropertyStrictMode, _global as ɵglobal, internalCreateApplication as ɵinternalCreateApplication, internalProvideZoneChangeDetection as ɵinternalProvideZoneChangeDetection, isComponentDefPendingResolution as ɵisComponentDefPendingResolution, isNgModule as ɵisNgModule, isPromise as ɵisPromise, isSubscribable as ɵisSubscribable, isViewDirty as ɵisViewDirty, markForRefresh as ɵmarkForRefresh, noSideEffects as ɵnoSideEffects, patchComponentDefWithScope as ɵpatchComponentDefWithScope, performanceMarkFeature as ɵperformanceMarkFeature, publishExternalGlobalUtil as ɵpublishExternalGlobalUtil, readHydrationInfo as ɵreadHydrationInfo, registerLocaleData as ɵregisterLocaleData, renderDeferBlockState as ɵrenderDeferBlockState, resetCompiledComponents as ɵresetCompiledComponents, resetJitOptions as ɵresetJitOptions, resolveComponentResources as ɵresolveComponentResources, restoreComponentResolutionQueue as ɵrestoreComponentResolutionQueue, setAllowDuplicateNgModuleIdsForTest as ɵsetAllowDuplicateNgModuleIdsForTest, ɵsetClassDebugInfo, setClassMetadata as ɵsetClassMetadata, setClassMetadataAsync as ɵsetClassMetadataAsync, setDocument as ɵsetDocument, setInjectorProfilerContext as ɵsetInjectorProfilerContext, setLocaleId as ɵsetLocaleId, ɵsetUnknownElementStrictMode, ɵsetUnknownPropertyStrictMode, startMeasuring as ɵstartMeasuring, stopMeasuring as ɵstopMeasuring, store as ɵstore, stringify as ɵstringify, transitiveScopesFor as ɵtransitiveScopesFor, triggerResourceLoading as ɵtriggerResourceLoading, truncateMiddle as ɵtruncateMiddle, unregisterAllLocaleData as ɵunregisterLocaleData, unwrapSafeValue as ɵunwrapSafeValue, withDomHydration as ɵwithDomHydration, withEventReplay as ɵwithEventReplay, withI18nSupport as ɵwithI18nSupport, withIncrementalHydration as ɵwithIncrementalHydration, ɵɵCopyDefinitionFeature, ɵɵExternalStylesFeature, __FactoryDeclaration as ɵɵFactoryDeclaration, FactoryTarget as ɵɵFactoryTarget, ɵɵHostDirectivesFeature, ɵɵInheritDefinitionFeature, __InjectableDeclaration as ɵɵInjectableDeclaration, __InjectorDeclaration as ɵɵInjectorDeclaration, __NgModuleDeclaration as ɵɵNgModuleDeclaration, ɵɵNgOnChangesFeature, ɵɵProvidersFeature, ɵɵadvance, ɵɵattachSourceLocations, ɵɵattribute, ɵɵattributeInterpolate1, ɵɵattributeInterpolate2, ɵɵattributeInterpolate3, ɵɵattributeInterpolate4, ɵɵattributeInterpolate5, ɵɵattributeInterpolate6, ɵɵattributeInterpolate7, ɵɵattributeInterpolate8, ɵɵattributeInterpolateV, ɵɵclassMap, ɵɵclassMapInterpolate1, ɵɵclassMapInterpolate2, ɵɵclassMapInterpolate3, ɵɵclassMapInterpolate4, ɵɵclassMapInterpolate5, ɵɵclassMapInterpolate6, ɵɵclassMapInterpolate7, ɵɵclassMapInterpolate8, ɵɵclassMapInterpolateV, ɵɵclassProp, ɵɵcomponentInstance, ɵɵconditional, ɵɵconditionalBranchCreate, ɵɵconditionalCreate, ɵɵcontentQuery, ɵɵcontentQuerySignal, ɵɵdeclareLet, ɵɵdefer, ɵɵdeferEnableTimerScheduling, ɵɵdeferHydrateNever, ɵɵdeferHydrateOnHover, ɵɵdeferHydrateOnIdle, ɵɵdeferHydrateOnImmediate, ɵɵdeferHydrateOnInteraction, ɵɵdeferHydrateOnTimer, ɵɵdeferHydrateOnViewport, ɵɵdeferHydrateWhen, ɵɵdeferOnHover, ɵɵdeferOnIdle, ɵɵdeferOnImmediate, ɵɵdeferOnInteraction, ɵɵdeferOnTimer, ɵɵdeferOnViewport, ɵɵdeferPrefetchOnHover, ɵɵdeferPrefetchOnIdle, ɵɵdeferPrefetchOnImmediate, ɵɵdeferPrefetchOnInteraction, ɵɵdeferPrefetchOnTimer, ɵɵdeferPrefetchOnViewport, ɵɵdeferPrefetchWhen, ɵɵdeferWhen, ɵɵdefineComponent, ɵɵdefineDirective, ɵɵdefineNgModule, ɵɵdefinePipe, ɵɵdirectiveInject, ɵɵdisableBindings, ɵɵdomProperty, ɵɵelement, ɵɵelementContainer, ɵɵelementContainerEnd, ɵɵelementContainerStart, ɵɵelementEnd, ɵɵelementStart, ɵɵenableBindings, ɵɵgetComponentDepsFactory, ɵɵgetCurrentView, ɵɵgetInheritedFactory, ɵɵi18n, ɵɵi18nApply, ɵɵi18nAttributes, ɵɵi18nEnd, ɵɵi18nExp, ɵɵi18nPostprocess, ɵɵi18nStart, ɵɵinject, ɵɵinjectAttribute, ɵɵinvalidFactory, ɵɵinvalidFactoryDep, ɵɵlistener, ɵɵloadQuery, ɵɵnamespaceHTML, ɵɵnamespaceMathML, ɵɵnamespaceSVG, ɵɵnextContext, ɵɵngDeclareClassMetadata, ɵɵngDeclareClassMetadataAsync, ɵɵngDeclareComponent, ɵɵngDeclareDirective, ɵɵngDeclareFactory, ɵɵngDeclareInjectable, ɵɵngDeclareInjector, ɵɵngDeclareNgModule, ɵɵngDeclarePipe, ɵɵpipe, ɵɵpipeBind1, ɵɵpipeBind2, ɵɵpipeBind3, ɵɵpipeBind4, ɵɵpipeBindV, ɵɵprojection, ɵɵprojectionDef, ɵɵproperty, ɵɵpropertyInterpolate, ɵɵpropertyInterpolate1, ɵɵpropertyInterpolate2, ɵɵpropertyInterpolate3, ɵɵpropertyInterpolate4, ɵɵpropertyInterpolate5, ɵɵpropertyInterpolate6, ɵɵpropertyInterpolate7, ɵɵpropertyInterpolate8, ɵɵpropertyInterpolateV, ɵɵpureFunction0, ɵɵpureFunction1, ɵɵpureFunction2, ɵɵpureFunction3, ɵɵpureFunction4, ɵɵpureFunction5, ɵɵpureFunction6, ɵɵpureFunction7, ɵɵpureFunction8, ɵɵpureFunctionV, ɵɵqueryAdvance, ɵɵqueryRefresh, ɵɵreadContextLet, ɵɵreference, registerNgModuleType as ɵɵregisterNgModuleType, ɵɵrepeater, ɵɵrepeaterCreate, ɵɵrepeaterTrackByIdentity, ɵɵrepeaterTrackByIndex, ɵɵreplaceMetadata, ɵɵresetView, ɵɵresolveBody, ɵɵresolveDocument, ɵɵresolveWindow, ɵɵrestoreView, ɵɵsanitizeHtml, ɵɵsanitizeResourceUrl, ɵɵsanitizeScript, ɵɵsanitizeStyle, ɵɵsanitizeUrl, ɵɵsanitizeUrlOrResourceUrl, ɵɵsetComponentScope, ɵɵsetNgModuleScope, ɵɵstoreLet, ɵɵstyleMap, ɵɵstyleMapInterpolate1, ɵɵstyleMapInterpolate2, ɵɵstyleMapInterpolate3, ɵɵstyleMapInterpolate4, ɵɵstyleMapInterpolate5, ɵɵstyleMapInterpolate6, ɵɵstyleMapInterpolate7, ɵɵstyleMapInterpolate8, ɵɵstyleMapInterpolateV, ɵɵstyleProp, ɵɵstylePropInterpolate1, ɵɵstylePropInterpolate2, ɵɵstylePropInterpolate3, ɵɵstylePropInterpolate4, ɵɵstylePropInterpolate5, ɵɵstylePropInterpolate6, ɵɵstylePropInterpolate7, ɵɵstylePropInterpolate8, ɵɵstylePropInterpolateV, ɵɵsyntheticHostListener, ɵɵsyntheticHostProperty, ɵɵtemplate, ɵɵtemplateRefExtractor, ɵɵtext, ɵɵtextInterpolate, ɵɵtextInterpolate1, ɵɵtextInterpolate2, ɵɵtextInterpolate3, ɵɵtextInterpolate4, ɵɵtextInterpolate5, ɵɵtextInterpolate6, ɵɵtextInterpolate7, ɵɵtextInterpolate8, ɵɵtextInterpolateV, ɵɵtrustConstantHtml, ɵɵtrustConstantResourceUrl, ɵɵtwoWayBindingSet, ɵɵtwoWayListener, ɵɵtwoWayProperty, ɵɵvalidateIframeAttribute, ɵɵviewQuery, ɵɵviewQuerySignal };
+export { ANIMATIONS_DISABLED, ANIMATION_MODULE_TYPE, APP_ID, APP_INITIALIZER, AfterRenderRef, ApplicationInitStatus, ApplicationModule, ApplicationRef, Attribute, Binding, CSP_NONCE, ChangeDetectionStrategy$1 as ChangeDetectionStrategy, ChangeDetectorRef, ClassProvider, ClassSansProvider, CompilerOptions, Component, ComponentFactory$1 as ComponentFactory, ComponentFactoryResolver$1 as ComponentFactoryResolver, ComponentRef$1 as ComponentRef, ConstructorProvider, ConstructorSansProvider, ContentChild, ContentChildren, DEFAULT_CURRENCY_CODE, DOCUMENT, DefaultIterableDiffer, Directive, ENVIRONMENT_INITIALIZER, EffectCleanupRegisterFn, ElementRef, ElementRegistry, EmbeddedViewRef, EnvironmentInjector, EnvironmentProviders, ErrorHandler, ExistingProvider, ExistingSansProvider, FactoryProvider, FactorySansProvider, HOST_TAG_NAME, Host, HostAttributeToken, INJECTOR, Inject, InjectOptions, Injectable, InjectionToken, Injector, IterableDiffers, KeyValueDiffers, LOCALE_ID, MissingTranslationStrategy, ModuleWithProviders, NgModule, NgModuleFactory$1 as NgModuleFactory, NgModuleRef$1 as NgModuleRef, NgZone, Optional, OutputRef, PACKAGE_ROOT_URL, PLATFORM_ID, PLATFORM_INITIALIZER, PendingTasks, Pipe, PlatformRef, Provider, ProviderToken, Query, QueryList, REQUEST, REQUEST_CONTEXT, RESPONSE_INIT, Resource, ResourceOptions, ResourceRef, ResourceStatus, ResourceStreamingLoader, SchemaMetadata, Self, Signal, SimpleChange, SkipSelf, StaticClassProvider, StaticClassSansProvider, StaticProvider, TRANSLATIONS, TRANSLATIONS_FORMAT, TemplateRef, Testability, TestabilityRegistry, TransferState, Type$1 as Type, TypeDecorator, TypeProvider, VERSION, ValueEqualityFn, ValueProvider, ValueSansProvider, Version, ViewChild, ViewChildren, ViewContainerRef, ViewEncapsulation$1 as ViewEncapsulation, ViewRef$1 as ViewRef, WritableResource, WritableSignal, afterEveryRender, afterNextRender, afterRenderEffect, assertInInjectionContext, assertNotInReactiveContext, assertPlatform, booleanAttribute, computed, contentChild, contentChildren, createComponent, createEnvironmentInjector, createNgModule, createNgModuleRef, createPlatform, createPlatformFactory, destroyPlatform, enableProdMode, enableProfiling$1 as enableProfiling, forwardRef, getModuleFactory, getNgModuleById, getPlatform, importProvidersFrom, inject, input, isDevMode, isSignal, isStandalone, linkedSignal, makeEnvironmentProviders, makeStateKey, mergeApplicationConfig, model, numberAttribute, platformCore, provideAppInitializer, provideBrowserGlobalErrorListeners, provideCheckNoChangesConfig, provideEnvironmentInitializer, provideNgReflectAttributes, providePlatformInitializer, provideZoneChangeDetection, provideZonelessChangeDetection, reflectComponentType, resolveForwardRef, resource, runInInjectionContext, setTestabilityGetter, untracked, viewChild, viewChildren, ALLOW_MULTIPLE_PLATFORMS as ɵALLOW_MULTIPLE_PLATFORMS, AcxChangeDetectionStrategy as ɵAcxChangeDetectionStrategy, AcxViewEncapsulation as ɵAcxViewEncapsulation, BypassType as ɵBypassType, CLIENT_RENDER_MODE_FLAG as ɵCLIENT_RENDER_MODE_FLAG, ChangeDetectionScheduler as ɵChangeDetectionScheduler, ChangeDetectionSchedulerImpl as ɵChangeDetectionSchedulerImpl, ComponentDef as ɵComponentDef, ComponentFactory$1 as ɵComponentFactory, ComponentType as ɵComponentType, Console as ɵConsole, CssSelectorList as ɵCssSelectorList, CurrencyIndex as ɵCurrencyIndex, DEFAULT_LOCALE_ID as ɵDEFAULT_LOCALE_ID, DEFER_BLOCK_CONFIG as ɵDEFER_BLOCK_CONFIG, DEFER_BLOCK_DEPENDENCY_INTERCEPTOR as ɵDEFER_BLOCK_DEPENDENCY_INTERCEPTOR, DEHYDRATED_BLOCK_REGISTRY as ɵDEHYDRATED_BLOCK_REGISTRY, DeferBlockConfig as ɵDeferBlockConfig, DeferBlockDependencyInterceptor as ɵDeferBlockDependencyInterceptor, DeferBlockState as ɵDeferBlockState, DirectiveDef as ɵDirectiveDef, DirectiveType as ɵDirectiveType, ENABLE_ROOT_COMPONENT_BOOTSTRAP as ɵENABLE_ROOT_COMPONENT_BOOTSTRAP, ExtraLocaleDataIndex as ɵExtraLocaleDataIndex, Framework as ɵFramework, HydrationStatus as ɵHydrationStatus, IMAGE_CONFIG as ɵIMAGE_CONFIG, IMAGE_CONFIG_DEFAULTS as ɵIMAGE_CONFIG_DEFAULTS, ɵINPUT_SIGNAL_BRAND_WRITE_TYPE, INTERNAL_APPLICATION_ERROR_HANDLER as ɵINTERNAL_APPLICATION_ERROR_HANDLER, IS_HYDRATION_DOM_REUSE_ENABLED as ɵIS_HYDRATION_DOM_REUSE_ENABLED, IS_INCREMENTAL_HYDRATION_ENABLED as ɵIS_INCREMENTAL_HYDRATION_ENABLED, InputSignalNode as ɵInputSignalNode, JSACTION_BLOCK_ELEMENT_MAP as ɵJSACTION_BLOCK_ELEMENT_MAP, LContext as ɵLContext, LocaleDataIndex as ɵLocaleDataIndex, NG_COMP_DEF as ɵNG_COMP_DEF, NG_DIR_DEF as ɵNG_DIR_DEF, NG_ELEMENT_ID as ɵNG_ELEMENT_ID, NG_MOD_DEF as ɵNG_MOD_DEF, NG_PIPE_DEF as ɵNG_PIPE_DEF, NOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR as ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR, NO_CHANGE as ɵNO_CHANGE, NgModuleFactory as ɵNgModuleFactory, NotificationSource as ɵNotificationSource, PERFORMANCE_MARK_PREFIX as ɵPERFORMANCE_MARK_PREFIX, PROVIDED_NG_ZONE as ɵPROVIDED_NG_ZONE, PendingTasksInternal as ɵPendingTasksInternal, ProfilerEvent as ɵProfilerEvent, ReflectionCapabilities as ɵReflectionCapabilities, ComponentFactory as ɵRender3ComponentFactory, ComponentRef as ɵRender3ComponentRef, NgModuleRef as ɵRender3NgModuleRef, ResourceImpl as ɵResourceImpl, RuntimeError as ɵRuntimeError, RuntimeErrorCode as ɵRuntimeErrorCode, SIGNAL as ɵSIGNAL, SSR_CONTENT_INTEGRITY_MARKER as ɵSSR_CONTENT_INTEGRITY_MARKER, TESTABILITY as ɵTESTABILITY, TESTABILITY_GETTER as ɵTESTABILITY_GETTER, TimerScheduler as ɵTimerScheduler, ViewRef as ɵViewRef, XSS_SECURITY_URL as ɵXSS_SECURITY_URL, _sanitizeHtml as ɵ_sanitizeHtml, _sanitizeUrl as ɵ_sanitizeUrl, allowSanitizationBypassAndThrow as ɵallowSanitizationBypassAndThrow, annotateForHydration as ɵannotateForHydration, bypassSanitizationTrustHtml as ɵbypassSanitizationTrustHtml, bypassSanitizationTrustResourceUrl as ɵbypassSanitizationTrustResourceUrl, bypassSanitizationTrustScript as ɵbypassSanitizationTrustScript, bypassSanitizationTrustStyle as ɵbypassSanitizationTrustStyle, bypassSanitizationTrustUrl as ɵbypassSanitizationTrustUrl, clearResolutionOfComponentResourcesQueue as ɵclearResolutionOfComponentResourcesQueue, compileComponent as ɵcompileComponent, compileDirective as ɵcompileDirective, compileNgModule as ɵcompileNgModule, compileNgModuleDefs as ɵcompileNgModuleDefs, compileNgModuleFactory as ɵcompileNgModuleFactory, compilePipe as ɵcompilePipe, convertToBitFlags as ɵconvertToBitFlags, createInjector as ɵcreateInjector, createOrReusePlatformInjector as ɵcreateOrReusePlatformInjector, defaultIterableDiffers as ɵdefaultIterableDiffers, defaultKeyValueDiffers as ɵdefaultKeyValueDiffers, depsTracker as ɵdepsTracker, devModeEqual as ɵdevModeEqual, disableProfiling as ɵdisableProfiling, enableProfiling as ɵenableProfiling, encapsulateResourceError as ɵencapsulateResourceError, findLocaleData as ɵfindLocaleData, flushModuleScopingQueueAsMuchAsPossible as ɵflushModuleScopingQueueAsMuchAsPossible, formatRuntimeError as ɵformatRuntimeError, generateStandaloneInDeclarationsError as ɵgenerateStandaloneInDeclarationsError, getAsyncClassMetadataFn as ɵgetAsyncClassMetadataFn, getClosestComponentName as ɵgetClosestComponentName, getComponentDef as ɵgetComponentDef, getDirectives as ɵgetDirectives, getDocument as ɵgetDocument, getHostElement as ɵgetHostElement, getLContext as ɵgetLContext, getLocaleCurrencyCode as ɵgetLocaleCurrencyCode, getLocalePluralCase as ɵgetLocalePluralCase, getSanitizationBypassType as ɵgetSanitizationBypassType, ɵgetUnknownElementStrictMode, ɵgetUnknownPropertyStrictMode, _global as ɵglobal, internalCreateApplication as ɵinternalCreateApplication, internalProvideZoneChangeDetection as ɵinternalProvideZoneChangeDetection, isComponentDefPendingResolution as ɵisComponentDefPendingResolution, isNgModule as ɵisNgModule, isPromise as ɵisPromise, isSubscribable as ɵisSubscribable, isViewDirty as ɵisViewDirty, markForRefresh as ɵmarkForRefresh, noSideEffects as ɵnoSideEffects, patchComponentDefWithScope as ɵpatchComponentDefWithScope, performanceMarkFeature as ɵperformanceMarkFeature, publishExternalGlobalUtil as ɵpublishExternalGlobalUtil, readHydrationInfo as ɵreadHydrationInfo, registerLocaleData as ɵregisterLocaleData, renderDeferBlockState as ɵrenderDeferBlockState, resetCompiledComponents as ɵresetCompiledComponents, resetJitOptions as ɵresetJitOptions, resolveComponentResources as ɵresolveComponentResources, restoreComponentResolutionQueue as ɵrestoreComponentResolutionQueue, setAllowDuplicateNgModuleIdsForTest as ɵsetAllowDuplicateNgModuleIdsForTest, ɵsetClassDebugInfo, setClassMetadata as ɵsetClassMetadata, setClassMetadataAsync as ɵsetClassMetadataAsync, setDocument as ɵsetDocument, setInjectorProfilerContext as ɵsetInjectorProfilerContext, setLocaleId as ɵsetLocaleId, ɵsetUnknownElementStrictMode, ɵsetUnknownPropertyStrictMode, startMeasuring as ɵstartMeasuring, stopMeasuring as ɵstopMeasuring, store as ɵstore, stringify as ɵstringify, transitiveScopesFor as ɵtransitiveScopesFor, triggerResourceLoading as ɵtriggerResourceLoading, truncateMiddle as ɵtruncateMiddle, unregisterAllLocaleData as ɵunregisterLocaleData, unwrapSafeValue as ɵunwrapSafeValue, withDomHydration as ɵwithDomHydration, withEventReplay as ɵwithEventReplay, withI18nSupport as ɵwithI18nSupport, withIncrementalHydration as ɵwithIncrementalHydration, ɵɵCopyDefinitionFeature, ɵɵExternalStylesFeature, __FactoryDeclaration as ɵɵFactoryDeclaration, FactoryTarget as ɵɵFactoryTarget, ɵɵHostDirectivesFeature, ɵɵInheritDefinitionFeature, __InjectableDeclaration as ɵɵInjectableDeclaration, __InjectorDeclaration as ɵɵInjectorDeclaration, __NgModuleDeclaration as ɵɵNgModuleDeclaration, ɵɵNgOnChangesFeature, ɵɵProvidersFeature, ɵɵadvance, ɵɵanimateIn, ɵɵanimateOut, ɵɵattachSourceLocations, ɵɵattribute, ɵɵclassMap, ɵɵclassProp, ɵɵcomponentInstance, ɵɵconditional, ɵɵconditionalBranchCreate, ɵɵconditionalCreate, ɵɵcontentQuery, ɵɵcontentQuerySignal, ɵɵdeclareLet, ɵɵdefer, ɵɵdeferEnableTimerScheduling, ɵɵdeferHydrateNever, ɵɵdeferHydrateOnHover, ɵɵdeferHydrateOnIdle, ɵɵdeferHydrateOnImmediate, ɵɵdeferHydrateOnInteraction, ɵɵdeferHydrateOnTimer, ɵɵdeferHydrateOnViewport, ɵɵdeferHydrateWhen, ɵɵdeferOnHover, ɵɵdeferOnIdle, ɵɵdeferOnImmediate, ɵɵdeferOnInteraction, ɵɵdeferOnTimer, ɵɵdeferOnViewport, ɵɵdeferPrefetchOnHover, ɵɵdeferPrefetchOnIdle, ɵɵdeferPrefetchOnImmediate, ɵɵdeferPrefetchOnInteraction, ɵɵdeferPrefetchOnTimer, ɵɵdeferPrefetchOnViewport, ɵɵdeferPrefetchWhen, ɵɵdeferWhen, ɵɵdefineComponent, ɵɵdefineDirective, ɵɵdefineNgModule, ɵɵdefinePipe, ɵɵdirectiveInject, ɵɵdisableBindings, ɵɵdomProperty, ɵɵelement, ɵɵelementContainer, ɵɵelementContainerEnd, ɵɵelementContainerStart, ɵɵelementEnd, ɵɵelementStart, ɵɵenableBindings, ɵɵgetComponentDepsFactory, ɵɵgetCurrentView, ɵɵgetInheritedFactory, ɵɵgetReplaceMetadataURL, ɵɵi18n, ɵɵi18nApply, ɵɵi18nAttributes, ɵɵi18nEnd, ɵɵi18nExp, ɵɵi18nPostprocess, ɵɵi18nStart, ɵɵinject, ɵɵinjectAttribute, ɵɵinterpolate, ɵɵinterpolate1, ɵɵinterpolate2, ɵɵinterpolate3, ɵɵinterpolate4, ɵɵinterpolate5, ɵɵinterpolate6, ɵɵinterpolate7, ɵɵinterpolate8, ɵɵinterpolateV, ɵɵinvalidFactory, ɵɵinvalidFactoryDep, ɵɵlistener, ɵɵloadQuery, ɵɵnamespaceHTML, ɵɵnamespaceMathML, ɵɵnamespaceSVG, ɵɵnextContext, ɵɵngDeclareClassMetadata, ɵɵngDeclareClassMetadataAsync, ɵɵngDeclareComponent, ɵɵngDeclareDirective, ɵɵngDeclareFactory, ɵɵngDeclareInjectable, ɵɵngDeclareInjector, ɵɵngDeclareNgModule, ɵɵngDeclarePipe, ɵɵpipe, ɵɵpipeBind1, ɵɵpipeBind2, ɵɵpipeBind3, ɵɵpipeBind4, ɵɵpipeBindV, ɵɵprojection, ɵɵprojectionDef, ɵɵproperty, ɵɵpureFunction0, ɵɵpureFunction1, ɵɵpureFunction2, ɵɵpureFunction3, ɵɵpureFunction4, ɵɵpureFunction5, ɵɵpureFunction6, ɵɵpureFunction7, ɵɵpureFunction8, ɵɵpureFunctionV, ɵɵqueryAdvance, ɵɵqueryRefresh, ɵɵreadContextLet, ɵɵreference, registerNgModuleType as ɵɵregisterNgModuleType, ɵɵrepeater, ɵɵrepeaterCreate, ɵɵrepeaterTrackByIdentity, ɵɵrepeaterTrackByIndex, ɵɵreplaceMetadata, ɵɵresetView, ɵɵresolveBody, ɵɵresolveDocument, ɵɵresolveWindow, ɵɵrestoreView, ɵɵsanitizeHtml, ɵɵsanitizeResourceUrl, ɵɵsanitizeScript, ɵɵsanitizeStyle, ɵɵsanitizeUrl, ɵɵsanitizeUrlOrResourceUrl, ɵɵsetComponentScope, ɵɵsetNgModuleScope, ɵɵstoreLet, ɵɵstyleMap, ɵɵstyleProp, ɵɵsyntheticHostListener, ɵɵsyntheticHostProperty, ɵɵtemplate, ɵɵtemplateRefExtractor, ɵɵtext, ɵɵtextInterpolate, ɵɵtextInterpolate1, ɵɵtextInterpolate2, ɵɵtextInterpolate3, ɵɵtextInterpolate4, ɵɵtextInterpolate5, ɵɵtextInterpolate6, ɵɵtextInterpolate7, ɵɵtextInterpolate8, ɵɵtextInterpolateV, ɵɵtrustConstantHtml, ɵɵtrustConstantResourceUrl, ɵɵtwoWayBindingSet, ɵɵtwoWayListener, ɵɵtwoWayProperty, ɵɵvalidateIframeAttribute, ɵɵviewQuery, ɵɵviewQuerySignal };
 export type { AfterContentChecked, AfterContentInit, AfterRenderOptions, AfterViewChecked, AfterViewInit, AnimationFunction, AnimationType, ApplicationConfig, AttributeDecorator, ComponentMirror, ContentChildDecorator, ContentChildFunction, ContentChildrenDecorator, CreateComputedOptions, DoBootstrap, DoCheck, ForwardRefFn, GetTestability, HostDecorator, ImportProvidersSource, InjectDecorator, InjectableDecorator, InjectableProvider, InputFunction, InputOptions, InputOptionsWithTransform, InputOptionsWithoutTransform, InputSignal, InputSignalWithTransform, IterableChangeRecord, IterableChanges, IterableDiffer, IterableDifferFactory, KeyValueChangeRecord, KeyValueChanges, KeyValueDiffer, KeyValueDifferFactory, ModelFunction, ModelOptions, ModelSignal, NgIterable, NgZoneOptions, OnChanges, OnDestroy, OnInit, OptionalDecorator, PipeTransform, SelfDecorator, SimpleChanges, SkipSelfDecorator, StateKey, TrackByFunction, ViewChildDecorator, ViewChildFunction, ViewChildrenDecorator, AcxComponentDebugMetadata as ɵAcxComponentDebugMetadata, AcxDirectiveDebugMetadata as ɵAcxDirectiveDebugMetadata, AngularComponentDebugMetadata as ɵAngularComponentDebugMetadata, AngularDirectiveDebugMetadata as ɵAngularDirectiveDebugMetadata, BaseDirectiveDebugMetadata as ɵBaseDirectiveDebugMetadata, DeferBlockData as ɵDeferBlockData, DirectiveDebugMetadata as ɵDirectiveDebugMetadata, ɵFirstAvailable, ɵFirstAvailableSignal, FrameworkAgnosticGlobalUtils as ɵFrameworkAgnosticGlobalUtils, GlobalDevModeUtils as ɵGlobalDevModeUtils, HydratedNode as ɵHydratedNode, HydrationInfo as ɵHydrationInfo, ImageConfig as ɵImageConfig, InjectorProfilerContext as ɵInjectorProfilerContext, NgModuleDef as ɵNgModuleDef, NgModuleTransitiveScopes as ɵNgModuleTransitiveScopes, NgModuleType as ɵNgModuleType, Profiler as ɵProfiler, ProviderRecord as ɵProviderRecord, SafeHtml as ɵSafeHtml, SafeResourceUrl as ɵSafeResourceUrl, SafeScript as ɵSafeScript, SafeStyle as ɵSafeStyle, SafeUrl as ɵSafeUrl, SafeValue as ɵSafeValue, ɵUnwrapDirectiveSignalInputs, WizComponentDebugMetadata as ɵWizComponentDebugMetadata };

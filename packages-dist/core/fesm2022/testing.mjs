@@ -1,15 +1,15 @@
 /**
- * @license Angular v19.2.9+sha-cb4c3da-with-local-changes
+ * @license Angular v20.0.3+sha-e8e1a42
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
-import { Subscription } from 'rxjs';
-import { DeferBlockState, triggerResourceLoading, renderDeferBlockState, getDeferBlocks, DeferBlockBehavior, NgZone, Injectable, NoopNgZone, ApplicationRef, getDebugNode, RendererFactory2, Pipe, Directive, Component, NgModule, ReflectionCapabilities, depsTracker, isComponentDefPendingResolution, getAsyncClassMetadataFn, resolveComponentResources, NgModuleRef, ApplicationInitStatus, LOCALE_ID, DEFAULT_LOCALE_ID, setLocaleId, ComponentFactory, compileComponent, compileDirective, compilePipe, patchComponentDefWithScope, compileNgModuleDefs, clearResolutionOfComponentResourcesQueue, restoreComponentResolutionQueue, internalProvideZoneChangeDetection, ChangeDetectionSchedulerImpl, Compiler, DEFER_BLOCK_CONFIG, COMPILER_OPTIONS, transitiveScopesFor, generateStandaloneInDeclarationsError, NgModuleFactory, ModuleWithComponentFactories, resetCompiledComponents, ɵsetUnknownElementStrictMode as _setUnknownElementStrictMode, ɵsetUnknownPropertyStrictMode as _setUnknownPropertyStrictMode, ɵgetUnknownElementStrictMode as _getUnknownElementStrictMode, ɵgetUnknownPropertyStrictMode as _getUnknownPropertyStrictMode, flushModuleScopingQueueAsMuchAsPossible, setAllowDuplicateNgModuleIdsForTest } from './debug_node-nZBodmzw.mjs';
-import { CONTAINER_HEADER_OFFSET, InjectionToken, inject as inject$1, EnvironmentInjector, ErrorHandler, PendingTasksInternal, ZONELESS_ENABLED, ChangeDetectionScheduler, EffectScheduler, stringify, getInjectableDef, resolveForwardRef, NG_COMP_DEF, NG_DIR_DEF, NG_PIPE_DEF, NG_INJ_DEF, NG_MOD_DEF, ENVIRONMENT_INITIALIZER, INTERNAL_APPLICATION_ERROR_HANDLER, Injector, isEnvironmentProviders, runInInjectionContext } from './root_effect_scheduler-DTKVhAd7.mjs';
 import * as i0 from '@angular/core';
+import { NgZone, Injectable, DeferBlockState, triggerResourceLoading, renderDeferBlockState, getDeferBlocks, DeferBlockBehavior, NoopNgZone, ApplicationRef, getDebugNode, RendererFactory2, Directive, Component, Pipe, NgModule, ReflectionCapabilities, depsTracker, isComponentDefPendingResolution, resolveComponentResources, NgModuleRef, ApplicationInitStatus, LOCALE_ID, DEFAULT_LOCALE_ID, setLocaleId, ComponentFactory, getAsyncClassMetadataFn, compileComponent, compileDirective, compilePipe, patchComponentDefWithScope, compileNgModuleDefs, clearResolutionOfComponentResourcesQueue, restoreComponentResolutionQueue, internalProvideZoneChangeDetection, ChangeDetectionSchedulerImpl, COMPILER_OPTIONS, generateStandaloneInDeclarationsError, transitiveScopesFor, Compiler, DEFER_BLOCK_CONFIG, NgModuleFactory, ModuleWithComponentFactories, resetCompiledComponents, ɵsetUnknownElementStrictMode as _setUnknownElementStrictMode, ɵsetUnknownPropertyStrictMode as _setUnknownPropertyStrictMode, ɵgetUnknownElementStrictMode as _getUnknownElementStrictMode, ɵgetUnknownPropertyStrictMode as _getUnknownPropertyStrictMode, flushModuleScopingQueueAsMuchAsPossible, setAllowDuplicateNgModuleIdsForTest } from './debug_node-BXfAYnOA.mjs';
+import { Subscription } from 'rxjs';
+import { inject as inject$1, EnvironmentInjector, ErrorHandler, CONTAINER_HEADER_OFFSET, InjectionToken, PendingTasksInternal, ZONELESS_ENABLED, ChangeDetectionScheduler, EffectScheduler, stringify, getInjectableDef, resolveForwardRef, NG_COMP_DEF, NG_DIR_DEF, NG_PIPE_DEF, NG_INJ_DEF, NG_MOD_DEF, ENVIRONMENT_INITIALIZER, Injector, isEnvironmentProviders, INTERNAL_APPLICATION_ERROR_HANDLER, runInInjectionContext } from './view_context-D0j9LO9U.mjs';
 import { ResourceLoader } from '@angular/compiler';
-import './signal-CVVPheSN.mjs';
+import './signal-nCiHhWf6.mjs';
 import 'rxjs/operators';
 import './attribute-BWp59EjE.mjs';
 import '@angular/core/primitives/signals';
@@ -51,6 +51,42 @@ function waitForAsync(fn) {
     };
 }
 
+const RETHROW_APPLICATION_ERRORS_DEFAULT = true;
+class TestBedApplicationErrorHandler {
+    zone = inject$1(NgZone);
+    injector = inject$1(EnvironmentInjector);
+    userErrorHandler;
+    whenStableRejectFunctions = new Set();
+    handleError(e) {
+        try {
+            this.zone.runOutsideAngular(() => {
+                this.userErrorHandler ??= this.injector.get(ErrorHandler);
+                this.userErrorHandler.handleError(e);
+            });
+        }
+        catch (userError) {
+            e = userError;
+        }
+        // Instead of throwing the error when there are outstanding `fixture.whenStable` promises,
+        // reject those promises with the error. This allows developers to write
+        // expectAsync(fix.whenStable()).toBeRejected();
+        if (this.whenStableRejectFunctions.size > 0) {
+            for (const fn of this.whenStableRejectFunctions.values()) {
+                fn(e);
+            }
+            this.whenStableRejectFunctions.clear();
+        }
+        else {
+            throw e;
+        }
+    }
+    static ɵfac = function TestBedApplicationErrorHandler_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || TestBedApplicationErrorHandler)(); };
+    static ɵprov = /*@__PURE__*/ i0.ɵɵdefineInjectable({ token: TestBedApplicationErrorHandler, factory: TestBedApplicationErrorHandler.ɵfac });
+}
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TestBedApplicationErrorHandler, [{
+        type: Injectable
+    }], null, null); })();
+
 /**
  * Represents an individual defer block for testing purposes.
  *
@@ -59,7 +95,7 @@ function waitForAsync(fn) {
 class DeferBlockFixture {
     block;
     componentFixture;
-    /** @nodoc */
+    /** @docs-private */
     constructor(block, componentFixture) {
         this.block = block;
         this.componentFixture = componentFixture;
@@ -156,42 +192,6 @@ const ComponentFixtureAutoDetect = new InjectionToken('ComponentFixtureAutoDetec
  */
 const ComponentFixtureNoNgZone = new InjectionToken('ComponentFixtureNoNgZone');
 
-const RETHROW_APPLICATION_ERRORS_DEFAULT = true;
-class TestBedApplicationErrorHandler {
-    zone = inject$1(NgZone);
-    injector = inject$1(EnvironmentInjector);
-    userErrorHandler;
-    whenStableRejectFunctions = new Set();
-    handleError(e) {
-        try {
-            this.zone.runOutsideAngular(() => {
-                this.userErrorHandler ??= this.injector.get(ErrorHandler);
-                this.userErrorHandler.handleError(e);
-            });
-        }
-        catch (userError) {
-            e = userError;
-        }
-        // Instead of throwing the error when there are outstanding `fixture.whenStable` promises,
-        // reject those promises with the error. This allows developers to write
-        // expectAsync(fix.whenStable()).toBeRejected();
-        if (this.whenStableRejectFunctions.size > 0) {
-            for (const fn of this.whenStableRejectFunctions.values()) {
-                fn(e);
-            }
-            this.whenStableRejectFunctions.clear();
-        }
-        else {
-            throw e;
-        }
-    }
-    static ɵfac = function TestBedApplicationErrorHandler_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || TestBedApplicationErrorHandler)(); };
-    static ɵprov = /*@__PURE__*/ i0.ɵɵdefineInjectable({ token: TestBedApplicationErrorHandler, factory: TestBedApplicationErrorHandler.ɵfac });
-}
-(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TestBedApplicationErrorHandler, [{
-        type: Injectable
-    }], null, null); })();
-
 /**
  * Fixture for debugging and testing a component.
  *
@@ -244,7 +244,7 @@ class ComponentFixture {
     subscriptions = new Subscription();
     // TODO(atscott): Remove this from public API
     ngZone = this._noZoneOptionIsSet ? null : this._ngZone;
-    /** @nodoc */
+    /** @docs-private */
     constructor(componentRef) {
         this.componentRef = componentRef;
         this.changeDetectorRef = componentRef.changeDetectorRef;
@@ -253,13 +253,15 @@ class ComponentFixture {
         this.componentInstance = componentRef.instance;
         this.nativeElement = this.elementRef.nativeElement;
         this.componentRef = componentRef;
+        this._testAppRef.allTestViews.add(this.componentRef.hostView);
         if (this.autoDetect) {
-            this._testAppRef.externalTestViews.add(this.componentRef.hostView);
+            this._testAppRef.autoDetectTestViews.add(this.componentRef.hostView);
             this.scheduler?.notify(8 /* ɵNotificationSource.ViewAttached */);
             this.scheduler?.notify(0 /* ɵNotificationSource.MarkAncestorsForTraversal */);
         }
         this.componentRef.hostView.onDestroy(() => {
-            this._testAppRef.externalTestViews.delete(this.componentRef.hostView);
+            this._testAppRef.allTestViews.delete(this.componentRef.hostView);
+            this._testAppRef.autoDetectTestViews.delete(this.componentRef.hostView);
         });
         // Create subscriptions outside the NgZone so that the callbacks run outside
         // of NgZone.
@@ -293,13 +295,11 @@ class ComponentFixture {
             }
             if (this.zonelessEnabled) {
                 try {
-                    this._testAppRef.externalTestViews.add(this.componentRef.hostView);
+                    this._testAppRef.includeAllTestViews = true;
                     this._appRef.tick();
                 }
                 finally {
-                    if (!this.autoDetect) {
-                        this._testAppRef.externalTestViews.delete(this.componentRef.hostView);
-                    }
+                    this._testAppRef.includeAllTestViews = false;
                 }
             }
             else {
@@ -323,24 +323,18 @@ class ComponentFixture {
     checkNoChanges() {
         this.changeDetectorRef.checkNoChanges();
     }
-    /**
-     * Set whether the fixture should autodetect changes.
-     *
-     * Also runs detectChanges once so that any existing change is detected.
-     *
-     * @param autoDetect Whether to autodetect changes. By default, `true`.
-     */
     autoDetectChanges(autoDetect = true) {
+        if (!autoDetect && this.zonelessEnabled) {
+            throw new Error('Cannot set autoDetect to false with zoneless change detection.');
+        }
         if (this._noZoneOptionIsSet && !this.zonelessEnabled) {
             throw new Error('Cannot call autoDetectChanges when ComponentFixtureNoNgZone is set.');
         }
-        if (autoDetect !== this.autoDetect) {
-            if (autoDetect) {
-                this._testAppRef.externalTestViews.add(this.componentRef.hostView);
-            }
-            else {
-                this._testAppRef.externalTestViews.delete(this.componentRef.hostView);
-            }
+        if (autoDetect) {
+            this._testAppRef.autoDetectTestViews.add(this.componentRef.hostView);
+        }
+        else {
+            this._testAppRef.autoDetectTestViews.delete(this.componentRef.hostView);
         }
         this.autoDetect = autoDetect;
         this.detectChanges();
@@ -404,7 +398,8 @@ class ComponentFixture {
      */
     destroy() {
         this.subscriptions.unsubscribe();
-        this._testAppRef.externalTestViews.delete(this.componentRef.hostView);
+        this._testAppRef.autoDetectTestViews.delete(this.componentRef.hostView);
+        this._testAppRef.allTestViews.delete(this.componentRef.hostView);
         if (!this._isDestroyed) {
             this.componentRef.destroy();
             this._isDestroyed = true;
@@ -413,9 +408,17 @@ class ComponentFixture {
 }
 
 const _Zone = typeof Zone !== 'undefined' ? Zone : null;
-const fakeAsyncTestModule = _Zone && _Zone[_Zone.__symbol__('fakeAsyncTest')];
-const fakeAsyncTestModuleNotLoadedErrorMessage = `zone-testing.js is needed for the fakeAsync() test helper but could not be found.
-        Please make sure that your environment includes zone.js/testing`;
+function getFakeAsyncTestModule() {
+    return _Zone && _Zone[_Zone.__symbol__('fakeAsyncTest')];
+}
+function withFakeAsyncTestModule(fn) {
+    const fakeAsyncTestModule = getFakeAsyncTestModule();
+    if (!fakeAsyncTestModule) {
+        throw new Error(`zone-testing.js is needed for the fakeAsync() test helper but could not be found.
+        Please make sure that your environment includes zone.js/testing`);
+    }
+    return fn(fakeAsyncTestModule);
+}
 /**
  * Clears out the shared fake async zone for a test.
  * To be called in a global `beforeEach`.
@@ -423,14 +426,11 @@ const fakeAsyncTestModuleNotLoadedErrorMessage = `zone-testing.js is needed for 
  * @publicApi
  */
 function resetFakeAsyncZone() {
-    if (fakeAsyncTestModule) {
-        return fakeAsyncTestModule.resetFakeAsyncZone();
-    }
-    throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
+    withFakeAsyncTestModule((v) => v.resetFakeAsyncZone());
 }
 function resetFakeAsyncZoneIfExists() {
-    if (fakeAsyncTestModule) {
-        fakeAsyncTestModule.resetFakeAsyncZone();
+    if (getFakeAsyncTestModule() && Zone['ProxyZoneSpec']?.isLoaded()) {
+        getFakeAsyncTestModule().resetFakeAsyncZone();
     }
 }
 /**
@@ -458,10 +458,7 @@ function resetFakeAsyncZoneIfExists() {
  * @publicApi
  */
 function fakeAsync(fn, options) {
-    if (fakeAsyncTestModule) {
-        return fakeAsyncTestModule.fakeAsync(fn, options);
-    }
-    throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
+    return withFakeAsyncTestModule((v) => v.fakeAsync(fn, options));
 }
 /**
  * Simulates the asynchronous passage of time for the timers in the `fakeAsync` zone.
@@ -530,10 +527,7 @@ function fakeAsync(fn, options) {
 function tick(millis = 0, tickOptions = {
     processNewMacroTasksSynchronously: true,
 }) {
-    if (fakeAsyncTestModule) {
-        return fakeAsyncTestModule.tick(millis, tickOptions);
-    }
-    throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
+    return withFakeAsyncTestModule((m) => m.tick(millis, tickOptions));
 }
 /**
  * Flushes any pending microtasks and simulates the asynchronous passage of time for the timers in
@@ -547,10 +541,7 @@ function tick(millis = 0, tickOptions = {
  * @publicApi
  */
 function flush(maxTurns) {
-    if (fakeAsyncTestModule) {
-        return fakeAsyncTestModule.flush(maxTurns);
-    }
-    throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
+    return withFakeAsyncTestModule((m) => m.flush(maxTurns));
 }
 /**
  * Discard all remaining periodic tasks.
@@ -558,10 +549,7 @@ function flush(maxTurns) {
  * @publicApi
  */
 function discardPeriodicTasks() {
-    if (fakeAsyncTestModule) {
-        return fakeAsyncTestModule.discardPeriodicTasks();
-    }
-    throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
+    return withFakeAsyncTestModule((m) => m.discardPeriodicTasks());
 }
 /**
  * Flush any pending microtasks.
@@ -569,10 +557,7 @@ function discardPeriodicTasks() {
  * @publicApi
  */
 function flushMicrotasks() {
-    if (fakeAsyncTestModule) {
-        return fakeAsyncTestModule.flushMicrotasks();
-    }
-    throw new Error(fakeAsyncTestModuleNotLoadedErrorMessage);
+    return withFakeAsyncTestModule((m) => m.flushMicrotasks());
 }
 
 let _nextReferenceId = 0;
@@ -879,9 +864,7 @@ class TestBedCompiler {
             moduleDef.rethrowApplicationErrors ?? RETHROW_APPLICATION_ERRORS_DEFAULT;
     }
     overrideModule(ngModule, override) {
-        {
-            depsTracker.clearScopeCacheFor(ngModule);
-        }
+        depsTracker.clearScopeCacheFor(ngModule);
         this.overriddenModules.add(ngModule);
         // Compile the module right away.
         this.resolvers.module.addOverride(ngModule, override);
@@ -1097,9 +1080,7 @@ class TestBedCompiler {
                 throw invalidTypeError(declaration.name, 'Component');
             }
             this.maybeStoreNgDef(NG_COMP_DEF, declaration);
-            {
-                depsTracker.clearScopeCacheFor(declaration);
-            }
+            depsTracker.clearScopeCacheFor(declaration);
             compileComponent(declaration, metadata);
         });
         this.pendingComponents.clear();
@@ -1132,9 +1113,7 @@ class TestBedCompiler {
             const affectedModules = this.collectModulesAffectedByOverrides(testingModuleDef.imports);
             if (affectedModules.size > 0) {
                 affectedModules.forEach((moduleType) => {
-                    {
-                        depsTracker.clearScopeCacheFor(moduleType);
-                    }
+                    depsTracker.clearScopeCacheFor(moduleType);
                 });
             }
         }
@@ -1455,9 +1434,7 @@ class TestBedCompiler {
         });
         // Restore initial component/directive/pipe defs
         this.initialNgDefs.forEach((defs, type) => {
-            {
-                depsTracker.clearScopeCacheFor(type);
-            }
+            depsTracker.clearScopeCacheFor(type);
             defs.forEach((descriptor, prop) => {
                 if (!descriptor) {
                     // Delete operations are generally undesirable since they have performance
@@ -1872,6 +1849,9 @@ class TestBedImpl {
     static get ngModule() {
         return TestBedImpl.INSTANCE.ngModule;
     }
+    static flushEffects() {
+        return TestBedImpl.INSTANCE.tick();
+    }
     static tick() {
         return TestBedImpl.INSTANCE.tick();
     }
@@ -1884,7 +1864,7 @@ class TestBedImpl {
     /**
      * Internal-only flag to indicate whether a module
      * scoping queue has been checked and flushed already.
-     * @nodoc
+     * @docs-private
      */
     globalCompilationChecked = false;
     /**
@@ -2197,12 +2177,31 @@ class TestBedImpl {
         }
     }
     /**
+     * Execute any pending effects by executing any pending work required to synchronize model to the UI.
+     *
+     * @deprecated use `TestBed.tick()` instead
+     */
+    flushEffects() {
+        this.tick();
+    }
+    /**
      * Execute any pending work required to synchronize model to the UI.
      *
      * @publicApi
      */
     tick() {
-        this.inject(ApplicationRef).tick();
+        const appRef = this.inject(ApplicationRef);
+        try {
+            // TODO(atscott): ApplicationRef.tick should set includeAllTestViews to true itself rather than doing this here and in ComponentFixture
+            // The behavior should be that TestBed.tick, ComponentFixture.detectChanges, and ApplicationRef.tick all result in the test fixtures
+            // getting synchronized, regardless of whether they are autoDetect: true.
+            // Automatic scheduling (zone or zoneless) will call _tick which will _not_ include fixtures with autoDetect: false
+            appRef.includeAllTestViews = true;
+            appRef.tick();
+        }
+        finally {
+            appRef.includeAllTestViews = false;
+        }
     }
 }
 /**
@@ -2280,41 +2279,6 @@ function withModule(moduleDef, fn) {
     }
     return new InjectSetupWrapper(() => moduleDef);
 }
-
-/**
- * Public Test Library for unit testing Angular applications. Assumes that you are running
- * with Jasmine, Mocha, or a similar framework which exports a beforeEach function and
- * allows tests to be asynchronous by either returning a promise or using a 'done' parameter.
- */
-// Reset the test providers and the fake async zone before each test.
-// We keep a guard because somehow this file can make it into a bundle and be executed
-// beforeEach is only defined when executing the tests
-globalThis.beforeEach?.(getCleanupHook(false));
-// We provide both a `beforeEach` and `afterEach`, because the updated behavior for
-// tearing down the module is supposed to run after the test so that we can associate
-// teardown errors with the correct test.
-// We keep a guard because somehow this file can make it into a bundle and be executed
-// afterEach is only defined when executing the tests
-globalThis.afterEach?.(getCleanupHook(true));
-function getCleanupHook(expectedTeardownValue) {
-    return () => {
-        const testBed = TestBedImpl.INSTANCE;
-        if (testBed.shouldTearDownTestingModule() === expectedTeardownValue) {
-            testBed.resetTestingModule();
-            resetFakeAsyncZoneIfExists();
-        }
-    };
-}
-/**
- * This API should be removed. But doing so seems to break `google3` and so it requires a bit of
- * investigation.
- *
- * A work around is to mark it as `@codeGenApi` for now and investigate later.
- *
- * @codeGenApi
- */
-// TODO(iminar): Remove this code in a safe way.
-const __core_private_testing_placeholder__ = '';
 
 /**
  * Fake implementation of user agent history and navigation behavior. This is a
@@ -3238,5 +3202,56 @@ class InternalNavigationResult {
     }
 }
 
-export { ComponentFixture, ComponentFixtureAutoDetect, ComponentFixtureNoNgZone, DeferBlockBehavior, DeferBlockFixture, DeferBlockState, InjectSetupWrapper, TestBed, TestComponentRenderer, __core_private_testing_placeholder__, discardPeriodicTasks, fakeAsync, flush, flushMicrotasks, getTestBed, inject, resetFakeAsyncZone, tick, waitForAsync, withModule, FakeNavigation as ɵFakeNavigation, MetadataOverrider as ɵMetadataOverrider, getCleanupHook as ɵgetCleanupHook };
+/**
+ * Public Test Library for unit testing Angular applications. Assumes that you are running
+ * with Jasmine, Mocha, or a similar framework which exports a beforeEach function and
+ * allows tests to be asynchronous by either returning a promise or using a 'done' parameter.
+ */
+// Reset the test providers and the fake async zone before each test.
+// We keep a guard because somehow this file can make it into a bundle and be executed
+// beforeEach is only defined when executing the tests
+globalThis.beforeEach?.(getCleanupHook(false));
+// We provide both a `beforeEach` and `afterEach`, because the updated behavior for
+// tearing down the module is supposed to run after the test so that we can associate
+// teardown errors with the correct test.
+// We keep a guard because somehow this file can make it into a bundle and be executed
+// afterEach is only defined when executing the tests
+globalThis.afterEach?.(getCleanupHook(true));
+function getCleanupHook(expectedTeardownValue) {
+    return () => {
+        const testBed = TestBedImpl.INSTANCE;
+        if (testBed.shouldTearDownTestingModule() === expectedTeardownValue) {
+            testBed.resetTestingModule();
+            resetFakeAsyncZoneIfExists();
+        }
+    };
+}
+
+class Log {
+    logItems;
+    constructor() {
+        this.logItems = [];
+    }
+    add(value) {
+        this.logItems.push(value);
+    }
+    fn(value) {
+        return () => {
+            this.logItems.push(value);
+        };
+    }
+    clear() {
+        this.logItems = [];
+    }
+    result() {
+        return this.logItems.join('; ');
+    }
+    static ɵfac = function Log_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || Log)(); };
+    static ɵprov = /*@__PURE__*/ i0.ɵɵdefineInjectable({ token: Log, factory: Log.ɵfac });
+}
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(Log, [{
+        type: Injectable
+    }], () => [], null); })();
+
+export { ComponentFixture, ComponentFixtureAutoDetect, ComponentFixtureNoNgZone, DeferBlockBehavior, DeferBlockFixture, DeferBlockState, InjectSetupWrapper, TestBed, TestComponentRenderer, discardPeriodicTasks, fakeAsync, flush, flushMicrotasks, getTestBed, inject, resetFakeAsyncZone, tick, waitForAsync, withModule, FakeNavigation as ɵFakeNavigation, Log as ɵLog, MetadataOverrider as ɵMetadataOverrider, getCleanupHook as ɵgetCleanupHook };
 //# sourceMappingURL=testing.mjs.map
